@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Penetration Tester Resources | Mike Small</title>
+  <meta name="description" content="A curated penetration tester resource page with hands-on labs, learning resources, and recommended tools." />
+  <style>
+    :root {
+      --bg: #071018;
+      --panel: rgba(15, 25, 38, 0.88);
+      --text: #ecf4ff;
+      --muted: #9db0c7;
+      --accent: #69e3ff;
+      --border: rgba(105, 227, 255, 0.18);
+      --shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+      --radius: 22px;
+      --max: 1080px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(105, 227, 255, 0.12), transparent 28%),
+        linear-gradient(180deg, #051019 0%, #071018 45%, #08131f 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(calc(100% - 2rem), var(--max)); margin: 0 auto; }
+    .header {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(4, 12, 19, 0.72);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .nav {
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1rem 0;
+    }
+    .brand { font-weight: 700; }
+    .brand span { color: var(--accent); }
+    .back-link { color: var(--muted); }
+    .hero { padding: 4.5rem 0 2rem; }
+    .hero-card, .card {
+      background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow);
+    }
+    .hero-card { padding: 2rem; }
+    .eyebrow {
+      display: inline-flex; align-items: center; color: var(--accent);
+      background: rgba(105, 227, 255, 0.08); border: 1px solid rgba(105, 227, 255, 0.15);
+      padding: 0.45rem 0.8rem; border-radius: 999px; font-size: 0.85rem; margin-bottom: 1rem;
+    }
+    h1 { margin: 0 0 0.8rem; font-size: clamp(2rem, 5vw, 3.7rem); line-height: 1.05; letter-spacing: -0.04em; }
+    .lead { color: var(--muted); max-width: 68ch; }
+    section { padding: 1rem 0 0.5rem; }
+    .section-header { margin-bottom: 1rem; }
+    .section-header h2 { margin: 0 0 0.3rem; font-size: 1.7rem; }
+    .section-header p { margin: 0; color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+    .card { padding: 1.25rem; }
+    .card h3 { margin-top: 0; margin-bottom: 0.5rem; }
+    .card p { margin-top: 0; color: var(--muted); }
+    .footer { padding: 2.5rem 0 3.5rem; color: var(--muted); text-align: center; }
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="../index.html">Mike <span>Small</span></a>
+      <a class="back-link" href="../index.html#resources">Back to Resources</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <div class="eyebrow">Resource Hub</div>
+          <h1>Penetration Tester</h1>
+          <p class="lead">A curated starting point for learning offensive security, exploitation techniques, and how to think like an attacker in real-world environments.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <h2>Hands-On Practice</h2>
+          <p>Platforms that build real offensive skills through labs, challenges, and full attack paths.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><h3>Hack The Box</h3><p>Advanced labs and realistic environments for offensive security.</p></article>
+          <article class="card"><h3>TryHackMe</h3><p>Guided learning paths and beginner-friendly offensive labs.</p></article>
+          <article class="card"><h3>PortSwigger Academy</h3><p>Best resource for learning web application security and exploitation.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <h2>Reading & Research</h2>
+          <p>Learn how attackers think, new techniques, and how vulnerabilities are exploited in real environments.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><h3>OffSec Blog</h3><p>Insights into offensive techniques and methodology.</p></article>
+          <article class="card"><h3>HackerOne Reports</h3><p>Real-world vulnerability writeups from bug bounty hunters.</p></article>
+          <article class="card"><h3>PayloadsAllTheThings</h3><p>Massive collection of payloads and exploitation techniques.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <h2>Recommended Tools</h2>
+          <p>Core tools used across reconnaissance, exploitation, and post-exploitation.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><h3>Burp Suite</h3><p>Essential for web application testing and proxying traffic.</p></article>
+          <article class="card"><h3>Nmap</h3><p>Network scanning and enumeration tool used in nearly every engagement.</p></article>
+          <article class="card"><h3>Metasploit</h3><p>Framework for exploitation and post-exploitation workflows.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">Built by Mike Small. Expand this with walkthroughs, notes, and real-world examples over time.</div>
+  </footer>
+</body>
+</html>
