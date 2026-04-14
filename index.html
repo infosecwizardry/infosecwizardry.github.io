@@ -391,6 +391,130 @@
       text-align: center;
     }
 
+    .cert-strip {
+      overflow: hidden;
+      position: relative;
+      padding: 0.35rem 0 0.75rem;
+    }
+
+    .cert-strip::before,
+    .cert-strip::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 72px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .cert-strip::before {
+      left: 0;
+      background: linear-gradient(90deg, rgba(7, 16, 24, 1), rgba(7, 16, 24, 0));
+    }
+
+    .cert-strip::after {
+      right: 0;
+      background: linear-gradient(270deg, rgba(7, 16, 24, 1), rgba(7, 16, 24, 0));
+    }
+
+    .cert-track {
+      display: flex;
+      width: max-content;
+      gap: 0.9rem;
+      animation: cert-scroll 44s linear infinite;
+    }
+
+    .cert-strip:hover .cert-track {
+      animation-play-state: paused;
+    }
+
+    .cert-badge {
+      min-width: 230px;
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      padding: 0.95rem 1rem;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .cert-badge:hover {
+      transform: translateY(-2px);
+      border-color: rgba(105, 227, 255, 0.28);
+      background: rgba(255, 255, 255, 0.045);
+    }
+
+    .cert-logo {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      overflow: hidden;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .cert-logo img {
+      max-width: 80%;
+      max-height: 80%;
+      object-fit: contain;
+    }
+
+    .logo-offsec {
+      background: linear-gradient(135deg, #e53935, #8e24aa);
+    }
+
+    .logo-giac {
+      background: linear-gradient(135deg, #1d4ed8, #0f766e);
+    }
+
+    .logo-comptia {
+      background: linear-gradient(135deg, #7c3aed, #2563eb);
+    }
+
+    .logo-aws {
+      background: linear-gradient(135deg, #ff9900, #232f3e);
+    }
+
+    .logo-elearnsecurity {
+      background: linear-gradient(135deg, #0ea5e9, #06b6d4);
+    }
+
+    .logo-hiddenlayer {
+      background: linear-gradient(135deg, #22c55e, #0f172a);
+    }
+
+    .cert-copy {
+      display: grid;
+      gap: 0.18rem;
+    }
+
+    .cert-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      line-height: 1.25;
+    }
+
+    .cert-provider {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    @keyframes cert-scroll {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
     .muted-note {
       font-size: 0.92rem;
       color: var(--muted);
@@ -482,6 +606,49 @@ mike@portfolio:~$ goals
 Show practical projects
 Share useful resources
 Publish clear blog posts</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Certifications & Training</h2>
+          </div>
+          <!-- A rolling view of certifications and training across offensive security, operations, cloud, forensics, and adversarial thinking. -->
+        </div>
+
+        <div class="cert-strip card">
+          <div class="cert-track" aria-label="Certifications marquee">
+            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/gxpn.webp" alt="GXPN"></div><div class="cert-copy"><div class="cert-title">GXPN</div><div class="cert-provider">GIAC</div></div></div>
+            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/gwapt.webp" alt="GWAPT"></div><div class="cert-copy"><div class="cert-title">GWAPT</div><div class="cert-provider">GIAC</div></div></div>
+            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/gpen.webp" alt="GPEN"></div><div class="cert-copy"><div class="cert-title">GPEN</div><div class="cert-provider">GIAC</div></div></div>
+            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/gcih.webp" alt="GCIH"></div><div class="cert-copy"><div class="cert-title">GCIH</div><div class="cert-provider">GIAC</div></div></div>
+            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/gcia.webp" alt="GCIA"></div><div class="cert-copy"><div class="cert-title">GCIA</div><div class="cert-provider">GIAC</div></div></div>
+            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/gsec.webp" alt="GSEC"></div><div class="cert-copy"><div class="cert-title">GSEC</div><div class="cert-provider">GIAC</div></div></div>
+
+            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/oscp.png" alt="OSCP"></div><div class="cert-copy"><div class="cert-title">OSCP</div><div class="cert-provider">Offensive Security</div></div></div>
+            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/osep.png" alt="OSEP"></div><div class="cert-copy"><div class="cert-title">OSEP</div><div class="cert-provider">Offensive Security</div></div></div>
+
+            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/securityx.svg" alt="SecurityX"></div><div class="cert-copy"><div class="cert-title">SecurityX</div><div class="cert-provider">CompTIA</div></div></div>
+            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/pentest-plus.svg" alt="PenTest+"></div><div class="cert-copy"><div class="cert-title">PenTest+</div><div class="cert-provider">CompTIA</div></div></div>
+            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/nva-professional.svg" alt="NVA"></div><div class="cert-copy"><div class="cert-title">NVA Professional</div><div class="cert-provider">CompTIA</div></div></div>
+            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/security-plus.svg" alt="Security+"></div><div class="cert-copy"><div class="cert-title">Security+</div><div class="cert-provider">CompTIA</div></div></div>
+            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/network-plus.svg" alt="Network+"></div><div class="cert-copy"><div class="cert-title">Network+</div><div class="cert-provider">CompTIA</div></div></div>
+
+            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/aws-cloud-practitioner.png" alt="AWS"></div><div class="cert-copy"><div class="cert-title">Cloud Practitioner</div><div class="cert-provider">AWS</div></div></div>
+
+            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/ejpt.png" alt="eJPT"></div><div class="cert-copy"><div class="cert-title">eJPT</div><div class="cert-provider">eLearnSecurity</div></div></div>
+            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/ecppt.png" alt="eCPPT"></div><div class="cert-copy"><div class="cert-title">eCPPT</div><div class="cert-provider">eLearnSecurity</div></div></div>
+            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/ecdfp.png" alt="eCDFP"></div><div class="cert-copy"><div class="cert-title">eCDFP</div><div class="cert-provider">eLearnSecurity</div></div></div>
+
+            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/Adversarial_Machine_Learning.png" alt="Adversarial ML"></div><div class="cert-copy"><div class="cert-title">Adversarial ML</div><div class="cert-provider">HiddenLayer</div></div></div>
+            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/Advanced_Adversarial_Machine_Learning.png" alt="Advanced ML"></div><div class="cert-copy"><div class="cert-title">Advanced ML</div><div class="cert-provider">HiddenLayer</div></div></div>
+
+            <!-- duplicate for smooth loop -->
+            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/gxpn.webp"></div><div class="cert-copy"><div class="cert-title">GXPN</div><div class="cert-provider">GIAC</div></div></div>
           </div>
         </div>
       </div>
