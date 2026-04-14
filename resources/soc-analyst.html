@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOC Analyst Resources | Mike Small</title>
+  <meta name="description" content="A curated SOC Analyst resource page with hands-on practice, reading, research, and recommended tools." />
+  <style>
+    :root {
+      --bg: #071018;
+      --panel: rgba(15, 25, 38, 0.88);
+      --text: #ecf4ff;
+      --muted: #9db0c7;
+      --accent: #69e3ff;
+      --border: rgba(105, 227, 255, 0.18);
+      --shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+      --radius: 22px;
+      --max: 1080px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(105, 227, 255, 0.12), transparent 28%),
+        linear-gradient(180deg, #051019 0%, #071018 45%, #08131f 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(calc(100% - 2rem), var(--max)); margin: 0 auto; }
+    .header {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(4, 12, 19, 0.72);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .nav {
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1rem 0;
+    }
+    .brand { font-weight: 700; }
+    .brand span { color: var(--accent); }
+    .back-link { color: var(--muted); }
+    .hero { padding: 4.5rem 0 2rem; }
+    .hero-card, .card {
+      background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow);
+    }
+    .hero-card { padding: 2rem; }
+    .eyebrow {
+      display: inline-flex; align-items: center; color: var(--accent);
+      background: rgba(105, 227, 255, 0.08); border: 1px solid rgba(105, 227, 255, 0.15);
+      padding: 0.45rem 0.8rem; border-radius: 999px; font-size: 0.85rem; margin-bottom: 1rem;
+    }
+    h1 { margin: 0 0 0.8rem; font-size: clamp(2rem, 5vw, 3.7rem); line-height: 1.05; letter-spacing: -0.04em; }
+    .lead { color: var(--muted); max-width: 68ch; }
+    section { padding: 1rem 0 0.5rem; }
+    .section-header { margin-bottom: 1rem; }
+    .section-header h2 { margin: 0 0 0.3rem; font-size: 1.7rem; }
+    .section-header p { margin: 0; color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+    .card { padding: 1.25rem; }
+    .card h3 { margin-top: 0; margin-bottom: 0.5rem; }
+    .card p { margin-top: 0; color: var(--muted); }
+    .list { display: grid; gap: 0.55rem; }
+    .item { color: var(--text); }
+    .item span { color: var(--muted); }
+    .footer { padding: 2.5rem 0 3.5rem; color: var(--muted); text-align: center; }
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="../index.html">Mike <span>Small</span></a>
+      <a class="back-link" href="../index.html#resources">Back to Resources</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <div class="eyebrow">Resource Hub</div>
+          <h1>SOC Analyst</h1>
+          <p class="lead">A curated starting point for people building skills in monitoring, triage, detection, and incident response. This page is structured by discipline so it is easy to turn into a learning path over time.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <h2>Hands-On Practice</h2>
+          <p>Platforms and labs that help build analyst instincts through repeated exposure to alerts, logs, and adversary behavior.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><h3>TryHackMe</h3><p>Good for guided blue-team labs and foundational workflows.</p></article>
+          <article class="card"><h3>LetsDefend</h3><p>Built around SOC-style alert triage, investigations, and incident handling.</p></article>
+          <article class="card"><h3>Blue Team Labs Online</h3><p>Practical exercises focused on detection and investigation.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <h2>Reading & Research</h2>
+          <p>Useful sources for staying current on attacker behavior, defensive ideas, and investigation techniques.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><h3>Red Canary</h3><p>Strong detection-focused writeups and threat reporting.</p></article>
+          <article class="card"><h3>SANS Reading Room</h3><p>Deep technical papers across incident response, logging, and analysis.</p></article>
+          <article class="card"><h3>MITRE ATT&CK</h3><p>Essential for mapping behavior, detections, and investigations.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <h2>Recommended Tools</h2>
+          <p>Core tools and data sources commonly used by analysts across triage, hunting, and response.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><h3>Splunk / Sentinel / Elastic</h3><p>SIEM platforms for search, correlation, and detection workflows.</p></article>
+          <article class="card"><h3>Wireshark / Zeek</h3><p>Great for network-focused analysis and deeper investigations.</p></article>
+          <article class="card"><h3>Volatility</h3><p>Useful for memory forensics and advanced investigation work.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">Built by Mike Small. Add links, screenshots, and longer writeups as this hub grows.</div>
+  </footer>
+</body>
+</html>
