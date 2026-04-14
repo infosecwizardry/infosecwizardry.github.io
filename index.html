@@ -719,39 +719,19 @@ mike@portfolio:~$ cat mission
           <div>
             <h2>Resources</h2>
           </div>
-          <p><!-- Recommended books, sites, labs, and learning tools. Swap these for your real favorites anytime. --></p>
+          <p>Role-based resource hubs built to help people learn with purpose.</p>
         </div>
 
-        <div class="resources-grid">
-          <article class="card">
-            <h3>Hands-On Practice</h3>
-            <p>Great places to keep your technical skills sharp and build repeatable habits.</p>
-            <div class="pill-row">
-              <span class="pill">Hack The Box</span>
-              <span class="pill">TryHackMe</span>
-              <span class="pill">PortSwigger Web Security Academy</span>
-            </div>
-          </article>
+        <div class="resources-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+          <a class="card" href="resources/soc-analyst.html" style="display:block;">
+            <h3>SOC Analyst</h3>
+            <p>Resources for building skills in monitoring, detection, triage, and incident response with a focus on practical analysis and real-world investigations.</p>
+          </a>
 
-          <article class="card">
-            <h3>Reading & Research</h3>
-            <p>Sources worth checking for tradecraft, writeups, and security thinking.</p>
-            <div class="pill-row">
-              <span class="pill">SANS Reading Room</span>
-              <span class="pill">OWASP</span>
-              <span class="pill">Red Canary</span>
-            </div>
-          </article>
-
-          <article class="card">
-            <h3>Tools I Recommend</h3>
-            <p>A place for your favorite tools, frameworks, and utilities as this portfolio evolves.</p>
-            <div class="pill-row">
-              <span class="pill">Burp Suite</span>
-              <span class="pill">Nmap</span>
-              <span class="pill">BloodHound</span>
-            </div>
-          </article>
+          <a class="card" href="resources/penetration-tester.html" style="display:block;">
+            <h3>Penetration Tester</h3>
+            <p>Resources for learning offensive security, testing methodology, and how to think like an attacker while building practical skills that transfer into real environments.</p>
+          </a>
         </div>
       </div>
     </section>
