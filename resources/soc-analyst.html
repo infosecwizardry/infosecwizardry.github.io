@@ -13,6 +13,7 @@
       --muted: #9db0c7;
       --accent: #69e3ff;
       --border: rgba(105, 227, 255, 0.18);
+      --accent-soft: rgba(105, 227, 255, 0.2);
       --shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
       --radius: 22px;
       --max: 1080px;
@@ -58,6 +59,183 @@
     .section-header h2 { margin: 0 0 0.3rem; font-size: 1.7rem; }
     .section-header p { margin: 0; color: var(--muted); }
     .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+    .pathway-card {
+      padding: 1.4rem;
+      background:
+        radial-gradient(circle at 18% 0%, rgba(105, 227, 255, 0.08), transparent 42%),
+        var(--panel);
+    }
+    .pathway-track {
+      position: relative;
+      display: grid;
+      gap: clamp(1.2rem, 3vh, 2.25rem);
+      padding: clamp(0.5rem, 1.5vh, 1rem) 0 clamp(0.75rem, 2vh, 1.5rem);
+      min-height: min(980px, calc(100vh - 18rem));
+      align-content: space-between;
+    }
+    .pathway-connectors {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .pathway-connectors path.connector-underlay {
+      fill: none;
+      stroke: rgba(105, 227, 255, 0.16);
+      stroke-width: 9;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .pathway-connectors path.connector-main {
+      fill: none;
+      stroke: rgba(167, 243, 255, 0.96);
+      stroke-width: 3.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      filter: drop-shadow(0 0 3px rgba(105, 227, 255, 0.18));
+    }
+    .pathway-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 120px minmax(0, 1fr);
+      align-items: center;
+      position: relative;
+      min-height: clamp(104px, 13vh, 148px);
+    }
+    .pathway-tile {
+      width: min(100%, 360px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+      color: var(--text);
+      text-align: left;
+      padding: 0.95rem 1rem;
+      cursor: pointer;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      position: relative;
+      z-index: 3;
+    }
+    .pathway-row.left .pathway-tile {
+      grid-column: 1;
+      justify-self: end;
+    }
+    .pathway-row.right .pathway-tile {
+      grid-column: 3;
+      justify-self: start;
+    }
+    .pathway-row.final .pathway-tile {
+      grid-column: 1 / -1;
+      justify-self: center;
+      width: min(100%, 400px);
+      padding: 1.35rem 1.4rem;
+      text-align: center;
+      border-color: rgba(105, 227, 255, 0.42);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(105, 227, 255, 0.24), transparent 52%),
+        linear-gradient(180deg, rgba(105, 227, 255, 0.18), rgba(255, 255, 255, 0.04));
+      box-shadow: 0 24px 42px rgba(2, 16, 28, 0.42);
+    }
+    .pathway-row.final {
+      margin-top: 1.4rem;
+      min-height: 164px;
+    }
+    .pathway-row.final .tile-step {
+      min-width: 112px;
+      background: rgba(105, 227, 255, 0.18);
+    }
+    .pathway-row.final .tile-title {
+      font-size: 1.18rem;
+    }
+    .pathway-row.final .tile-hint {
+      color: #d8f7ff;
+      font-size: 0.84rem;
+    }
+    .pathway-tile:hover {
+      transform: translateY(-2px);
+      border-color: rgba(105, 227, 255, 0.5);
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.26);
+      background: linear-gradient(180deg, rgba(105, 227, 255, 0.12), rgba(255, 255, 255, 0.03));
+    }
+    .pathway-tile:focus-visible {
+      outline: 3px solid rgba(105, 227, 255, 0.45);
+      outline-offset: 2px;
+      border-color: rgba(105, 227, 255, 0.7);
+    }
+    .pathway-tile.active {
+      border-color: rgba(105, 227, 255, 0.68);
+      box-shadow: 0 0 0 2px rgba(105, 227, 255, 0.16), 0 12px 26px rgba(3, 20, 34, 0.45);
+      background: linear-gradient(180deg, rgba(105, 227, 255, 0.14), rgba(255, 255, 255, 0.03));
+    }
+    .tile-step {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 72px;
+      padding: 0.18rem 0.45rem;
+      border-radius: 999px;
+      border: 1px solid rgba(105, 227, 255, 0.35);
+      background: rgba(105, 227, 255, 0.1);
+      font-size: 0.72rem;
+      color: #bfefff;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.45rem;
+    }
+    .tile-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    .tile-hint {
+      margin-top: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .pathway-modal {
+      width: min(760px, calc(100% - 2rem));
+      border: 1px solid rgba(105, 227, 255, 0.3);
+      border-radius: 20px;
+      padding: 0;
+      background: #0b1623;
+      color: var(--text);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.48);
+    }
+    .pathway-modal::backdrop { background: rgba(2, 8, 14, 0.74); }
+    .modal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 0;
+    }
+    .modal-image {
+      min-height: 250px;
+      display: grid;
+      place-items: center;
+      font-size: 4rem;
+      background: radial-gradient(circle at 20% 15%, rgba(105, 227, 255, 0.25), transparent 55%),
+                  linear-gradient(145deg, #102235 0%, #0e1b2a 100%);
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .modal-body { padding: 1.15rem 1.15rem 1rem; }
+    .modal-body h3 { margin: 0 0 0.55rem; font-size: 1.2rem; }
+    .modal-body p { margin: 0.45rem 0; color: var(--muted); line-height: 1.55; }
+    .modal-close {
+      margin-top: 0.85rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 0.55rem 0.8rem;
+      cursor: pointer;
+    }
+    .modal-close:hover {
+      border-color: rgba(105, 227, 255, 0.45);
+      background: rgba(105, 227, 255, 0.1);
+    }
+    .modal-close:focus-visible {
+      outline: 3px solid rgba(105, 227, 255, 0.45);
+      outline-offset: 2px;
+    }
     .card { padding: 1.25rem; }
     .card h3 { margin-top: 0; margin-bottom: 0.5rem; }
     .card p { margin-top: 0; color: var(--muted); }
@@ -65,7 +243,53 @@
     .item { color: var(--text); }
     .item span { color: var(--muted); }
     .footer { padding: 2.5rem 0 3.5rem; color: var(--muted); text-align: center; }
-    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+    @media (max-width: 1100px) {
+      .pathway-track {
+        min-height: auto;
+        align-content: start;
+      }
+      .pathway-row {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .pathway-tile {
+        width: 100%;
+        max-width: none;
+      }
+      .pathway-row.left .pathway-tile,
+      .pathway-row.right .pathway-tile,
+      .pathway-row.final .pathway-tile {
+        grid-column: 1;
+        justify-self: stretch;
+      }
+      .pathway-row.final {
+        margin-top: 0.6rem;
+        min-height: auto;
+      }
+    }
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+      .modal-grid { grid-template-columns: 1fr; }
+      .pathway-track {
+        gap: 1rem;
+        padding-top: 0.35rem;
+        padding-bottom: 0.75rem;
+      }
+      .modal-image {
+        min-height: 170px;
+        border-right: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .pathway-tile,
+      .modal-close {
+        transition: none;
+      }
+      .pathway-connectors path {
+        filter: none;
+      }
+    }
   </style>
 </head>
 <body>
@@ -84,6 +308,61 @@
           <h1>SOC Analyst</h1>
           <p class="lead">A curated starting point for people building skills in monitoring, triage, detection, and incident response. This page is structured by discipline so it is easy to turn into a learning path over time.</p>
         </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <h2>Pathway to Become a SOC Analyst</h2>
+          <p>Follow the route step-by-step. Click each tile to open details.</p>
+        </div>
+        <article class="hero-card pathway-card">
+          <div class="pathway-track" id="pathway-track">
+            <svg class="pathway-connectors" id="pathway-connectors" aria-hidden="true">
+              <defs>
+                <marker id="path-arrow" viewBox="0 0 12 12" refX="9.8" refY="6" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
+                  <path d="M 2 2 L 10 6 L 2 10" fill="none" stroke="rgba(167, 243, 255, 0.98)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </marker>
+              </defs>
+            </svg>
+            <div class="pathway-row left">
+              <button class="pathway-tile" type="button" data-step="1">
+                <div class="tile-step">Step 1</div>
+                <div class="tile-title">CompTIA Security+</div>
+                <div class="tile-hint">View details</div>
+              </button>
+            </div>
+            <div class="pathway-row right">
+              <button class="pathway-tile" type="button" data-step="2">
+                <div class="tile-step">Step 2</div>
+                <div class="tile-title">HTB CDSA</div>
+                <div class="tile-hint">View details</div>
+              </button>
+            </div>
+            <div class="pathway-row left">
+              <button class="pathway-tile" type="button" data-step="3">
+                <div class="tile-step">Step 3</div>
+                <div class="tile-title">Labs + Branding</div>
+                <div class="tile-hint">View details</div>
+              </button>
+            </div>
+            <div class="pathway-row right">
+              <button class="pathway-tile" type="button" data-step="4">
+                <div class="tile-step">Step 4</div>
+                <div class="tile-title">Labs + Apply + Network</div>
+                <div class="tile-hint">View details</div>
+              </button>
+            </div>
+            <div class="pathway-row final">
+              <button class="pathway-tile" type="button" data-step="5">
+                <div class="tile-step">Step 5</div>
+                <div class="tile-title">Land the Role</div>
+                <div class="tile-hint">Final destination</div>
+              </button>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -133,5 +412,144 @@
   <footer class="footer">
     <div class="container">Built by Mike Small. Add links, screenshots, and longer writeups as this hub grows.</div>
   </footer>
+
+  <dialog id="pathway-modal" class="pathway-modal" aria-labelledby="modal-title">
+    <div class="modal-grid">
+      <div id="modal-image" class="modal-image" aria-hidden="true"></div>
+      <div class="modal-body">
+        <h3 id="modal-title"></h3>
+        <p id="modal-actions"></p>
+        <p id="modal-output"></p>
+        <p id="modal-timeframe"></p>
+        <button class="modal-close" type="button" id="modal-close">Close</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    const pathwayDetails = {
+      1: {
+        emoji: "📘",
+        title: "Step 1: CompTIA Security+",
+        actions: "Actions: Build core security fundamentals, review threat models, and complete practice exams.",
+        output: "Output: Security+ earned.",
+        timeframe: "Timeframe: 6-10 weeks."
+      },
+      2: {
+        emoji: "🧠",
+        title: "Step 2: HTB CDSA",
+        actions: "Actions: Complete CDSA modules and practice SOC-style investigations in lab scenarios.",
+        output: "Output: HTB CDSA completed.",
+        timeframe: "Timeframe: 8-12 weeks."
+      },
+      3: {
+        emoji: "🛠️",
+        title: "Step 3: Labs + Branding (resume, portfolio, LinkedIn)",
+        actions: "Actions: Keep running labs while turning your work into resume bullets, portfolio writeups, and LinkedIn updates.",
+        output: "Output: Interview-ready brand assets with proof of skill.",
+        timeframe: "Timeframe: 4-8 weeks in parallel with labs."
+      },
+      4: {
+        emoji: "🎯",
+        title: "Step 4: Labs, apply + interview prep + networking",
+        actions: "Actions: Continue labs, apply to targeted roles, prep SOC interview scenarios, and network weekly.",
+        output: "Output: Active interview pipeline and referral opportunities.",
+        timeframe: "Timeframe: Weekly cadence until offers."
+      },
+      5: {
+        emoji: "🚀",
+        title: "Step 5: Land the role",
+        actions: "Actions: Close interviews, compare offers, and prepare a 30/60/90-day onboarding plan.",
+        output: "Output: SOC Analyst role secured.",
+        timeframe: "Timeframe: Depends on market and application volume."
+      }
+    };
+
+    const modal = document.getElementById("pathway-modal");
+    const modalImage = document.getElementById("modal-image");
+    const modalTitle = document.getElementById("modal-title");
+    const modalActions = document.getElementById("modal-actions");
+    const modalOutput = document.getElementById("modal-output");
+    const modalTimeframe = document.getElementById("modal-timeframe");
+    const closeBtn = document.getElementById("modal-close");
+    const track = document.getElementById("pathway-track");
+    const connectorsSvg = document.getElementById("pathway-connectors");
+    const tiles = Array.from(track.querySelectorAll(".pathway-tile"));
+
+    function renderPathConnectors() {
+      if (tiles.length < 2) return;
+
+      const existingPaths = Array.from(connectorsSvg.querySelectorAll("path.connector-underlay, path.connector-main"));
+      existingPaths.forEach((path) => path.remove());
+
+      const trackRect = track.getBoundingClientRect();
+      connectorsSvg.setAttribute("viewBox", `0 0 ${trackRect.width} ${trackRect.height}`);
+
+      for (let i = 0; i < tiles.length - 1; i += 1) {
+        const currentRect = tiles[i].getBoundingClientRect();
+        const nextRect = tiles[i + 1].getBoundingClientRect();
+
+        const currentCenterX = currentRect.left + (currentRect.width / 2);
+        const nextCenterX = nextRect.left + (nextRect.width / 2);
+        const movingRight = nextCenterX >= currentCenterX;
+
+        const startX = (movingRight ? currentRect.right - 6 : currentRect.left + 6) - trackRect.left;
+        const startY = currentRect.top + (currentRect.height / 2) - trackRect.top;
+        const endX = nextRect.left + (nextRect.width / 2) - trackRect.left;
+        const endY = nextRect.top - 10 - trackRect.top;
+        const direction = endX >= startX ? 1 : -1;
+        const corner = 18;
+        const bendX = endX;
+        const bendY = startY;
+        const pathData =
+          `M ${startX} ${startY}
+           L ${bendX - (corner * direction)} ${bendY}
+           Q ${bendX} ${bendY} ${bendX} ${bendY + corner}
+           L ${endX} ${endY}`;
+
+        const underlay = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        underlay.setAttribute("class", "connector-underlay");
+        underlay.setAttribute("d", pathData);
+        connectorsSvg.appendChild(underlay);
+
+        const main = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        main.setAttribute("class", "connector-main");
+        main.setAttribute("d", pathData);
+        main.setAttribute("marker-end", "url(#path-arrow)");
+        connectorsSvg.appendChild(main);
+      }
+    }
+
+    document.getElementById("pathway-track").addEventListener("click", (event) => {
+      const tile = event.target.closest(".pathway-tile");
+      if (!tile) return;
+
+      const detail = pathwayDetails[tile.dataset.step];
+      if (!detail) return;
+
+      modalImage.textContent = detail.emoji;
+      modalTitle.textContent = detail.title;
+      modalActions.textContent = detail.actions;
+      modalOutput.textContent = detail.output;
+      modalTimeframe.textContent = detail.timeframe;
+      tiles.forEach((candidate) => candidate.classList.remove("active"));
+      tile.classList.add("active");
+      modal.showModal();
+    });
+
+    closeBtn.addEventListener("click", () => modal.close());
+    modal.addEventListener("click", (event) => {
+      const rect = modal.getBoundingClientRect();
+      const inside =
+        event.clientX >= rect.left &&
+        event.clientX <= rect.right &&
+        event.clientY >= rect.top &&
+        event.clientY <= rect.bottom;
+      if (!inside) modal.close();
+    });
+
+    renderPathConnectors();
+    window.addEventListener("resize", renderPathConnectors);
+  </script>
 </body>
 </html>
