@@ -239,6 +239,21 @@
     .card { padding: 1.25rem; }
     .card h3 { margin-top: 0; margin-bottom: 0.5rem; }
     .card p { margin-top: 0; color: var(--muted); }
+    .resource-link-card {
+      display: block;
+      height: 100%;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+    .resource-link-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(105, 227, 255, 0.42);
+      box-shadow: 0 18px 34px rgba(2, 16, 28, 0.34);
+      background: linear-gradient(180deg, rgba(105, 227, 255, 0.08), rgba(255, 255, 255, 0.03));
+    }
+    .resource-link-card .tile-hint {
+      margin-top: 0.85rem;
+      color: #d8f7ff;
+    }
     .list { display: grid; gap: 0.55rem; }
     .item { color: var(--text); }
     .item span { color: var(--muted); }
@@ -369,41 +384,58 @@
     <section>
       <div class="container">
         <div class="section-header">
-          <h2>Hands-On Practice</h2>
-          <p>Platforms and labs that help build analyst instincts through repeated exposure to alerts, logs, and adversary behavior.</p>
+          <h2>Blogs</h2>
+          <p>This section will feature SOC Analyst blog posts as they are published.</p>
         </div>
-        <div class="grid">
-          <article class="card"><h3>TryHackMe</h3><p>Good for guided blue-team labs and foundational workflows.</p></article>
-          <article class="card"><h3>LetsDefend</h3><p>Built around SOC-style alert triage, investigations, and incident handling.</p></article>
-          <article class="card"><h3>Blue Team Labs Online</h3><p>Practical exercises focused on detection and investigation.</p></article>
-        </div>
+        <article class="card">
+          <h3>Coming Soon</h3>
+          <p>No blogs are published for this pathway yet. When they are ready, this section can highlight walkthroughs, lessons learned, and role-specific guidance.</p>
+        </article>
       </div>
     </section>
 
     <section>
       <div class="container">
         <div class="section-header">
-          <h2>Reading & Research</h2>
-          <p>Useful sources for staying current on attacker behavior, defensive ideas, and investigation techniques.</p>
+          <h2>Recommendations</h2>
+          <p>Browse recommendations by category so each resource type can scale on its own page without overwhelming this hub.</p>
         </div>
         <div class="grid">
-          <article class="card"><h3>Red Canary</h3><p>Strong detection-focused writeups and threat reporting.</p></article>
-          <article class="card"><h3>SANS Reading Room</h3><p>Deep technical papers across incident response, logging, and analysis.</p></article>
-          <article class="card"><h3>MITRE ATT&CK</h3><p>Essential for mapping behavior, detections, and investigations.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="section-header">
-          <h2>Recommended Tools</h2>
-          <p>Core tools and data sources commonly used by analysts across triage, hunting, and response.</p>
-        </div>
-        <div class="grid">
-          <article class="card"><h3>Splunk / Sentinel / Elastic</h3><p>SIEM platforms for search, correlation, and detection workflows.</p></article>
-          <article class="card"><h3>Wireshark / Zeek</h3><p>Great for network-focused analysis and deeper investigations.</p></article>
-          <article class="card"><h3>Volatility</h3><p>Useful for memory forensics and advanced investigation work.</p></article>
+          <a class="card resource-link-card" href="soc-analyst-labs.html">
+            <h3>Labs</h3>
+            <p>Hands-on training platforms, SOC simulations, and investigation exercises.</p>
+            <div class="tile-hint">Explore Labs</div>
+          </a>
+          <a class="card resource-link-card" href="soc-analyst-tools.html">
+            <h3>Tools</h3>
+            <p>SIEMs, packet tools, endpoint tools, and analyst workflow staples.</p>
+            <div class="tile-hint">Explore Tools</div>
+          </a>
+          <a class="card resource-link-card" href="soc-analyst-podcasts.html">
+            <h3>Podcasts</h3>
+            <p>Shows that help you stay close to incidents, trends, and defender thinking.</p>
+            <div class="tile-hint">Explore Podcasts</div>
+          </a>
+          <a class="card resource-link-card" href="soc-analyst-research.html">
+            <h3>Research</h3>
+            <p>Threat reports, technical papers, and behavior mapping resources.</p>
+            <div class="tile-hint">Explore Research</div>
+          </a>
+          <a class="card resource-link-card" href="soc-analyst-content-creators.html">
+            <h3>Content Creators</h3>
+            <p>Analysts, educators, and practitioners worth following across platforms.</p>
+            <div class="tile-hint">Explore Creators</div>
+          </a>
+          <a class="card resource-link-card" href="soc-analyst-certifications.html">
+            <h3>Certifications</h3>
+            <p>Role-relevant certification paths from baseline to analyst specialization.</p>
+            <div class="tile-hint">Explore Certifications</div>
+          </a>
+          <a class="card resource-link-card" href="soc-analyst-books.html">
+            <h3>Books</h3>
+            <p>Long-form learning for detection, investigation, and blue-team tradecraft.</p>
+            <div class="tile-hint">Explore Books</div>
+          </a>
         </div>
       </div>
     </section>
