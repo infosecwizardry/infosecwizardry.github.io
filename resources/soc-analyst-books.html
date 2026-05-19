@@ -32,6 +32,13 @@
     .card p { margin-top:0; color:var(--muted); }
     .resource-link { color:var(--accent); font-weight:600; }
     .footer { padding:2.5rem 0 3.5rem; color:var(--muted); text-align:center; }
+    .empty-state { color:var(--muted); border:1px dashed rgba(255,255,255,.14); border-radius:18px; padding:1rem; background:rgba(255,255,255,.02); grid-column: 1 / -1; }
+    .pill-row { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.85rem; }
+    .pill { border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.03); color:var(--text); border-radius:999px; padding:.32rem .6rem; font-size:.78rem; }
+    .rec-card { position:relative; padding-top:2.6rem; }
+    .type-pill { position:absolute; top:1rem; right:1rem; font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; padding:.28rem .6rem; border-radius:999px; background:rgba(105,227,255,.12); border:1px solid rgba(105,227,255,.3); color:var(--accent); font-weight:600; }
+    .rec-card-author { color:var(--muted); font-size:.88rem; margin:-.2rem 0 .6rem; }
+    .project-links { margin-top:.9rem; font-size:.95rem; }
     @media (max-width:900px) { .grid { grid-template-columns:1fr; } }
   </style>
 </head>
@@ -39,8 +46,10 @@
   <header class="header"><div class="container nav"><a class="brand" href="../index.html">Mike <span>Small</span></a><a class="back-link" href="soc-analyst.html">Back to SOC Analyst</a></div></header>
   <main>
     <section class="hero"><div class="container"><div class="hero-card"><div class="eyebrow">SOC Analyst Recommendations</div><h1>Books</h1><p class="lead">This page is reserved for book recommendations that help analysts build deeper investigation, detection, and defender reasoning skills.</p></div></div></section>
-    <section><div class="container"><div class="section-header"><h2>Recommended Books</h2><p>Long-form references for malware analysis, memory forensics, Windows internals, and deeper technical understanding.</p></div><div class="grid"><article class="card"><h3>The Art of Memory Forensics</h3><p>Strong reference for memory acquisition, investigation workflow, and forensic analysis on live systems.</p><a class="resource-link" href="https://www.amazon.com/Art-Memory-Forensics-Detecting-Malware/dp/1118825098" target="_blank" rel="noreferrer">View Book</a></article><article class="card"><h3>The Art of Computer Virus Research and Defense</h3><p>Helpful for understanding malware behavior, defensive thinking, and the broader adversarial mindset.</p><a class="resource-link" href="https://www.amazon.com/Art-Computer-Virus-Research-Defense/dp/0321304543" target="_blank" rel="noreferrer">View Book</a></article><article class="card"><h3>Practical Malware Analysis</h3><p>Excellent hands-on introduction to dissecting malware behavior and building stronger investigation instincts.</p><a class="resource-link" href="https://www.amazon.com/Practical-Malware-Analysis-Hands-Dissecting/dp/1593272901" target="_blank" rel="noreferrer">View Book</a></article><article class="card"><h3>Windows Internals Part 1, 7th Edition</h3><p>Deep Windows operating system knowledge that pays off in triage, logging, telemetry interpretation, and host investigations.</p><a class="resource-link" href="https://www.amazon.com/Windows-Internals-Part-architecture-management/dp/0735684189" target="_blank" rel="noreferrer">View Book</a></article></div></div></section>
+    <section><div class="container"><div class="section-header"><h2>Recommended Books</h2><p>Long-form references for malware analysis, memory forensics, Windows internals, and deeper technical understanding.</p></div><div id="cards-grid" class="grid"></div></div></section>
   </main>
   <footer class="footer"><div class="container">Built for the SOC Analyst resource hub.</div></footer>
+  <script src="../assets/js/recommendations.js"></script>
+  <script>Recommendations.renderByTagAndType("cards-grid", "soc-analyst", "book");</script>
 </body>
 </html>

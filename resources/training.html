@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SOC Analyst Tools | Mike Small</title>
-  <meta name="description" content="SOC Analyst tool recommendations for investigations, visibility, and day-to-day blue-team workflows." />
+  <title>Training & Courses | Mike Small</title>
+  <meta name="description" content="Training and course recommendations across offensive, defensive, and foundational cybersecurity." />
   <style>
     :root { --bg:#071018; --panel:rgba(15,25,38,.88); --text:#ecf4ff; --muted:#9db0c7; --accent:#69e3ff; --border:rgba(105,227,255,.18); --shadow:0 18px 40px rgba(0,0,0,.28); --radius:22px; --max:1080px; }
     * { box-sizing:border-box; }
@@ -32,15 +32,24 @@
     .card p { margin-top:0; color:var(--muted); }
     .resource-link { color:var(--accent); font-weight:600; }
     .footer { padding:2.5rem 0 3.5rem; color:var(--muted); text-align:center; }
+    .empty-state { color:var(--muted); border:1px dashed rgba(255,255,255,.14); border-radius:18px; padding:1rem; background:rgba(255,255,255,.02); grid-column: 1 / -1; }
+    .pill-row { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.85rem; }
+    .pill { border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.03); color:var(--text); border-radius:999px; padding:.32rem .6rem; font-size:.78rem; }
+    .rec-card { position:relative; padding-top:2.6rem; }
+    .type-pill { position:absolute; top:1rem; right:1rem; font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; padding:.28rem .6rem; border-radius:999px; background:rgba(105,227,255,.12); border:1px solid rgba(105,227,255,.3); color:var(--accent); font-weight:600; }
+    .rec-card-author { color:var(--muted); font-size:.88rem; margin:-.2rem 0 .6rem; }
+    .project-links { margin-top:.9rem; font-size:.95rem; }
     @media (max-width:900px) { .grid { grid-template-columns:1fr; } }
   </style>
 </head>
 <body>
-  <header class="header"><div class="container nav"><a class="brand" href="../index.html">Mike <span>Small</span></a><a class="back-link" href="soc-analyst.html">Back to SOC Analyst</a></div></header>
+  <header class="header"><div class="container nav"><a class="brand" href="../index.html">Mike <span>Small</span></a><a class="back-link" href="../index.html#recommendations">Back to Recommendations</a></div></header>
   <main>
-    <section class="hero"><div class="container"><div class="hero-card"><div class="eyebrow">SOC Analyst Recommendations</div><h1>Tools</h1><p class="lead">This page is reserved for tool recommendations that support SOC investigations, detection, and operational workflow design.</p></div></div></section>
-    <section><div class="container"><div class="section-header"><h2>Recommended Tools</h2><p>Core analyst tools and log sources that support investigations, visibility, and day-to-day SOC workflows.</p></div><div class="grid"><article class="card"><h3>Kibana</h3><p>Useful for searching, visualizing, and investigating log data in Elastic-based environments.</p><a class="resource-link" href="https://www.elastic.co/kibana" target="_blank" rel="noreferrer">View Kibana</a></article><article class="card"><h3>Wireshark</h3><p>Packet analysis staple for digging deeper into network behavior and validating suspicious activity.</p><a class="resource-link" href="https://www.wireshark.org/" target="_blank" rel="noreferrer">View Wireshark</a></article><article class="card"><h3>Sysmon Logs</h3><p>High-value Windows telemetry source for process creation, network connections, and host-based investigations.</p><a class="resource-link" href="https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon" target="_blank" rel="noreferrer">View Sysmon</a></article><article class="card"><h3>PowerShell Logs</h3><p>Important log source for script execution visibility, attacker behavior tracing, and post-incident review.</p></article></div></div></section>
+    <section class="hero"><div class="container"><div class="hero-card"><div class="eyebrow">Recommendations</div><h1>Training &amp; Courses</h1><p class="lead">Structured courses and platforms I'd point someone toward depending on where they are in their cybersecurity journey.</p></div></div></section>
+    <section><div class="container"><div class="section-header"><h2>All Training</h2><p>Tag chips show which roles or topics each course best fits.</p></div><div id="cards-grid" class="grid"></div></div></section>
   </main>
-  <footer class="footer"><div class="container">Built for the SOC Analyst resource hub.</div></footer>
+  <footer class="footer"><div class="container">Built for the Recommendations hub.</div></footer>
+  <script src="../assets/js/recommendations.js"></script>
+  <script>Recommendations.renderByType("cards-grid", "training");</script>
 </body>
 </html>

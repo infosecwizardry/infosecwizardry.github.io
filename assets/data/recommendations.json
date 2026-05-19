@@ -1,0 +1,143 @@
+{
+  "items": [
+    {
+      "id": "art-of-memory-forensics",
+      "type": "book",
+      "title": "The Art of Memory Forensics",
+      "author": "Ligh, Case, Levy, Walters",
+      "description": "Strong reference for memory acquisition, investigation workflow, and forensic analysis on live systems.",
+      "link": "https://www.amazon.com/Art-Memory-Forensics-Detecting-Malware/dp/1118825098",
+      "tags": ["soc-analyst", "forensics", "incident-response"]
+    },
+    {
+      "id": "art-of-computer-virus-research-and-defense",
+      "type": "book",
+      "title": "The Art of Computer Virus Research and Defense",
+      "author": "Peter Szor",
+      "description": "Helpful for understanding malware behavior, defensive thinking, and the broader adversarial mindset.",
+      "link": "https://www.amazon.com/Art-Computer-Virus-Research-Defense/dp/0321304543",
+      "tags": ["soc-analyst", "malware-analysis"]
+    },
+    {
+      "id": "practical-malware-analysis",
+      "type": "book",
+      "title": "Practical Malware Analysis",
+      "author": "Sikorski & Honig",
+      "description": "Excellent hands-on introduction to dissecting malware behavior and building stronger investigation instincts.",
+      "link": "https://www.amazon.com/Practical-Malware-Analysis-Hands-Dissecting/dp/1593272901",
+      "tags": ["soc-analyst", "malware-analysis", "reverse-engineering"]
+    },
+    {
+      "id": "windows-internals-part-1-7e",
+      "type": "book",
+      "title": "Windows Internals, Part 1 (7th Edition)",
+      "author": "Yosifovich, Russinovich, Solomon, Ionescu",
+      "description": "Deep Windows operating system knowledge that pays off in triage, logging, telemetry interpretation, and host investigations.",
+      "link": "https://www.amazon.com/Windows-Internals-Part-architecture-management/dp/0735684189",
+      "tags": ["soc-analyst", "pen-tester", "windows-internals"]
+    },
+    {
+      "id": "tcm-practical-ethical-hacking",
+      "type": "training",
+      "title": "Practical Ethical Hacking",
+      "author": "TCM Security",
+      "description": "Hands-on entry into offensive security with a strong network-pentest focus. Good first step before OSCP-style training.",
+      "link": "https://academy.tcm-sec.com/p/practical-ethical-hacking-the-complete-course",
+      "tags": ["pen-tester"]
+    },
+    {
+      "id": "tryhackme",
+      "type": "training",
+      "title": "TryHackMe",
+      "description": "Guided learning paths and approachable, beginner-friendly content across blue-team and offensive foundations.",
+      "link": "https://tryhackme.com/",
+      "tags": ["soc-analyst", "pen-tester", "beginner"]
+    },
+    {
+      "id": "hack-the-box",
+      "type": "training",
+      "title": "Hack The Box",
+      "description": "Broader hands-on ecosystem with structured Academy modules covering offensive and defensive topics, plus deeper independent challenge content for more advanced practice.",
+      "link": "https://hacktheboxltd.sjv.io/e1MxWO",
+      "tags": ["soc-analyst", "pen-tester", "advanced"]
+    },
+    {
+      "id": "kibana",
+      "type": "tool",
+      "title": "Kibana",
+      "author": "Elastic",
+      "description": "Useful for searching, visualizing, and investigating log data in Elastic-based environments.",
+      "link": "https://www.elastic.co/kibana",
+      "tags": ["soc-analyst", "siem"]
+    },
+    {
+      "id": "wireshark",
+      "type": "tool",
+      "title": "Wireshark",
+      "description": "Packet analysis staple for digging deeper into network behavior and validating suspicious activity.",
+      "link": "https://www.wireshark.org/",
+      "tags": ["soc-analyst", "pen-tester", "network-analysis"]
+    },
+    {
+      "id": "sysmon",
+      "type": "tool",
+      "title": "Sysmon",
+      "author": "Microsoft Sysinternals",
+      "description": "High-value Windows telemetry source for process creation, network connections, and host-based investigations.",
+      "link": "https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon",
+      "tags": ["soc-analyst", "windows-internals", "detection-engineering"]
+    },
+    {
+      "id": "powershell-logging",
+      "type": "tool",
+      "title": "PowerShell Logging",
+      "description": "Important log source for script execution visibility, attacker behavior tracing, and post-incident review.",
+      "tags": ["soc-analyst", "detection-engineering"]
+    },
+    {
+      "id": "darknet-diaries",
+      "type": "podcast",
+      "title": "Darknet Diaries",
+      "author": "Jack Rhysider",
+      "description": "True stories from the dark side of the internet — hackers, breaches, and the people behind them. Approachable for newcomers, fun for veterans.",
+      "link": "https://darknetdiaries.com/",
+      "tags": ["soc-analyst", "pen-tester"]
+    },
+    {
+      "id": "ippsec",
+      "type": "creator",
+      "title": "IppSec",
+      "author": "YouTube",
+      "description": "Walkthroughs of retired Hack The Box machines that build real offensive technique pattern recognition.",
+      "link": "https://www.youtube.com/@ippsec",
+      "tags": ["pen-tester"]
+    },
+    {
+      "id": "mitre-attack",
+      "type": "research",
+      "title": "MITRE ATT&CK",
+      "author": "MITRE",
+      "description": "The shared language for adversary behavior. Useful for detection engineering, threat hunting, purple teaming, and report writing.",
+      "link": "https://attack.mitre.org/",
+      "tags": ["soc-analyst", "pen-tester", "detection-engineering"]
+    },
+    {
+      "id": "gcia",
+      "type": "certification",
+      "title": "GIAC Certified Intrusion Analyst (GCIA)",
+      "author": "GIAC",
+      "description": "Strong analyst-focused credential around intrusion analysis, traffic inspection, and network-centered investigation.",
+      "link": "https://www.giac.org/certifications/certified-intrusion-analyst-gcia",
+      "tags": ["soc-analyst"]
+    },
+    {
+      "id": "ecdfp",
+      "type": "certification",
+      "title": "Certified Digital Forensics Professional (eCDFP)",
+      "author": "INE / eLearnSecurity",
+      "description": "Useful path for developing forensic investigation skills that support host analysis and incident response depth.",
+      "link": "https://my.ine.com/CyberSecurity/learning-paths/54d03ae9-f161-4c34-85d1-ed4007d83f11/digital-forensics-professional",
+      "tags": ["soc-analyst", "forensics"]
+    }
+  ]
+}

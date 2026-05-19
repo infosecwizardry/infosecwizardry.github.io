@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SOC Analyst Content Creators | Mike Small</title>
-  <meta name="description" content="SOC Analyst content creator recommendations across YouTube, blogs, social platforms, and other education channels." />
+  <title>Labs | Mike Small</title>
+  <meta name="description" content="Hands-on lab platforms for blue-team practice, offensive challenges, and analyst workflow development." />
   <style>
     :root { --bg:#071018; --panel:rgba(15,25,38,.88); --text:#ecf4ff; --muted:#9db0c7; --accent:#69e3ff; --border:rgba(105,227,255,.18); --shadow:0 18px 40px rgba(0,0,0,.28); --radius:22px; --max:1080px; }
     * { box-sizing:border-box; }
@@ -43,13 +43,13 @@
   </style>
 </head>
 <body>
-  <header class="header"><div class="container nav"><a class="brand" href="../index.html">Mike <span>Small</span></a><a class="back-link" href="soc-analyst.html">Back to SOC Analyst</a></div></header>
+  <header class="header"><div class="container nav"><a class="brand" href="../index.html">Mike <span>Small</span></a><a class="back-link" href="../index.html#recommendations">Back to Recommendations</a></div></header>
   <main>
-    <section class="hero"><div class="container"><div class="hero-card"><div class="eyebrow">SOC Analyst Recommendations</div><h1>Content Creators</h1><p class="lead">This page is reserved for analysts, educators, and practitioners worth following across blogs, YouTube, and social platforms.</p></div></div></section>
-    <section><div class="container"><div class="section-header"><h2>Recommended Content Creators</h2><p>Creators who publish useful blue-team, malware, forensics, and analyst-adjacent content.</p></div><div id="cards-grid" class="grid"></div></div></section>
+    <section class="hero"><div class="container"><div class="hero-card"><div class="eyebrow">Recommendations</div><h1>Labs</h1><p class="lead">Hands-on platforms for building real skills — alert triage, exploitation chains, investigation repetition, and everything in between.</p></div></div></section>
+    <section><div class="container"><div class="section-header"><h2>All Labs</h2><p>Tag chips show which roles or skill levels each platform best fits.</p></div><div id="cards-grid" class="grid"></div></div></section>
   </main>
-  <footer class="footer"><div class="container">Built for the SOC Analyst resource hub.</div></footer>
+  <footer class="footer"><div class="container">Built for the Recommendations hub.</div></footer>
   <script src="../assets/js/recommendations.js"></script>
-  <script>Recommendations.renderByTagAndType("cards-grid", "soc-analyst", "creator");</script>
+  <script>Recommendations.renderByType("cards-grid", "lab");</script>
 </body>
 </html>

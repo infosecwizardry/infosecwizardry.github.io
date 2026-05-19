@@ -520,6 +520,51 @@
       color: var(--muted);
     }
 
+    .rec-tile-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.85rem;
+    }
+
+    .rec-tile {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.85rem;
+      padding: 1rem 1.1rem;
+      min-height: 110px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .rec-tile:hover {
+      transform: translateY(-2px);
+      border-color: rgba(105, 227, 255, 0.4);
+      background: rgba(105, 227, 255, 0.04);
+    }
+
+    .rec-tile h3 {
+      margin: 0;
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
+    }
+
+    .rec-tile-hint {
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    @media (max-width: 900px) {
+      .rec-tile-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 480px) {
+      .rec-tile-grid { grid-template-columns: 1fr; }
+    }
+
     @media (max-width: 980px) {
       .hero-grid,
       .about-grid,
@@ -570,6 +615,7 @@
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#resources">Resources</a>
+        <a href="#recommendations">Recommendations</a>
         <a href="#blog">Blog</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -731,6 +777,52 @@ mike@portfolio:~$ cat mission
           <a class="card" href="resources/penetration-tester.html" style="display:block;">
             <h3>Penetration Tester</h3>
             <p>Resources for learning offensive security, testing methodology, and how to think like an attacker while building practical skills that transfer into real environments.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="recommendations">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Recommendations</h2>
+          </div>
+          <p>Books, training, podcasts, and other resources I've found genuinely useful. Pick a category to browse.</p>
+        </div>
+
+        <div class="rec-tile-grid">
+          <a class="rec-tile" href="resources/books.html">
+            <h3>Books</h3>
+            <span class="rec-tile-hint">Browse &rarr;</span>
+          </a>
+          <a class="rec-tile" href="resources/training.html">
+            <h3>Training &amp; Courses</h3>
+            <span class="rec-tile-hint">Browse &rarr;</span>
+          </a>
+          <a class="rec-tile" href="resources/labs.html">
+            <h3>Labs</h3>
+            <span class="rec-tile-hint">Browse &rarr;</span>
+          </a>
+          <a class="rec-tile" href="resources/tools.html">
+            <h3>Tools</h3>
+            <span class="rec-tile-hint">Browse &rarr;</span>
+          </a>
+          <a class="rec-tile" href="resources/podcasts.html">
+            <h3>Podcasts &amp; Creators</h3>
+            <span class="rec-tile-hint">Browse &rarr;</span>
+          </a>
+          <a class="rec-tile" href="resources/research.html">
+            <h3>Research</h3>
+            <span class="rec-tile-hint">Browse &rarr;</span>
+          </a>
+          <a class="rec-tile" href="resources/certifications.html">
+            <h3>Certifications</h3>
+            <span class="rec-tile-hint">Browse &rarr;</span>
+          </a>
+          <a class="rec-tile" href="resources/other.html">
+            <h3>Other</h3>
+            <span class="rec-tile-hint">Browse &rarr;</span>
           </a>
         </div>
       </div>

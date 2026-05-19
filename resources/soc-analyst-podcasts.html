@@ -32,6 +32,13 @@
     .card p { margin-top:0; color:var(--muted); }
     .resource-link { color:var(--accent); font-weight:600; }
     .footer { padding:2.5rem 0 3.5rem; color:var(--muted); text-align:center; }
+    .empty-state { color:var(--muted); border:1px dashed rgba(255,255,255,.14); border-radius:18px; padding:1rem; background:rgba(255,255,255,.02); grid-column: 1 / -1; }
+    .pill-row { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.85rem; }
+    .pill { border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.03); color:var(--text); border-radius:999px; padding:.32rem .6rem; font-size:.78rem; }
+    .rec-card { position:relative; padding-top:2.6rem; }
+    .type-pill { position:absolute; top:1rem; right:1rem; font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; padding:.28rem .6rem; border-radius:999px; background:rgba(105,227,255,.12); border:1px solid rgba(105,227,255,.3); color:var(--accent); font-weight:600; }
+    .rec-card-author { color:var(--muted); font-size:.88rem; margin:-.2rem 0 .6rem; }
+    .project-links { margin-top:.9rem; font-size:.95rem; }
     @media (max-width:900px) { .grid { grid-template-columns:1fr; } }
   </style>
 </head>
@@ -39,8 +46,10 @@
   <header class="header"><div class="container nav"><a class="brand" href="../index.html">Mike <span>Small</span></a><a class="back-link" href="soc-analyst.html">Back to SOC Analyst</a></div></header>
   <main>
     <section class="hero"><div class="container"><div class="hero-card"><div class="eyebrow">SOC Analyst Recommendations</div><h1>Podcasts</h1><p class="lead">This page is reserved for podcast recommendations that help future analysts stay current on incidents, tradecraft, and security thinking.</p></div></div></section>
-    <section><div class="container"><div class="section-header"><h2>Recommended Podcasts</h2><p>Shows worth following for security storytelling, attacker context, and broader industry awareness.</p></div><div class="grid"><article class="card"><h3>Darknet Diaries</h3><p>Excellent for incident narratives, attacker case studies, and understanding how real-world operations unfold.</p><a class="resource-link" href="https://darknetdiaries.com/" target="_blank" rel="noreferrer">Listen to Darknet Diaries</a></article><article class="card"><h3>Malicious Life</h3><p>Good mix of cyber history, threat stories, and practical context that helps newer analysts build intuition.</p><a class="resource-link" href="https://malicious.life/" target="_blank" rel="noreferrer">Listen to Malicious Life</a></article></div></div></section>
+    <section><div class="container"><div class="section-header"><h2>Recommended Podcasts</h2><p>Shows worth following for security storytelling, attacker context, and broader industry awareness.</p></div><div id="cards-grid" class="grid"></div></div></section>
   </main>
   <footer class="footer"><div class="container">Built for the SOC Analyst resource hub.</div></footer>
+  <script src="../assets/js/recommendations.js"></script>
+  <script>Recommendations.renderByTagAndType("cards-grid", "soc-analyst", "podcast");</script>
 </body>
 </html>
