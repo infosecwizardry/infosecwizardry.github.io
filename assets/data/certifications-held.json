@@ -5,84 +5,84 @@
       "name": "GXPN",
       "provider": "GIAC",
       "logo": "assets/certs/gxpn.webp",
-      "focusAreas": ["adversary-emulation"]
+      "focusAreas": ["adversary-emulation", "penetration-testing", "red-teaming", "malware-development"]
     },
     {
       "id": "gwapt",
       "name": "GWAPT",
       "provider": "GIAC",
       "logo": "assets/certs/gwapt.webp",
-      "focusAreas": ["adversary-emulation"]
+      "focusAreas": ["adversary-emulation", "penetration-testing", "web-application-security", "api-security"]
     },
     {
       "id": "gpen",
       "name": "GPEN",
       "provider": "GIAC",
       "logo": "assets/certs/gpen.webp",
-      "focusAreas": ["adversary-emulation"]
+      "focusAreas": ["adversary-emulation", "penetration-testing", "vulnerability-management"]
     },
     {
       "id": "gcih",
       "name": "GCIH",
       "provider": "GIAC",
       "logo": "assets/certs/gcih.webp",
-      "focusAreas": ["incident-response"]
+      "focusAreas": ["incident-response", "incident-command", "threat-hunting"]
     },
     {
       "id": "gcia",
       "name": "GCIA",
       "provider": "GIAC",
       "logo": "assets/certs/gcia.webp",
-      "focusAreas": ["detection-engineering", "threat-hunting", "security-operations"]
+      "focusAreas": ["detection-engineering", "threat-hunting", "security-operations", "threat-intelligence"]
     },
     {
       "id": "gsec",
       "name": "GSEC",
       "provider": "GIAC",
       "logo": "assets/certs/gsec.webp",
-      "focusAreas": ["security-operations"]
+      "focusAreas": ["security-operations", "incident-response"]
     },
     {
       "id": "oscp",
       "name": "OSCP",
       "provider": "Offensive Security",
       "logo": "assets/certs/oscp.png",
-      "focusAreas": ["adversary-emulation"]
+      "focusAreas": ["adversary-emulation", "penetration-testing", "red-teaming", "web-application-security"]
     },
     {
       "id": "osep",
       "name": "OSEP",
       "provider": "Offensive Security",
       "logo": "assets/certs/osep.png",
-      "focusAreas": ["adversary-emulation", "malware-development"]
+      "focusAreas": ["adversary-emulation", "penetration-testing", "red-teaming", "malware-development"]
     },
     {
       "id": "securityx",
       "name": "SecurityX",
       "provider": "CompTIA",
       "logo": "assets/certs/securityx.svg",
-      "focusAreas": ["security-operations"]
+      "focusAreas": ["security-operations", "threat-hunting", "incident-response", "threat-modeling", "executive-communication"]
     },
     {
       "id": "pentest-plus",
       "name": "PenTest+",
       "provider": "CompTIA",
       "logo": "assets/certs/pentest-plus.svg",
-      "focusAreas": ["adversary-emulation"]
+      "focusAreas": ["penetration-testing", "vulnerability-management", "executive-communication"]
     },
     {
       "id": "security-plus",
       "name": "Security+",
       "provider": "CompTIA",
       "logo": "assets/certs/security-plus.svg",
-      "focusAreas": ["security-operations"]
+      "focusAreas": ["security-operations", "incident-response"]
     },
     {
       "id": "network-plus",
       "name": "Network+",
       "provider": "CompTIA",
       "logo": "assets/certs/network-plus.svg",
-      "focusAreas": []
+      "focusAreas": ["security-operations"]
     },
     {
       "id": "aws-cloud-practitioner",
@@ -96,35 +96,35 @@
       "name": "eJPT",
       "provider": "eLearnSecurity",
       "logo": "assets/certs/ejpt.png",
-      "focusAreas": ["adversary-emulation"]
+      "focusAreas": ["adversary-emulation", "penetration-testing"]
     },
     {
       "id": "ecppt",
       "name": "eCPPT",
       "provider": "eLearnSecurity",
       "logo": "assets/certs/ecppt.png",
-      "focusAreas": ["adversary-emulation"]
+      "focusAreas": ["adversary-emulation", "penetration-testing", "web-application-security", "red-teaming"]
     },
     {
       "id": "ecdfp",
       "name": "eCDFP",
       "provider": "eLearnSecurity",
       "logo": "assets/certs/ecdfp.png",
-      "focusAreas": ["digital-forensics", "incident-response"]
+      "focusAreas": ["digital-forensics", "incident-response", "malware-analysis"]
     },
     {
       "id": "adversarial-ml",
       "name": "Adversarial ML",
       "provider": "HiddenLayer",
       "logo": "assets/certs/Adversarial_Machine_Learning.png",
-      "focusAreas": []
+      "focusAreas": ["adversarial-ml", "adversary-emulation"]
     },
     {
       "id": "advanced-adversarial-ml",
       "name": "Advanced ML",
       "provider": "HiddenLayer",
       "logo": "assets/certs/Advanced_Adversarial_Machine_Learning.png",
-      "focusAreas": []
+      "focusAreas": ["adversarial-ml", "adversary-emulation"]
     }
   ]
 }
