@@ -278,7 +278,7 @@
     }
 
     .about-grid {
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1fr;
     }
 
     .projects-grid {
@@ -565,6 +565,161 @@
       .rec-tile-grid { grid-template-columns: 1fr; }
     }
 
+    .pill-clickable {
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease, color 0.2s ease;
+      font: inherit;
+    }
+    .pill-clickable:hover,
+    .pill-clickable:focus-visible {
+      background: rgba(105, 227, 255, 0.12);
+      border-color: rgba(105, 227, 255, 0.45);
+      color: var(--accent);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .experience-summary {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+    }
+    .position-card { padding: 1.25rem 1.4rem; }
+    .position-head h3 { margin: 0 0 0.2rem; font-size: 1.1rem; }
+    .position-meta { color: var(--muted); font-size: 0.92rem; margin-bottom: 0.7rem; }
+    .position-bullets { margin: 0; padding-left: 1.1rem; color: var(--text); }
+    .position-bullets li { margin-bottom: 0.5rem; line-height: 1.55; }
+    .position-bullets li:last-child { margin-bottom: 0; }
+    .bullet-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem; }
+    .bullet-tags .pill { font-size: 0.72rem; padding: 0.22rem 0.55rem; }
+
+    .position-collapsible .position-body {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.35s ease, opacity 0.25s ease;
+    }
+    .position-collapsible.expanded .position-body {
+      max-height: 2400px;
+      opacity: 1;
+    }
+    .position-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-top: 0.9rem;
+      background: rgba(105, 227, 255, 0.08);
+      border: 1px solid rgba(105, 227, 255, 0.3);
+      color: var(--accent);
+      border-radius: 999px;
+      padding: 0.5rem 0.95rem;
+      font: inherit;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+    }
+    .position-toggle:hover,
+    .position-toggle:focus-visible {
+      background: rgba(105, 227, 255, 0.18);
+      border-color: rgba(105, 227, 255, 0.5);
+      transform: translateY(-1px);
+      outline: none;
+    }
+    .position-toggle-icon {
+      transition: transform 0.25s ease;
+      display: inline-block;
+      font-size: 0.7rem;
+    }
+    .position-collapsible.expanded .position-toggle-icon {
+      transform: rotate(180deg);
+    }
+
+    .focus-modal {
+      width: min(900px, calc(100% - 2rem));
+      max-height: min(85vh, 900px);
+      padding: 0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--panel-strong);
+      color: var(--text);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+      overflow: hidden;
+    }
+    .focus-modal[open] {
+      display: flex;
+      flex-direction: column;
+    }
+    .focus-modal::backdrop {
+      background: rgba(4, 12, 19, 0.72);
+      backdrop-filter: blur(6px);
+    }
+    .focus-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.2rem 1.4rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(7, 16, 24, 0.7);
+      flex: 0 0 auto;
+    }
+    .focus-modal-header h2 {
+      margin: 0;
+      font-size: 1.4rem;
+      letter-spacing: -0.02em;
+    }
+    .focus-modal-close-form {
+      margin: 0;
+      padding: 0;
+      display: inline-flex;
+    }
+    .focus-modal-close {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--muted);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 999px;
+      padding: 0.45rem 0.95rem;
+      font: inherit;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+    .focus-modal-close:hover {
+      background: rgba(255, 255, 255, 0.07);
+      color: var(--text);
+      border-color: rgba(255, 255, 255, 0.22);
+    }
+    .focus-modal-body {
+      padding: 1.4rem;
+      overflow-y: auto;
+      flex: 1 1 auto;
+      min-height: 0;
+      display: grid;
+      gap: 1.6rem;
+    }
+    .focus-modal-group { display: grid; gap: 0.85rem; }
+    .focus-modal-group-title {
+      margin: 0;
+      font-size: 1.1rem;
+      letter-spacing: -0.01em;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+    .focus-modal-stack { display: grid; gap: 0.8rem; }
+    .focus-modal-cert-row { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+    .focus-modal-cert-row .cert-badge { min-width: 200px; }
+    .focus-modal-body .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.85rem;
+    }
+    @media (max-width: 720px) {
+      .focus-modal-body .grid { grid-template-columns: 1fr; }
+    }
+
     @media (max-width: 980px) {
       .hero-grid,
       .about-grid,
@@ -613,6 +768,8 @@
       <a href="#top" class="brand">Mike <span>Small</span></a>
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="resume.html">Resume</a>
         <a href="#projects">Projects</a>
         <a href="#resources">Resources</a>
         <a href="#recommendations">Recommendations</a>
@@ -666,35 +823,7 @@ mike@portfolio:~$ cat mission
         </div>
 
         <div class="cert-strip card">
-          <div class="cert-track" aria-label="Certifications marquee">
-            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/gxpn.webp" alt="GXPN"></div><div class="cert-copy"><div class="cert-title">GXPN</div><div class="cert-provider">GIAC</div></div></div>
-            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/gwapt.webp" alt="GWAPT"></div><div class="cert-copy"><div class="cert-title">GWAPT</div><div class="cert-provider">GIAC</div></div></div>
-            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/gpen.webp" alt="GPEN"></div><div class="cert-copy"><div class="cert-title">GPEN</div><div class="cert-provider">GIAC</div></div></div>
-            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/gcih.webp" alt="GCIH"></div><div class="cert-copy"><div class="cert-title">GCIH</div><div class="cert-provider">GIAC</div></div></div>
-            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/gcia.webp" alt="GCIA"></div><div class="cert-copy"><div class="cert-title">GCIA</div><div class="cert-provider">GIAC</div></div></div>
-            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/gsec.webp" alt="GSEC"></div><div class="cert-copy"><div class="cert-title">GSEC</div><div class="cert-provider">GIAC</div></div></div>
-
-            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/oscp.png" alt="OSCP"></div><div class="cert-copy"><div class="cert-title">OSCP</div><div class="cert-provider">Offensive Security</div></div></div>
-            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/osep.png" alt="OSEP"></div><div class="cert-copy"><div class="cert-title">OSEP</div><div class="cert-provider">Offensive Security</div></div></div>
-
-            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/securityx.svg" alt="SecurityX"></div><div class="cert-copy"><div class="cert-title">SecurityX</div><div class="cert-provider">CompTIA</div></div></div>
-            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/pentest-plus.svg" alt="PenTest+"></div><div class="cert-copy"><div class="cert-title">PenTest+</div><div class="cert-provider">CompTIA</div></div></div>
-            
-            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/security-plus.svg" alt="Security+"></div><div class="cert-copy"><div class="cert-title">Security+</div><div class="cert-provider">CompTIA</div></div></div>
-            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/network-plus.svg" alt="Network+"></div><div class="cert-copy"><div class="cert-title">Network+</div><div class="cert-provider">CompTIA</div></div></div>
-
-            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/aws-cloud-practitioner.png" alt="AWS"></div><div class="cert-copy"><div class="cert-title">Cloud Practitioner</div><div class="cert-provider">AWS</div></div></div>
-
-            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/ejpt.png" alt="eJPT"></div><div class="cert-copy"><div class="cert-title">eJPT</div><div class="cert-provider">eLearnSecurity</div></div></div>
-            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/ecppt.png" alt="eCPPT"></div><div class="cert-copy"><div class="cert-title">eCPPT</div><div class="cert-provider">eLearnSecurity</div></div></div>
-            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/ecdfp.png" alt="eCDFP"></div><div class="cert-copy"><div class="cert-title">eCDFP</div><div class="cert-provider">eLearnSecurity</div></div></div>
-
-            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/Adversarial_Machine_Learning.png" alt="Adversarial ML"></div><div class="cert-copy"><div class="cert-title">Adversarial ML</div><div class="cert-provider">HiddenLayer</div></div></div>
-            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/Advanced_Adversarial_Machine_Learning.png" alt="Advanced ML"></div><div class="cert-copy"><div class="cert-title">Advanced ML</div><div class="cert-provider">HiddenLayer</div></div></div>
-
-            <!-- duplicate for smooth loop -->
-            <div class="cert-badge"><div class="cert-logo"><img src="assets/certs/gxpn.webp"></div><div class="cert-copy"><div class="cert-title">GXPN</div><div class="cert-provider">GIAC</div></div></div>
-          </div>
+          <div id="cert-track" class="cert-track" aria-label="Certifications marquee"></div>
         </div>
       </div>
     </section>
@@ -724,26 +853,22 @@ mike@portfolio:~$ cat mission
 
           <aside class="card">
             <h3>Focus Areas</h3>
-            <div class="pill-row">
-              <span class="pill">Detection Engineering</span>
-              <span class="pill">Security Operations</span>
-              <span class="pill">Incident Response</span>
-              <span class="pill">Digital Forensics</span>
-              <span class="pill">Threat Hunting</span>
-              <span class="pill">Adversary Emulation</span>
-              <span class="pill">Purple Teaming</span>
-              <span class="pill">SIEM Engineering</span>
-              <span class="pill">Security Automation</span>
-              <span class="pill">Threat Intelligence</span>
-              <span class="pill">MITRE ATT&CK</span>
-              <span class="pill">Cloud Security</span>
-              <span class="pill">AWS</span>
-              <span class="pill">Azure</span>
-              <span class="pill">Malware Analysis</span>
-              <span class="pill">Malware Development</span>
-            </div>
+            <p class="muted-note">Click a focus area to see the experience, certs, projects, and recommended resources that support it.</p>
+            <div id="focus-areas-pills" class="pill-row"></div>
           </aside>
         </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Experience</h2>
+          </div>
+          <p>Recent roles and the work that shaped them. <a class="resource-link" href="resume.html">View full resume &rarr;</a></p>
+        </div>
+        <div id="experience-summary" class="experience-summary"></div>
       </div>
     </section>
 
@@ -984,6 +1109,27 @@ mike@portfolio:~$ cat mission
     }
 
     loadRepos();
+  </script>
+
+  <dialog id="focus-area-modal" class="focus-modal" aria-labelledby="focus-modal-title">
+    <div class="focus-modal-header">
+      <h2 id="focus-modal-title"></h2>
+      <form method="dialog" class="focus-modal-close-form">
+        <button class="focus-modal-close" aria-label="Close">Close</button>
+      </form>
+    </div>
+    <div id="focus-modal-body" class="focus-modal-body"></div>
+  </dialog>
+
+  <script src="assets/js/recommendations.js"></script>
+  <script src="assets/js/focus-areas.js"></script>
+  <script>
+    FocusAreas.renderFocusAreaPills("focus-areas-pills");
+    FocusAreas.renderCertMarquee("cert-track");
+    FocusAreas.renderExperienceSummary("experience-summary");
+    FocusAreas.wireModalChrome();
+    FocusAreas.maybeOpenFromHash();
+    window.addEventListener("hashchange", FocusAreas.maybeOpenFromHash);
   </script>
 </body>
 </html>

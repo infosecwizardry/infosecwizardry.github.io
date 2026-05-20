@@ -1,0 +1,144 @@
+{
+  "areas": [
+    {
+      "slug": "detection-engineering",
+      "label": "Detection Engineering",
+      "githubTopicAliases": ["detection-engineering", "detection-rules", "sigma", "yara", "detections"]
+    },
+    {
+      "slug": "security-operations",
+      "label": "Security Operations",
+      "githubTopicAliases": ["security-operations", "soc", "blue-team", "blueteam"]
+    },
+    {
+      "slug": "incident-response",
+      "label": "Incident Response",
+      "githubTopicAliases": ["incident-response", "ir", "dfir"]
+    },
+    {
+      "slug": "digital-forensics",
+      "label": "Digital Forensics",
+      "githubTopicAliases": ["digital-forensics", "forensics", "dfir", "memory-forensics"]
+    },
+    {
+      "slug": "threat-hunting",
+      "label": "Threat Hunting",
+      "githubTopicAliases": ["threat-hunting", "hunting"]
+    },
+    {
+      "slug": "adversary-emulation",
+      "label": "Adversary Emulation",
+      "githubTopicAliases": ["adversary-emulation", "red-team", "redteam", "offensive-security", "pentesting", "penetration-testing"]
+    },
+    {
+      "slug": "purple-teaming",
+      "label": "Purple Teaming",
+      "githubTopicAliases": ["purple-team", "purple-teaming"]
+    },
+    {
+      "slug": "security-automation",
+      "label": "Security Automation",
+      "githubTopicAliases": ["security-automation", "soar", "automation"]
+    },
+    {
+      "slug": "threat-intelligence",
+      "label": "Threat Intelligence",
+      "githubTopicAliases": ["threat-intelligence", "threat-intel", "ti", "cti"]
+    },
+    {
+      "slug": "mitre-attack",
+      "label": "MITRE ATT&CK",
+      "githubTopicAliases": ["mitre-attack", "mitre", "attack-framework", "att-ck"]
+    },
+    {
+      "slug": "cloud-security",
+      "label": "Cloud Security",
+      "githubTopicAliases": ["cloud-security", "cloudsec"]
+    },
+    {
+      "slug": "aws",
+      "label": "AWS",
+      "githubTopicAliases": ["aws", "amazon-web-services"]
+    },
+    {
+      "slug": "azure",
+      "label": "Azure",
+      "githubTopicAliases": ["azure", "microsoft-azure"]
+    },
+    {
+      "slug": "malware-analysis",
+      "label": "Malware Analysis",
+      "githubTopicAliases": ["malware-analysis", "reverse-engineering", "malware", "reversing"]
+    },
+    {
+      "slug": "malware-development",
+      "label": "Malware Development",
+      "githubTopicAliases": ["malware-development", "maldev", "offensive-tooling", "implant", "c2"]
+    },
+    {
+      "slug": "threat-modeling",
+      "label": "Threat Modeling",
+      "githubTopicAliases": ["threat-modeling", "threat-model", "stride", "attack-trees", "design-review"]
+    },
+    {
+      "slug": "adversarial-ml",
+      "label": "Adversarial ML",
+      "githubTopicAliases": ["adversarial-ml", "adversarial-machine-learning", "ai-security", "ml-security", "llm-security"]
+    },
+    {
+      "slug": "red-teaming",
+      "label": "Red Teaming",
+      "githubTopicAliases": ["red-team", "red-teaming", "redteam", "offensive-security"]
+    },
+    {
+      "slug": "penetration-testing",
+      "label": "Penetration Testing",
+      "githubTopicAliases": ["penetration-testing", "pentesting", "pentest", "network-pentest"]
+    },
+    {
+      "slug": "web-application-security",
+      "label": "Web Application Security",
+      "githubTopicAliases": ["web-application-security", "appsec", "web-security", "webapp-security", "burp"]
+    },
+    {
+      "slug": "api-security",
+      "label": "API Security",
+      "githubTopicAliases": ["api-security", "api-pentest", "api-testing"]
+    },
+    {
+      "slug": "vulnerability-management",
+      "label": "Vulnerability Management",
+      "githubTopicAliases": ["vulnerability-management", "vuln-management", "vulnerability-scanning", "vm"]
+    },
+    {
+      "slug": "incident-command",
+      "label": "Incident Command",
+      "githubTopicAliases": ["incident-command", "incident-commander", "crisis-management"]
+    },
+    {
+      "slug": "soc-leadership",
+      "label": "SOC Leadership",
+      "githubTopicAliases": ["soc-leadership", "soc-management", "cyber-defense-leadership"]
+    },
+    {
+      "slug": "team-management",
+      "label": "Team Management",
+      "githubTopicAliases": ["team-management", "people-leadership", "engineering-management"]
+    },
+    {
+      "slug": "program-management",
+      "label": "Program Management",
+      "githubTopicAliases": ["program-management", "project-management", "pi-planning"]
+    },
+    {
+      "slug": "mentoring",
+      "label": "Mentoring & Analyst Development",
+      "githubTopicAliases": ["mentoring", "analyst-development", "training"]
+    },
+    {
+      "slug": "executive-communication",
+      "label": "Executive Communication",
+      "githubTopicAliases": ["executive-communication", "executive-briefing", "stakeholder-management"]
+    }
+  ]
+}

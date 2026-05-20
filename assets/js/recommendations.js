@@ -184,6 +184,8 @@
     loadRecommendations,
     renderByType,
     renderByTag,
-    renderByTagAndType
+    renderByTagAndType,
+    renderCard,
+    escapeHtml
   };
 })();

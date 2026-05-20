@@ -1,0 +1,302 @@
+{
+  "positions": [
+    {
+      "id": "adapt-forward-cssp-2025",
+      "title": "CSSP Operations Technical Lead, Contractor",
+      "company": "Adapt Forward",
+      "startDate": "2025-09",
+      "endDate": null,
+      "bullets": [
+        {
+          "text": "Lead a global cyber defense operation across SOC monitoring, detection engineering, threat hunting, malware analysis, and forensics in a government CSSP environment.",
+          "focusAreas": ["security-operations", "detection-engineering", "threat-hunting", "digital-forensics", "incident-response", "team-management", "soc-leadership", "mitre-attack"]
+        },
+        {
+          "text": "Rebuilt detection operations from alert-by-alert workflows into a risk-based strategy, using host, network, and cloud telemetry reviews to reduce alert volume by approximately 75% while preserving detection logic coverage.",
+          "focusAreas": ["detection-engineering", "security-operations", "program-management", "soc-leadership", "mitre-attack", "security-automation"]
+        },
+        {
+          "text": "Built a formal threat hunting cadence with threat intelligence partnership, increasing hunts from one every few months to every three weeks and enabling immediate pivots for targeted intelligence, emerging attacker behavior, or zero-day activity.",
+          "focusAreas": ["threat-hunting", "threat-intelligence", "program-management", "security-automation"]
+        },
+        {
+          "text": "Drove the creation of investigation standards, runbooks, and playbook-driven workflows for SOC, detection engineering, threat hunting, malware analysis, and forensics so teams collect evidence consistently and make faster response decisions.",
+          "focusAreas": ["security-operations", "incident-response", "detection-engineering", "threat-hunting", "digital-forensics", "program-management", "mitre-attack", "security-automation"]
+        },
+        {
+          "text": "Implemented PI planning, project management standardization, and role-based training to increase delivery from roughly three small projects per quarter to 10+ major concurrent initiatives and reduce average open-to-close time by over 66%.",
+          "focusAreas": ["security-operations", "program-management"]
+        },
+        {
+          "text": "Drove multiple security operations projects that had been stalled for years through completion by clarifying ownership, resolving dependencies, and forcing measurable delivery milestones.",
+          "focusAreas": ["security-operations", "program-management"]
+        },
+        {
+          "text": "Reorganized team structure and rebalanced job duties to create specialized capability areas, including malware analysis and forensic analysis, improving investigative depth and operational focus.",
+          "focusAreas": ["security-operations", "digital-forensics", "team-management"]
+        },
+        {
+          "text": "Serve as senior escalation point for high-severity events, turning initial signals into severity decisions, scope, containment priorities, recovery actions, leadership updates, and post-incident changes.",
+          "focusAreas": ["incident-response", "incident-command"]
+        },
+        {
+          "text": "Contribute to threat modeling and design review discussions, helping teams prioritize realistic attacker paths, control gaps, and response improvements.",
+          "focusAreas": ["threat-modeling", "security-operations", "detection-engineering", "mitre-attack"]
+        },
+        {
+          "text": "Reported operational progress, risk, detection priorities, and incident response posture to the government program director and contracting company VP.",
+          "focusAreas": ["security-operations", "incident-response", "detection-engineering", "executive-communication", "mitre-attack"]
+        }
+      ]
+    },
+    {
+      "id": "tandem-cyber-2018",
+      "title": "Founder / Co-Owner, Concurrent Consulting",
+      "company": "Tandem Cyber Solutions",
+      "startDate": "2018-06",
+      "endDate": null,
+      "bullets": [
+        {
+          "text": "Co-founded and operate a remote penetration testing company delivering an average of five client engagements per year across network, web application, API, and PCI-scoped tests that simulate real-world attack techniques and identify security gaps in enterprise infrastructure and applications.",
+          "focusAreas": ["adversary-emulation", "penetration-testing", "web-application-security", "api-security", "team-management"]
+        },
+        {
+          "text": "Manage end-to-end penetration testing engagements from client discovery and scoping conversations that help organizations define realistic project boundaries and select the right scope for their security goals and budget, through execution, reporting, executive briefing, remediation guidance, and follow-up coordination.",
+          "focusAreas": ["adversary-emulation", "penetration-testing", "executive-communication", "program-management"]
+        },
+        {
+          "text": "Conduct informal threat hunts, incident response tabletop exercises, and post-incident analysis for clients when engagement scope requires deeper investigation or readiness validation.",
+          "focusAreas": ["threat-hunting", "incident-response", "purple-teaming"]
+        },
+        {
+          "text": "Briefed executive leadership teams on assessment results, translating vulnerabilities, attack paths, and remediation priorities into practical business risk language.",
+          "focusAreas": ["adversary-emulation", "penetration-testing", "executive-communication", "vulnerability-management"]
+        },
+        {
+          "text": "Coordinated with client IT teams and third-party vendors to resolve identified issues and move remediation work from report findings into operational action.",
+          "focusAreas": ["adversary-emulation", "penetration-testing", "vulnerability-management"]
+        },
+        {
+          "text": "Use tools such as Nmap, Burp Suite, and Metasploit during network and web application assessments to map attack surface, validate exploitability, capture evidence, and support remediation planning.",
+          "focusAreas": ["adversary-emulation", "penetration-testing", "web-application-security"]
+        },
+        {
+          "text": "Contributed to threat modeling and design review conversations, helping clients reason through attacker behavior, likely attack paths, control gaps, and remediation priorities.",
+          "focusAreas": ["threat-modeling", "adversary-emulation", "penetration-testing", "purple-teaming"]
+        },
+        {
+          "text": "Built cloud-based testing infrastructure and penetration testing reporting infrastructure to support remote delivery, repeatable workflows, and scalable service operations.",
+          "focusAreas": ["adversary-emulation", "cloud-security", "aws", "penetration-testing"]
+        }
+      ]
+    },
+    {
+      "id": "capital-one-purple-2022",
+      "title": "Purple Team Manager, Exercise Service / R&D Lead",
+      "company": "Capital One",
+      "startDate": "2022-06",
+      "endDate": "2025-09",
+      "bullets": [
+        {
+          "text": "Shaped the technical vision, cross-team execution, and adoption strategy for an AWS AMI-based detection assurance platform that scaled from purple team idea to multi-team capability, ultimately covering approximately 95% of high and critical detections and moving validation from hours of manual effort to scheduled testing as often as hourly.",
+          "focusAreas": ["purple-teaming", "detection-engineering", "aws", "cloud-security", "security-automation", "program-management", "executive-communication"]
+        },
+        {
+          "text": "Drove an attack-to-detection workflow using an AWS AMI-based detection assurance platform that executed controlled attack variations against clean images with the enterprise security stack, then analyzed telemetry across Splunk, Elastic, CrowdStrike, Databricks, SQL, cloud, and endpoint sources to produce hunt logic, prototype detections, and production-ready detection requirements.",
+          "focusAreas": ["purple-teaming", "adversary-emulation", "red-teaming", "detection-engineering", "threat-hunting", "aws"]
+        },
+        {
+          "text": "Scaled the platform to move nearly 500 host-based detections from monthly or ad hoc validation to recurring automated testing, reducing detection drift discovery from weeks or months to hours through dashboards, Slack alerts, and executive metrics.",
+          "focusAreas": ["purple-teaming", "detection-engineering", "security-automation", "executive-communication"]
+        },
+        {
+          "text": "Personally built framework, attack-module, and orchestration components while clearing compliance, engineering, and ownership blockers across teams so the platform could scale from a purple team idea into a reusable detection engineering capability.",
+          "focusAreas": ["purple-teaming", "detection-engineering", "security-automation", "program-management"]
+        },
+        {
+          "text": "Built scalable detection health monitoring and a feedback loop for detection engineers and endpoint teams that exposed drift, broken logic, telemetry gaps, and control degradation as enterprise environments and tooling changed, letting teams test technique variants, rule tuning changes, and configuration updates against real attack execution before changes degraded production detection quality.",
+          "focusAreas": ["detection-engineering", "purple-teaming"]
+        },
+        {
+          "text": "Partnered across detection engineering, SOC, threat hunting, product security, cyber defense leadership, and cyber threat intelligence to turn detection validation from a manual point-in-time activity into a continuous engineering capability.",
+          "focusAreas": ["detection-engineering", "security-operations", "threat-hunting", "threat-intelligence", "purple-teaming", "program-management"]
+        },
+        {
+          "text": "Designed adversary simulations that put 30 to 46 analysts per quarter into realistic end-to-end incidents, then used missed steps and feedback loops to improve detection understanding and investigation quality.",
+          "focusAreas": ["adversary-emulation", "red-teaming", "purple-teaming", "security-operations", "incident-response", "mentoring"]
+        },
+        {
+          "text": "Built a threat-informed validation process to assess defensive coverage against the organization's top financial-sector threat actors by partnering with CTI, building relevant techniques, automating tests, and producing coverage reporting for senior leadership consumption.",
+          "focusAreas": ["purple-teaming", "red-teaming", "threat-intelligence", "mitre-attack", "detection-engineering", "executive-communication"]
+        },
+        {
+          "text": "Used Splunk, Elastic, CrowdStrike, Databricks, SQL, and custom scripts to find durable signals across fragmented telemetry when a single data source could not reliably identify the attack.",
+          "focusAreas": ["detection-engineering", "threat-hunting"]
+        },
+        {
+          "text": "Built cross-correlation methods that pieced together endpoint, network, identity, load balancer, and application telemetry into usable investigative and detection logic.",
+          "focusAreas": ["detection-engineering", "threat-hunting"]
+        },
+        {
+          "text": "Performed and analyzed attack variations including LSASS dumping, Active Directory enumeration, ransomware behavior, domain fronting, and load-balanced traffic tracing to identify what defenders could reliably detect.",
+          "focusAreas": ["adversary-emulation", "red-teaming", "malware-development", "purple-teaming", "detection-engineering"]
+        },
+        {
+          "text": "Turned attack research into actionable detection engineering handoffs, including expected telemetry, required logs, detection logic, edge cases, tuning considerations, and validation approaches.",
+          "focusAreas": ["detection-engineering", "adversary-emulation", "red-teaming", "purple-teaming"]
+        },
+        {
+          "text": "Closed visibility gaps in Active Directory attacks, load-balanced traffic, and domain fronting that had been known but unresolved for years by partnering with detection engineering, platform, endpoint, and pipeline teams to onboard missing logs, repair telemetry pipelines, reconfigure data flows, and build detection tooling so analysts could reliably detect and trace activity.",
+          "focusAreas": ["detection-engineering", "program-management", "adversary-emulation", "red-teaming"]
+        },
+        {
+          "text": "Contributed to threat modeling and design review efforts with cyber threat intelligence, product security, and engineering partners, translating attacker behavior and control gaps into prioritized testing and remediation plans.",
+          "focusAreas": ["threat-modeling", "threat-intelligence", "adversary-emulation"]
+        },
+        {
+          "text": "Built custom command-and-control tooling to extend Mandiant Security Validation where native capabilities could not emulate required tradecraft, enabling automated adversary actions while preserving realistic hands-on-keyboard behavior.",
+          "focusAreas": ["adversary-emulation", "red-teaming", "malware-development", "purple-teaming"]
+        },
+        {
+          "text": "Researched bring-your-own-vulnerable-driver tradecraft and produced defensive guidance to help detection and response teams understand the attack path, expected telemetry, and practical detection opportunities.",
+          "focusAreas": ["adversary-emulation", "red-teaming", "malware-development", "detection-engineering"]
+        },
+        {
+          "text": "Built Databricks investigative workflows to trace activity through load-balanced environments, giving analysts a repeatable way to identify true source systems from limited inputs.",
+          "focusAreas": ["threat-hunting", "detection-engineering"]
+        },
+        {
+          "text": "Built controlled ransomware emulation scenarios to test enterprise defenses against realistic encryption behavior, operator tradecraft, evasion patterns, and response workflows without creating unsafe operational risk.",
+          "focusAreas": ["adversary-emulation", "red-teaming", "purple-teaming", "malware-analysis"]
+        },
+        {
+          "text": "Completed advanced adversarial machine learning training and helped build training content that taught defenders how to recognize AI-enabled attacks and misuse patterns.",
+          "focusAreas": ["adversarial-ml", "adversary-emulation", "mentoring"]
+        }
+      ]
+    },
+    {
+      "id": "adapt-forward-malware-ir-2018",
+      "title": "Malware Analyst / CND Senior Incident Response Analyst, Contractor",
+      "company": "Adapt Forward",
+      "startDate": "2018-05",
+      "endDate": "2021-06",
+      "bullets": [
+        {
+          "text": "Led end-to-end investigations across distributed government environments as a contractor, turning initial signals into scoped evidence collection, forensic analysis, malware triage, containment guidance, remediation plans, and post-incident reviews.",
+          "focusAreas": ["incident-response", "incident-command", "digital-forensics", "malware-analysis"]
+        },
+        {
+          "text": "Served as incident commander and analyst for advanced persistent threat, nation-state, and multi-stage intrusion activity, coordinating external agencies, internal teams, technical responders, and leadership stakeholders.",
+          "focusAreas": ["incident-response", "incident-command"]
+        },
+        {
+          "text": "Briefed leadership and technical teams during and after major incidents, translating investigative status, forensic findings, scope, risk, containment actions, and remediation priorities into clear operational strategy and actionable next steps for both audiences.",
+          "focusAreas": ["incident-response", "incident-command", "executive-communication", "digital-forensics"]
+        },
+        {
+          "text": "Developed an onboarding bootcamp that reduced job-readiness time for new analysts from approximately nine months to four months.",
+          "focusAreas": ["security-operations", "incident-response", "mentoring", "program-management"]
+        },
+        {
+          "text": "Built an internal analyst development program that helped SOC analysts grow into incident response analysts, more than doubling the number of personnel able to support investigations.",
+          "focusAreas": ["security-operations", "incident-response", "mentoring", "program-management"]
+        },
+        {
+          "text": "Built forensic virtual machines, analysis processes, and a tactical forensic service pipeline to process forensic artifacts quickly and provide investigators with timely evidence needed to move cases forward.",
+          "focusAreas": ["digital-forensics", "incident-response", "program-management"]
+        },
+        {
+          "text": "Built malware analysis / reverse engineering virtual machines and repeatable malware triage processes that enabled faster extraction of usable investigative information, including infection vectors, persistence mechanisms, indicators, and attacker objectives.",
+          "focusAreas": ["malware-analysis", "incident-response", "program-management"]
+        },
+        {
+          "text": "Performed host, disk, memory, and network forensic analysis using tools such as Volatility, FTK, EnCase, Wireshark, and Zeek to reconstruct attacker activity and determine scope of compromise.",
+          "focusAreas": ["digital-forensics", "incident-response"]
+        },
+        {
+          "text": "Investigated advanced threats and intrusion activity, identifying attacker TTPs and developing actionable intelligence to support detection and response efforts.",
+          "focusAreas": ["threat-hunting", "threat-intelligence", "incident-response"]
+        },
+        {
+          "text": "Developed Splunk playbooks covering broad MITRE ATT&CK-aligned response scenarios and supported CrowdStrike automation efforts to improve investigation and response workflows.",
+          "focusAreas": ["security-automation", "incident-response", "mitre-attack"]
+        },
+        {
+          "text": "Served as a technical subject matter expert and escalation point, guiding investigations and mentoring analysts during complex incidents.",
+          "focusAreas": ["incident-response", "incident-command", "security-operations", "mentoring"]
+        },
+        {
+          "text": "Became a trusted advisor to leadership for incident response strategy, organizational planning, analyst development, and capability-building initiatives.",
+          "focusAreas": ["incident-response", "security-operations", "executive-communication", "mentoring", "program-management"]
+        },
+        {
+          "text": "Produced post-incident reports and after-action reviews covering root cause, scope, containment actions, remediation priorities, and operational lessons learned.",
+          "focusAreas": ["incident-response", "incident-command"]
+        }
+      ]
+    },
+    {
+      "id": "optiv-offensive-2017",
+      "title": "Consultant, Offensive Security",
+      "company": "Optiv",
+      "startDate": "2017-02",
+      "endDate": "2018-05",
+      "bullets": [
+        {
+          "text": "Delivered 100+ penetration tests for enterprise clients, primarily focused on network penetration testing with selected web application and PCI-scoped assessments.",
+          "focusAreas": ["adversary-emulation", "penetration-testing", "web-application-security"]
+        },
+        {
+          "text": "Led end-to-end assessment execution, including planning, testing, evidence collection, reporting, and remediation-oriented recommendations.",
+          "focusAreas": ["adversary-emulation", "penetration-testing"]
+        },
+        {
+          "text": "Used Nmap extensively for network discovery, service enumeration, and attack surface mapping across enterprise penetration tests.",
+          "focusAreas": ["adversary-emulation", "penetration-testing"]
+        },
+        {
+          "text": "Used Burp Suite during web application penetration tests to evaluate application behavior, identify vulnerabilities, capture evidence, and support remediation recommendations.",
+          "focusAreas": ["adversary-emulation", "penetration-testing", "web-application-security"]
+        },
+        {
+          "text": "Briefed key information security executives on assessment outcomes, translating technical findings, attack paths, and remediation priorities into business risk.",
+          "focusAreas": ["adversary-emulation", "penetration-testing", "executive-communication"]
+        },
+        {
+          "text": "Identified exploitable weaknesses across enterprise network environments and translated attack paths into practical remediation priorities clients could action to reduce exposure and improve defensive posture.",
+          "focusAreas": ["adversary-emulation", "penetration-testing", "vulnerability-management", "red-teaming"]
+        }
+      ]
+    },
+    {
+      "id": "reliaquest-soc-2016",
+      "title": "Security Operations Center Shift Lead / Analyst",
+      "company": "ReliaQuest",
+      "startDate": "2016-03",
+      "endDate": "2017-02",
+      "bullets": [
+        {
+          "text": "Promoted to SOC shift lead within six months, reflecting early trust in technical analysis, customer communication, and operational leadership.",
+          "focusAreas": ["security-operations", "soc-leadership"]
+        },
+        {
+          "text": "Trained SOC analysts on alert investigation, analysis quality, escalation practices, and customer-facing communication.",
+          "focusAreas": ["security-operations", "mentoring", "soc-leadership"]
+        },
+        {
+          "text": "Reviewed analyst investigations and provided feedback to improve accuracy, completeness, and consistency of security analysis.",
+          "focusAreas": ["security-operations", "incident-response", "mentoring"]
+        },
+        {
+          "text": "Engaged directly with customers to communicate alert context, investigation status, escalation details, and recommended next steps.",
+          "focusAreas": ["security-operations", "executive-communication"]
+        },
+        {
+          "text": "Investigated security alerts across ServiceNow, ArcSight, QRadar, AlienVault, Splunk, Carbon Black, and Elastic environments.",
+          "focusAreas": ["security-operations"]
+        }
+      ]
+    }
+  ]
+}
