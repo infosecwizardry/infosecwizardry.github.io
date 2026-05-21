@@ -1,0 +1,53 @@
+{
+  "items": [
+    {
+      "id": "infosecwizard",
+      "type": "content",
+      "title": "InfosecWizard",
+      "tagline": "Run the attack. Investigate what happened. Add it to your portfolio.",
+      "description": "InfosecWizard helps post-Sec+ / early-career defenders stop passively watching cybersecurity content and start doing hands-on labs that build real SOC analyst capability, portfolio evidence, and confidence in actual investigations.",
+      "goals": [
+        "Help 50 people break into cybersecurity",
+        "Hit 5,000 watch hours"
+      ],
+      "link": {
+        "label": "YouTube channel",
+        "url": "https://www.youtube.com/@InfosecWizard"
+      }
+    },
+    {
+      "id": "currently-reading",
+      "type": "book",
+      "title": "Currently Reading",
+      "books": [
+        {
+          "title": "Rinsed",
+          "author": "Geoff White"
+        },
+        {
+          "title": "The Diary of a CEO",
+          "author": "Steven Bartlett"
+        }
+      ]
+    },
+    {
+      "id": "running",
+      "type": "running",
+      "title": "Running",
+      "description": "Consistency over intensity. Working toward the next race and pushing what's possible.",
+      "mileage": {
+        "thisWeek": "",
+        "ytd": "",
+        "lastUpdated": ""
+      },
+      "goals": [
+        "60 mile ultra marathon",
+        "Sub-3 hour marathon (Boston qualifier)"
+      ],
+      "link": {
+        "label": "Strava",
+        "url": "#"
+      }
+    }
+  ]
+}

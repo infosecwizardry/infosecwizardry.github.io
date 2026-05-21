@@ -7,13 +7,13 @@
   <meta name="description" content="A curated SOC Analyst resource page with hands-on practice, reading, research, and recommended tools." />
   <style>
     :root {
-      --bg: #071018;
-      --panel: rgba(15, 25, 38, 0.88);
-      --text: #ecf4ff;
-      --muted: #9db0c7;
-      --accent: #69e3ff;
-      --border: rgba(105, 227, 255, 0.18);
-      --accent-soft: rgba(105, 227, 255, 0.2);
+      --bg: #050108;
+      --panel: rgba(22, 14, 38, 0.88);
+      --text: #FFFFFF;
+      --muted: #D8BEFF;
+      --accent: #A868E3;
+      --border: rgba(168, 104, 227, 0.18);
+      --accent-soft: rgba(168, 104, 227, 0.2);
       --shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
       --radius: 22px;
       --max: 1080px;
@@ -23,8 +23,8 @@
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(105, 227, 255, 0.12), transparent 28%),
-        linear-gradient(180deg, #051019 0%, #071018 45%, #08131f 100%);
+        radial-gradient(circle at top left, rgba(168, 104, 227, 0.12), transparent 28%),
+        linear-gradient(180deg, #030108 0%, #050108 45%, #0a0418 100%);
       color: var(--text);
       line-height: 1.6;
     }
@@ -33,7 +33,7 @@
     .header {
       position: sticky; top: 0; z-index: 20;
       backdrop-filter: blur(14px);
-      background: rgba(4, 12, 19, 0.72);
+      background: rgba(5, 1, 8, 0.72);
       border-bottom: 1px solid rgba(255,255,255,0.05);
     }
     .nav {
@@ -49,7 +49,7 @@
     .hero-card { padding: 2rem; }
     .eyebrow {
       display: inline-flex; align-items: center; color: var(--accent);
-      background: rgba(105, 227, 255, 0.08); border: 1px solid rgba(105, 227, 255, 0.15);
+      background: rgba(168, 104, 227, 0.08); border: 1px solid rgba(168, 104, 227, 0.15);
       padding: 0.45rem 0.8rem; border-radius: 999px; font-size: 0.85rem; margin-bottom: 1rem;
     }
     h1 { margin: 0 0 0.8rem; font-size: clamp(2rem, 5vw, 3.7rem); line-height: 1.05; letter-spacing: -0.04em; }
@@ -62,7 +62,7 @@
     .pathway-card {
       padding: 1.4rem;
       background:
-        radial-gradient(circle at 18% 0%, rgba(105, 227, 255, 0.08), transparent 42%),
+        radial-gradient(circle at 18% 0%, rgba(168, 104, 227, 0.08), transparent 42%),
         var(--panel);
     }
     .pathway-track {
@@ -83,7 +83,7 @@
     }
     .pathway-connectors path.connector-underlay {
       fill: none;
-      stroke: rgba(105, 227, 255, 0.16);
+      stroke: rgba(168, 104, 227, 0.16);
       stroke-width: 9;
       stroke-linecap: round;
       stroke-linejoin: round;
@@ -94,7 +94,7 @@
       stroke-width: 3.5;
       stroke-linecap: round;
       stroke-linejoin: round;
-      filter: drop-shadow(0 0 3px rgba(105, 227, 255, 0.18));
+      filter: drop-shadow(0 0 3px rgba(168, 104, 227, 0.18));
     }
     .pathway-row {
       display: grid;
@@ -130,10 +130,10 @@
       width: min(100%, 400px);
       padding: 1.35rem 1.4rem;
       text-align: center;
-      border-color: rgba(105, 227, 255, 0.42);
+      border-color: rgba(168, 104, 227, 0.42);
       background:
-        radial-gradient(circle at 50% 0%, rgba(105, 227, 255, 0.24), transparent 52%),
-        linear-gradient(180deg, rgba(105, 227, 255, 0.18), rgba(255, 255, 255, 0.04));
+        radial-gradient(circle at 50% 0%, rgba(168, 104, 227, 0.24), transparent 52%),
+        linear-gradient(180deg, rgba(168, 104, 227, 0.18), rgba(255, 255, 255, 0.04));
       box-shadow: 0 24px 42px rgba(2, 16, 28, 0.42);
     }
     .pathway-row.final {
@@ -142,30 +142,30 @@
     }
     .pathway-row.final .tile-step {
       min-width: 112px;
-      background: rgba(105, 227, 255, 0.18);
+      background: rgba(168, 104, 227, 0.18);
     }
     .pathway-row.final .tile-title {
       font-size: 1.18rem;
     }
     .pathway-row.final .tile-hint {
-      color: #d8f7ff;
+      color: #E8D5FF;
       font-size: 0.84rem;
     }
     .pathway-tile:hover {
       transform: translateY(-2px);
-      border-color: rgba(105, 227, 255, 0.5);
+      border-color: rgba(168, 104, 227, 0.5);
       box-shadow: 0 14px 28px rgba(0, 0, 0, 0.26);
-      background: linear-gradient(180deg, rgba(105, 227, 255, 0.12), rgba(255, 255, 255, 0.03));
+      background: linear-gradient(180deg, rgba(168, 104, 227, 0.12), rgba(255, 255, 255, 0.03));
     }
     .pathway-tile:focus-visible {
-      outline: 3px solid rgba(105, 227, 255, 0.45);
+      outline: 3px solid rgba(168, 104, 227, 0.45);
       outline-offset: 2px;
-      border-color: rgba(105, 227, 255, 0.7);
+      border-color: rgba(168, 104, 227, 0.7);
     }
     .pathway-tile.active {
-      border-color: rgba(105, 227, 255, 0.68);
-      box-shadow: 0 0 0 2px rgba(105, 227, 255, 0.16), 0 12px 26px rgba(3, 20, 34, 0.45);
-      background: linear-gradient(180deg, rgba(105, 227, 255, 0.14), rgba(255, 255, 255, 0.03));
+      border-color: rgba(168, 104, 227, 0.68);
+      box-shadow: 0 0 0 2px rgba(168, 104, 227, 0.16), 0 12px 26px rgba(3, 20, 34, 0.45);
+      background: linear-gradient(180deg, rgba(168, 104, 227, 0.14), rgba(255, 255, 255, 0.03));
     }
     .tile-step {
       display: inline-flex;
@@ -174,8 +174,8 @@
       min-width: 72px;
       padding: 0.18rem 0.45rem;
       border-radius: 999px;
-      border: 1px solid rgba(105, 227, 255, 0.35);
-      background: rgba(105, 227, 255, 0.1);
+      border: 1px solid rgba(168, 104, 227, 0.35);
+      background: rgba(168, 104, 227, 0.1);
       font-size: 0.72rem;
       color: #bfefff;
       text-transform: uppercase;
@@ -194,7 +194,7 @@
     }
     .pathway-modal {
       width: min(760px, calc(100% - 2rem));
-      border: 1px solid rgba(105, 227, 255, 0.3);
+      border: 1px solid rgba(168, 104, 227, 0.3);
       border-radius: 20px;
       padding: 0;
       background: #0b1623;
@@ -212,7 +212,7 @@
       display: grid;
       place-items: center;
       font-size: 4rem;
-      background: radial-gradient(circle at 20% 15%, rgba(105, 227, 255, 0.25), transparent 55%),
+      background: radial-gradient(circle at 20% 15%, rgba(168, 104, 227, 0.25), transparent 55%),
                   linear-gradient(145deg, #102235 0%, #0e1b2a 100%);
       border-right: 1px solid rgba(255, 255, 255, 0.08);
     }
@@ -229,11 +229,11 @@
       cursor: pointer;
     }
     .modal-close:hover {
-      border-color: rgba(105, 227, 255, 0.45);
-      background: rgba(105, 227, 255, 0.1);
+      border-color: rgba(168, 104, 227, 0.45);
+      background: rgba(168, 104, 227, 0.1);
     }
     .modal-close:focus-visible {
-      outline: 3px solid rgba(105, 227, 255, 0.45);
+      outline: 3px solid rgba(168, 104, 227, 0.45);
       outline-offset: 2px;
     }
     .card { padding: 1.25rem; }
@@ -246,13 +246,13 @@
     }
     .resource-link-card:hover {
       transform: translateY(-3px);
-      border-color: rgba(105, 227, 255, 0.42);
+      border-color: rgba(168, 104, 227, 0.42);
       box-shadow: 0 18px 34px rgba(2, 16, 28, 0.34);
-      background: linear-gradient(180deg, rgba(105, 227, 255, 0.08), rgba(255, 255, 255, 0.03));
+      background: linear-gradient(180deg, rgba(168, 104, 227, 0.08), rgba(255, 255, 255, 0.03));
     }
     .resource-link-card .tile-hint {
       margin-top: 0.85rem;
-      color: #d8f7ff;
+      color: #E8D5FF;
     }
     .list { display: grid; gap: 0.55rem; }
     .item { color: var(--text); }
@@ -262,13 +262,13 @@
     .pill-row { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .85rem; }
     .pill { border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.03); color: var(--text); border-radius: 999px; padding: .32rem .6rem; font-size: .78rem; }
     .rec-card { position: relative; padding-top: 2.6rem; }
-    .type-pill { position: absolute; top: 1rem; right: 1rem; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; padding: .28rem .6rem; border-radius: 999px; background: rgba(105,227,255,.12); border: 1px solid rgba(105,227,255,.3); color: var(--accent); font-weight: 600; }
+    .type-pill { position: absolute; top: 1rem; right: 1rem; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; padding: .28rem .6rem; border-radius: 999px; background: rgba(168,104,227,.12); border: 1px solid rgba(168,104,227,.3); color: var(--accent); font-weight: 600; }
     .rec-card-author { color: var(--muted); font-size: .88rem; margin: -.2rem 0 .6rem; }
     .resource-link { color: var(--accent); font-weight: 600; }
     .project-links { margin-top: .9rem; font-size: .95rem; }
     .rec-jump-row { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.4rem; }
-    .rec-jump-btn { display: inline-flex; align-items: center; padding: .5rem 1rem; border-radius: 999px; background: rgba(105,227,255,.08); border: 1px solid rgba(105,227,255,.3); color: var(--accent); font-weight: 600; font-size: .9rem; transition: background .2s ease, transform .2s ease, border-color .2s ease; }
-    .rec-jump-btn:hover { background: rgba(105,227,255,.18); border-color: rgba(105,227,255,.5); transform: translateY(-1px); }
+    .rec-jump-btn { display: inline-flex; align-items: center; padding: .5rem 1rem; border-radius: 999px; background: rgba(168,104,227,.08); border: 1px solid rgba(168,104,227,.3); color: var(--accent); font-weight: 600; font-size: .9rem; transition: background .2s ease, transform .2s ease, border-color .2s ease; }
+    .rec-jump-btn:hover { background: rgba(168,104,227,.18); border-color: rgba(168,104,227,.5); transform: translateY(-1px); }
     .rec-jump-btn-external { background: rgba(255,255,255,.03); border-color: rgba(255,255,255,.12); color: var(--text); }
     .rec-jump-btn-external:hover { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.22); }
     .rec-subsection { margin-top: 1.75rem; }
