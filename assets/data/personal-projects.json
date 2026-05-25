@@ -35,15 +35,28 @@
       "type": "running",
       "title": "Running",
       "description": "Consistency over intensity. Working toward the next race and pushing what's possible.",
-      "mileage": {
-        "thisWeek": "",
-        "ytd": "",
-        "lastUpdated": ""
+      "weeklyMileage": [
+        { "weekEnding": "2026-05-24", "miles": 20.3 },
+        { "weekEnding": "2026-05-17", "miles": 19.5 }
+      ],
+      "longestRun": {
+        "miles": null,
+        "date": null
       },
+      "racePRs": [
+        { "distance": "5K",            "time": "28:51",   "date": "2026-01-13", "target": "18:30" },
+        { "distance": "10K",           "time": "1:02:32", "date": "2026-01-04", "target": "38:30" },
+        { "distance": "Half Marathon", "time": "2:45:02", "date": "2025-11-23", "target": "1:26:00" },
+        { "distance": "Marathon",      "time": "4:15:02", "date": "2025-03-23", "target": "2:59:00" }
+      ],
       "goals": [
         "60 mile ultra marathon",
         "Sub-3 hour marathon (Boston qualifier)"
       ],
+      "mileage": {
+        "ytd": "",
+        "lastUpdated": "May 25, 2026"
+      },
       "link": {
         "label": "Strava",
         "url": "#"

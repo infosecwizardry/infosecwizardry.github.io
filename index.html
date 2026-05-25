@@ -319,6 +319,158 @@
       line-height: 1.45;
     }
     .personal-goals li:last-child { margin-bottom: 0; }
+    .personal-goals-hint {
+      font-size: 0.66rem;
+      color: var(--muted);
+      text-transform: none;
+      letter-spacing: 0;
+      font-weight: 500;
+      margin-left: 0.4rem;
+    }
+    .personal-goals.clickable ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.5rem;
+    }
+    .personal-goals.clickable li { margin: 0; }
+    .personal-goal-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      width: 100%;
+      background: rgba(168, 104, 227, 0.08);
+      border: 1px solid rgba(168, 104, 227, 0.28);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 0.55rem 0.8rem;
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.92rem;
+      line-height: 1.4;
+      text-align: left;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+    }
+    .personal-goal-btn:hover,
+    .personal-goal-btn:focus-visible {
+      background: rgba(168, 104, 227, 0.18);
+      border-color: rgba(168, 104, 227, 0.5);
+      transform: translateY(-1px);
+      outline: none;
+    }
+    .personal-goal-chevron {
+      color: var(--accent);
+      font-size: 1.4rem;
+      line-height: 1;
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
+      font-weight: 600;
+    }
+    .personal-goal-btn:hover .personal-goal-chevron,
+    .personal-goal-btn:focus-visible .personal-goal-chevron {
+      transform: translateX(3px);
+    }
+    .personal-action-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      width: 100%;
+      background: rgba(168, 104, 227, 0.08);
+      border: 1px solid rgba(168, 104, 227, 0.28);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 0.65rem 0.85rem;
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.95rem;
+      font-weight: 600;
+      line-height: 1.4;
+      text-align: left;
+      margin-top: 0.6rem;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+    }
+    .personal-action-btn:hover,
+    .personal-action-btn:focus-visible {
+      background: rgba(168, 104, 227, 0.18);
+      border-color: rgba(168, 104, 227, 0.5);
+      transform: translateY(-1px);
+      outline: none;
+    }
+    .personal-action-btn .personal-goal-chevron {
+      color: var(--accent);
+      font-size: 1.4rem;
+      line-height: 1;
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
+      font-weight: 600;
+    }
+    .personal-action-btn:hover .personal-goal-chevron,
+    .personal-action-btn:focus-visible .personal-goal-chevron {
+      transform: translateX(3px);
+    }
+    .running-stat-row {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+      padding: 0.4rem 0;
+    }
+    .stat-value-big {
+      display: block;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      margin-top: 0.15rem;
+    }
+    .stat-value-big.stat-target { color: var(--accent); }
+    .race-pr-table { width: 100%; border-collapse: collapse; }
+    .race-pr-table th {
+      text-align: left;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 0 0 0.55rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      font-weight: 600;
+    }
+    .race-pr-table td {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.95rem;
+    }
+    .race-pr-table td:first-child { font-weight: 600; }
+    .race-pr-table td.race-target { color: var(--accent); font-weight: 600; }
+    .race-pr-table .muted-note { font-style: italic; font-size: 0.9rem; }
+    .running-week-table { width: 100%; border-collapse: collapse; }
+    .running-week-table th {
+      text-align: left;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 0 0 0.55rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      font-weight: 600;
+    }
+    .running-week-table th:last-child { text-align: right; }
+    .running-week-table td {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.95rem;
+    }
+    .running-week-table td:last-child { text-align: right; font-weight: 600; color: var(--text); }
+    .running-week-table tfoot td {
+      border-bottom: none;
+      padding-top: 0.85rem;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+    .running-week-table tfoot td:first-child { text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.72rem; color: var(--muted); font-weight: 600; }
     .personal-stats {
       display: flex;
       gap: 1.4rem;
