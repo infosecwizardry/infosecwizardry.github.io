@@ -12,6 +12,9 @@ test("production homepage uses approved recruiter-first copy and production sect
 
   assert.match(html, /Offensively trained cyber defense leader/);
   assert.match(html, /I make cyber defense work when easy answers fail\./);
+  assert.match(html, /<strong>85%<\/strong>/);
+  assert.match(html, /validated 85% of high\/critical detections/);
+  assert.doesNotMatch(html, /<strong>95%<\/strong>/);
   assert.match(html, /What I help teams do/);
   assert.match(html, /From stuck programs to measurable movement\./);
   assert.match(html, /GitHub Projects/);
