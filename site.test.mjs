@@ -87,6 +87,17 @@ test("resource pages load shared css and remain purple-forward", () => {
   }
 });
 
+test("resume page keeps experience clean by omitting bullet tag chips", () => {
+  const html = read("resume.html");
+  const focusJs = read("assets/js/focus-areas.js");
+
+  assert.doesNotMatch(html, /skill tags on each bullet/i);
+  assert.doesNotMatch(html, /Click any tag/i);
+  assert.match(html, /src="assets\/js\/focus-areas\.js\?v=/);
+  assert.match(focusJs, /renderResumePage[\s\S]*renderPositionCard\(pos, false\)/);
+  assert.doesNotMatch(focusJs, /renderResumePage[\s\S]*querySelectorAll\("\.bullet-tag"\)/);
+});
+
 test("production homepage does not ship old placeholder blog cards", () => {
   const html = read("index.html");
 

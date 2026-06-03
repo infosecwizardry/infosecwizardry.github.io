@@ -36,23 +36,18 @@
     .position-bullets { margin:0; padding-left:1.2rem; color:var(--text); }
     .position-bullets li { margin-bottom:.7rem; line-height:1.6; }
     .position-bullets li:last-child { margin-bottom:0; }
-    .bullet-tags { display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.45rem; }
-    .pill { border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.03); color:var(--text); border-radius:999px; padding:.32rem .6rem; font-size:.78rem; }
-    .bullet-tags .pill { font-size:.72rem; padding:.22rem .55rem; }
-    .bullet-tag { transition: background .2s ease, border-color .2s ease, color .2s ease, transform .15s ease; }
-    .bullet-tag:hover { background: rgba(168,104,227,.12); border-color: rgba(168,104,227,.45); color: var(--accent); transform: translateY(-1px); }
   </style>
   <link rel="stylesheet" href="assets/css/site.css?v=sitewide" />
 </head>
 <body class="portfolio-theme subpage">
   <header class="header"><div class="container nav"><a class="brand" href="index.html">Mike <span>Small</span></a><a class="back-link" href="index.html">Back to Home</a></div></header>
   <main>
-    <section class="hero"><div class="container"><div class="hero-card"><div class="eyebrow">Resume</div><h1>Experience</h1><p class="lead">Full position history with skill tags on each bullet. Click any tag to see everything I've done in that area.</p></div></div></section>
+    <section class="hero"><div class="container"><div class="hero-card"><div class="eyebrow">Resume</div><h1>Experience</h1><p class="lead">Full position history across cybersecurity leadership, SOC operations, detection engineering, incident response, and offensive security.</p></div></div></section>
     <section><div class="container"><div id="resume-stack" class="resume-stack"></div></div></section>
   </main>
   <footer class="footer"><div class="container">Built by Mike Small.</div></footer>
   <script src="assets/js/recommendations.js"></script>
-  <script src="assets/js/focus-areas.js"></script>
+  <script src="assets/js/focus-areas.js?v=resume-clean"></script>
   <script>FocusAreas.renderResumePage("resume-stack");</script>
 </body>
 </html>

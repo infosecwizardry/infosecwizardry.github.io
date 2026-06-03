@@ -319,16 +319,7 @@
       container.innerHTML = `<div class="empty-state">Resume content coming soon.</div>`;
       return;
     }
-    container.innerHTML = data.positions.map(pos => renderPositionCard(pos, true)).join("");
-
-    container.querySelectorAll(".bullet-tag").forEach(tag => {
-      tag.style.cursor = "pointer";
-      tag.addEventListener("click", () => {
-        const slug = tag.getAttribute("data-area");
-        // Navigate home with hash so the modal opens there
-        window.location.href = "index.html#focus=" + encodeURIComponent(slug);
-      });
-    });
+    container.innerHTML = data.positions.map(pos => renderPositionCard(pos, false)).join("");
   }
 
   async function openModalForArea(slug) {
