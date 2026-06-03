@@ -1,57 +1,6 @@
 {
   "items": [
     {
-      "id": "art-of-memory-forensics",
-      "type": "book",
-      "title": "The Art of Memory Forensics",
-      "author": "Ligh, Case, Levy, Walters",
-      "description": "Strong reference for memory acquisition, investigation workflow, and forensic analysis on live systems.",
-      "link": "https://www.amazon.com/Art-Memory-Forensics-Detecting-Malware/dp/1118825098",
-      "tags": [
-        "soc-analyst",
-        "forensics",
-        "incident-response"
-      ]
-    },
-    {
-      "id": "art-of-computer-virus-research-and-defense",
-      "type": "book",
-      "title": "The Art of Computer Virus Research and Defense",
-      "author": "Peter Szor",
-      "description": "Helpful for understanding malware behavior, defensive thinking, and the broader adversarial mindset.",
-      "link": "https://www.amazon.com/Art-Computer-Virus-Research-Defense/dp/0321304543",
-      "tags": [
-        "soc-analyst",
-        "malware-analysis"
-      ]
-    },
-    {
-      "id": "practical-malware-analysis",
-      "type": "book",
-      "title": "Practical Malware Analysis",
-      "author": "Sikorski & Honig",
-      "description": "Excellent hands-on introduction to dissecting malware behavior and building stronger investigation instincts.",
-      "link": "https://www.amazon.com/Practical-Malware-Analysis-Hands-Dissecting/dp/1593272901",
-      "tags": [
-        "soc-analyst",
-        "malware-analysis",
-        "reverse-engineering"
-      ]
-    },
-    {
-      "id": "windows-internals-part-1-7e",
-      "type": "book",
-      "title": "Windows Internals, Part 1 (7th Edition)",
-      "author": "Yosifovich, Russinovich, Solomon, Ionescu",
-      "description": "Deep Windows operating system knowledge that pays off in triage, logging, telemetry interpretation, and host investigations.",
-      "link": "https://www.amazon.com/Windows-Internals-Part-architecture-management/dp/0735684189",
-      "tags": [
-        "soc-analyst",
-        "pen-tester",
-        "windows-internals"
-      ]
-    },
-    {
       "id": "tcm-practical-ethical-hacking",
       "type": "training",
       "title": "Practical Ethical Hacking",

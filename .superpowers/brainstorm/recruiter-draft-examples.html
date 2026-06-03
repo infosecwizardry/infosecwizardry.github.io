@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Draft Examples</title>
+  <style>
+    :root {
+      --bg: #08070b;
+      --surface: #111019;
+      --panel: #171522;
+      --panel-2: #201d2b;
+      --text: #f8f7fb;
+      --muted: #c4bdd3;
+      --quiet: #91899f;
+      --line: #332f43;
+      --accent: #73d2de;
+      --accent-2: #d4b1ff;
+      --green: #79e6a0;
+      --amber: #ffd166;
+      --radius: 8px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    main {
+      width: min(calc(100% - 32px), 1220px);
+      margin: 0 auto;
+      padding: 34px 0 72px;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      margin-bottom: 8px;
+      font-size: 34px;
+      letter-spacing: 0;
+    }
+    .intro {
+      max-width: 780px;
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+    .drafts {
+      display: grid;
+      gap: 26px;
+    }
+    .draft {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      overflow: hidden;
+    }
+    .draft-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: start;
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--line);
+      background: #0f0e15;
+    }
+    .draft-head h2 {
+      margin-bottom: 6px;
+      font-size: 22px;
+      letter-spacing: 0;
+    }
+    .draft-head p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 820px;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(115, 210, 222, 0.5);
+      border-radius: 999px;
+      color: var(--accent);
+      padding: 5px 10px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+    .preview {
+      background: #08070b;
+      padding: 22px;
+    }
+    .page {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #0d0c13;
+      overflow: hidden;
+      min-height: 560px;
+    }
+    .nav {
+      height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 22px;
+      border-bottom: 1px solid var(--line);
+      background: #111019;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .brand {
+      color: var(--text);
+      font-weight: 800;
+    }
+    .brand span { color: var(--accent); }
+    .navlinks {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: end;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 18px;
+      padding: 24px;
+    }
+    .hero-main,
+    .hero-side,
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+    }
+    .hero-main {
+      padding: 24px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      width: fit-content;
+      margin-bottom: 12px;
+      border: 1px solid rgba(115, 210, 222, 0.3);
+      border-radius: 999px;
+      padding: 5px 10px;
+      color: var(--accent);
+      background: rgba(115, 210, 222, 0.08);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .hero-main h3 {
+      margin-bottom: 12px;
+      font-size: clamp(28px, 4vw, 52px);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+    .hero-main h3 span { color: var(--accent-2); }
+    .lead {
+      color: var(--muted);
+      max-width: 68ch;
+      margin-bottom: 18px;
+      font-size: 16px;
+    }
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .button {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-weight: 800;
+      font-size: 13px;
+      color: var(--text);
+      background: #221f2f;
+    }
+    .button.primary {
+      border-color: rgba(115, 210, 222, 0.55);
+      background: rgba(115, 210, 222, 0.14);
+      color: #effcff;
+    }
+    .proof-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .proof {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #111019;
+      padding: 12px;
+    }
+    .proof strong {
+      display: block;
+      color: var(--green);
+      font-size: 22px;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+    .proof span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .hero-side {
+      padding: 18px;
+      display: grid;
+      gap: 12px;
+      align-content: start;
+    }
+    .side-title {
+      margin-bottom: 4px;
+      color: var(--text);
+      font-size: 16px;
+      font-weight: 800;
+    }
+    .side-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .side-list li {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding-bottom: 10px;
+    }
+    .side-list li:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+    .section {
+      padding: 0 24px 24px;
+    }
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: end;
+      margin: 4px 0 12px;
+    }
+    .section-title h3 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: 0;
+    }
+    .section-title p {
+      color: var(--muted);
+      margin: 0;
+      max-width: 560px;
+      font-size: 14px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .card {
+      padding: 15px;
+    }
+    .card h4 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: 0;
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .card .mini {
+      color: var(--quiet);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+      font-weight: 800;
+    }
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 12px;
+    }
+    .pill {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 8px;
+      color: var(--muted);
+      background: #111019;
+      font-size: 12px;
+    }
+    .timeline {
+      display: grid;
+      gap: 10px;
+    }
+    .role {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 15px;
+    }
+    .role h4 {
+      margin: 0 0 4px;
+      font-size: 16px;
+    }
+    .role p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .operator-hero {
+      grid-template-columns: 1fr 1fr;
+    }
+    .channel-card {
+      border-color: rgba(212, 177, 255, 0.42);
+      background: linear-gradient(135deg, rgba(115, 210, 222, 0.08), rgba(212, 177, 255, 0.12));
+    }
+    .channel-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .metric {
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      padding: 10px;
+      background: rgba(0,0,0,0.18);
+    }
+    .metric strong {
+      display: block;
+      color: var(--amber);
+      font-size: 18px;
+    }
+    .metric span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .notes {
+      padding: 0 22px 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .notes strong { color: var(--text); }
+    @media (max-width: 960px) {
+      .hero,
+      .operator-hero,
+      .grid-2,
+      .grid-3,
+      .grid-4 {
+        grid-template-columns: 1fr;
+      }
+      .draft-head,
+      .section-title {
+        flex-direction: column;
+        align-items: start;
+      }
+      .nav {
+        height: auto;
+        padding: 14px;
+        align-items: start;
+        flex-direction: column;
+      }
+      .navlinks { justify-content: start; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Example Drafts for Each Direction</h1>
+    <p class="intro">These are not final designs. They are concrete homepage drafts to help compare the story, order, and emphasis for a recruiter-first portfolio.</p>
+
+    <div class="drafts">
+      <article class="draft" id="draft-a">
+        <div class="draft-head">
+          <div>
+            <h2>A. Defensive Leader Snapshot</h2>
+            <p>Most direct recruiter scan: role target, measurable impact, current credibility, then deeper proof.</p>
+          </div>
+          <span class="tag">Recommended</span>
+        </div>
+        <div class="preview">
+          <div class="page">
+            <div class="nav">
+              <div class="brand">Mike <span>Small</span></div>
+              <div class="navlinks"><span>Impact</span><span>Experience</span><span>Capabilities</span><span>Projects</span><span>Resume</span><span>Contact</span></div>
+            </div>
+            <div class="hero">
+              <div class="hero-main">
+                <div class="eyebrow">SOC Leadership | Cyber Defense | Detection Engineering</div>
+                <h3>Cyber defense leader who turns noisy operations into <span>measurable detection and response capability.</span></h3>
+                <p class="lead">I lead defensive security teams across SOC operations, detection engineering, threat hunting, incident response, forensics, and purple-team validation. My work focuses on reducing noise, improving investigation quality, and building systems defenders can trust under real pressure.</p>
+                <div class="buttons"><span class="button primary">View Defensive Impact</span><span class="button">Download Resume</span><span class="button">Contact Me</span></div>
+                <div class="proof-row">
+                  <div class="proof"><strong>75%</strong><span>alert-volume reduction through risk-based detection operations</span></div>
+                  <div class="proof"><strong>500</strong><span>host detections moved into recurring validation</span></div>
+                  <div class="proof"><strong>10+</strong><span>major concurrent initiatives delivered after workflow rebuild</span></div>
+                </div>
+              </div>
+              <aside class="hero-side">
+                <div>
+                  <div class="side-title">Best fit roles</div>
+                  <ul class="side-list">
+                    <li>Cyber Defense Lead / Manager</li>
+                    <li>SOC Operations Lead</li>
+                    <li>Detection Engineering Lead</li>
+                    <li>Purple Team / Detection Validation Lead</li>
+                  </ul>
+                </div>
+                <div>
+                  <div class="side-title">Signal areas</div>
+                  <div class="pill-row"><span class="pill">SOC</span><span class="pill">Detection</span><span class="pill">IR</span><span class="pill">Threat Hunting</span><span class="pill">Purple Team</span><span class="pill">Leadership</span></div>
+                </div>
+              </aside>
+            </div>
+            <section class="section">
+              <div class="section-title">
+                <h3>Defensive Impact</h3>
+                <p>Three concise cards translate your resume into outcomes a recruiter can absorb before scrolling deeper.</p>
+              </div>
+              <div class="grid-3">
+                <div class="card"><div class="mini">Operations</div><h4>Rebuilt alert response strategy</h4><p>Moved from alert-by-alert workflows to risk-based detection operations with clearer ownership, runbooks, and escalation standards.</p></div>
+                <div class="card"><div class="mini">Detection</div><h4>Made validation continuous</h4><p>Scaled attack-to-detection validation across Splunk, Elastic, CrowdStrike, Databricks, cloud, and endpoint telemetry.</p></div>
+                <div class="card"><div class="mini">Leadership</div><h4>Raised team delivery capacity</h4><p>Introduced planning, specialization, and capability ownership so stalled programs could move into measurable execution.</p></div>
+              </div>
+            </section>
+            <section class="section">
+              <div class="section-title">
+                <h3>Experience Snapshot</h3>
+                <p>Roles stay collapsible, but the top summary makes the career arc obvious.</p>
+              </div>
+              <div class="timeline">
+                <div class="role"><h4>CSSP Operations Technical Lead</h4><p>Global cyber defense operations across SOC, detection, hunting, malware analysis, forensics, and incident response.</p></div>
+                <div class="role"><h4>Purple Team Manager / R&D Lead</h4><p>Detection assurance, adversary simulation, and enterprise validation platform ownership.</p></div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div class="notes"><strong>How InfosecWizard appears:</strong> a later “Teaching & Community Proof” section showing learner impact, YouTube channel, and portfolio-building labs as evidence of communication and enablement.</div>
+      </article>
+
+      <article class="draft" id="draft-b">
+        <div class="draft-head">
+          <div>
+            <h2>B. Capability Map</h2>
+            <p>Best when the page should help recruiters match you to specific defensive leadership needs.</p>
+          </div>
+          <span class="tag">Skill-led</span>
+        </div>
+        <div class="preview">
+          <div class="page">
+            <div class="nav">
+              <div class="brand">Mike <span>Small</span></div>
+              <div class="navlinks"><span>Capabilities</span><span>Proof</span><span>Experience</span><span>Resources</span><span>Resume</span></div>
+            </div>
+            <div class="hero">
+              <div class="hero-main">
+                <div class="eyebrow">Defensive Security Capability Map</div>
+                <h3>I build and lead the defensive systems that help teams <span>detect, investigate, and respond.</span></h3>
+                <p class="lead">My background connects SOC leadership, detection engineering, purple teaming, threat hunting, incident response, and offensive testing. Pick a capability to see the experience, certifications, projects, and resources behind it.</p>
+                <div class="buttons"><span class="button primary">Explore Capabilities</span><span class="button">View Resume</span></div>
+              </div>
+              <aside class="hero-side">
+                <div class="side-title">Quick proof</div>
+                <ul class="side-list">
+                  <li>Led cyber defense operations in government CSSP environment</li>
+                  <li>Scaled detection validation from manual effort to recurring automation</li>
+                  <li>Built training and standards for analysts and responders</li>
+                </ul>
+              </aside>
+            </div>
+            <section class="section">
+              <div class="section-title">
+                <h3>Core Capabilities</h3>
+                <p>The existing skill modal becomes a central recruiter tool instead of a secondary about-page detail.</p>
+              </div>
+              <div class="grid-4">
+                <div class="card"><div class="mini">Lead Role</div><h4>SOC & Cyber Defense Leadership</h4><p>Operating model, triage quality, escalation, standards, reporting, and analyst enablement.</p><div class="pill-row"><span class="pill">Experience</span><span class="pill">Certs</span><span class="pill">Resources</span></div></div>
+                <div class="card"><div class="mini">Engineering</div><h4>Detection Engineering</h4><p>Telemetry review, detection logic, drift validation, tuning, and measurable coverage.</p><div class="pill-row"><span class="pill">Projects</span><span class="pill">Splunk</span><span class="pill">Elastic</span></div></div>
+                <div class="card"><div class="mini">Validation</div><h4>Purple Teaming</h4><p>Attack execution, detection assurance, analyst exercises, and threat-informed validation.</p><div class="pill-row"><span class="pill">Adversary</span><span class="pill">Coverage</span></div></div>
+                <div class="card"><div class="mini">Response</div><h4>Incident Response & DFIR</h4><p>Severity decisions, containment strategy, forensic evidence, after-action reviews, and recovery.</p><div class="pill-row"><span class="pill">IR</span><span class="pill">Forensics</span></div></div>
+              </div>
+            </section>
+            <section class="section">
+              <div class="section-title">
+                <h3>Proof by Area</h3>
+                <p>Each capability can open a focused evidence modal using your current data model.</p>
+              </div>
+              <div class="grid-2">
+                <div class="card"><h4>Detection Engineering proof</h4><p>Capital One validation platform, CSSP detection strategy, GCIA, related repos, and recommended resources.</p></div>
+                <div class="card"><h4>SOC Leadership proof</h4><p>Team restructuring, investigation standards, delivery cadence, analyst training, and leadership reporting.</p></div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div class="notes"><strong>How InfosecWizard appears:</strong> as one capability-supporting proof source under leadership, training, and learner enablement rather than a major homepage block.</div>
+      </article>
+
+      <article class="draft" id="draft-c">
+        <div class="draft-head">
+          <div>
+            <h2>C. Operator + Educator</h2>
+            <p>Most memorable personal brand direction, with the channel visible earlier and tied to leadership communication.</p>
+          </div>
+          <span class="tag">Brand-led</span>
+        </div>
+        <div class="preview">
+          <div class="page">
+            <div class="nav">
+              <div class="brand">Mike <span>Small</span></div>
+              <div class="navlinks"><span>Defense Work</span><span>InfosecWizard</span><span>Projects</span><span>Resume</span><span>Contact</span></div>
+            </div>
+            <div class="hero operator-hero">
+              <div class="hero-main">
+                <div class="eyebrow">Cyber Defense Leader + Practical Security Educator</div>
+                <h3>I lead defensive teams in real environments and teach learners how to <span>think like investigators.</span></h3>
+                <p class="lead">My professional work spans SOC leadership, detection engineering, incident response, forensics, and purple-team validation. Through InfosecWizard, I turn that experience into hands-on guidance for people building real cybersecurity skill.</p>
+                <div class="buttons"><span class="button primary">View Professional Impact</span><span class="button">See InfosecWizard</span></div>
+              </div>
+              <aside class="hero-side channel-card">
+                <div class="side-title">InfosecWizard</div>
+                <p class="lead">Run the attack. Investigate what happened. Add it to your portfolio.</p>
+                <div class="channel-metrics">
+                  <div class="metric"><strong>50</strong><span>people helped into cyber goal</span></div>
+                  <div class="metric"><strong>5,000</strong><span>watch-hour goal</span></div>
+                </div>
+                <div class="pill-row"><span class="pill">SOC labs</span><span class="pill">Portfolio evidence</span><span class="pill">Learner confidence</span></div>
+              </aside>
+            </div>
+            <section class="section">
+              <div class="section-title">
+                <h3>Two Kinds of Proof</h3>
+                <p>This direction makes your professional and educator stories reinforce each other.</p>
+              </div>
+              <div class="grid-2">
+                <div class="card"><div class="mini">Professional</div><h4>Cyber defense leadership</h4><p>Led teams, rebuilt operations, validated detections, drove incident response, and translated security risk for leadership.</p></div>
+                <div class="card"><div class="mini">Public Work</div><h4>Practical learner enablement</h4><p>Builds public resources, labs, and explanations that help early-career defenders move from passive learning into evidence-based practice.</p></div>
+              </div>
+            </section>
+            <section class="section">
+              <div class="section-title">
+                <h3>Selected Evidence</h3>
+                <p>Recruiters still get conventional proof, but the channel gets more early attention.</p>
+              </div>
+              <div class="grid-3">
+                <div class="card"><h4>Detection validation platform</h4><p>Scaled validation for high and critical detections with automated recurring checks.</p></div>
+                <div class="card"><h4>Analyst development</h4><p>Reduced job-readiness time and built paths for SOC analysts to grow into IR roles.</p></div>
+                <div class="card"><h4>Zero to SOC Analyst</h4><p>Companion repo and content path for learners building hands-on defensive portfolios.</p></div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div class="notes"><strong>Tradeoff:</strong> stronger personal brand, but recruiters may need one more beat to understand that defensive leadership is the primary target.</div>
+      </article>
+    </div>
+  </main>
+</body>
+</html>

@@ -163,7 +163,10 @@
   function renderLink(link) {
     if (!link || !link.url) return "";
     const label = escapeHtml(link.label || "Link");
-    return `<div class="project-links"><a href="${escapeHtml(link.url)}" target="_blank" rel="noreferrer">${label} &rarr;</a></div>`;
+    const href = escapeHtml(link.url);
+    const isExternal = /^[a-z][a-z0-9+.-]*:|^\/\//i.test(link.url);
+    const targetAttrs = isExternal ? ` target="_blank" rel="noreferrer"` : "";
+    return `<div class="project-links"><a href="${href}"${targetAttrs}>${label} &rarr;</a></div>`;
   }
 
   function renderContentCard(item) {
@@ -185,6 +188,7 @@
           <div class="book-entry">
             <p class="book-title">${escapeHtml(b.title)}</p>
             ${b.author ? `<p class="book-author">by ${escapeHtml(b.author)}</p>` : ""}
+            ${renderBookMeta(b)}
             ${b.note ? `<p class="book-note">${escapeHtml(b.note)}</p>` : ""}
           </div>
         `).join("")}</div>`
@@ -193,8 +197,20 @@
       <article class="card personal-card">
         <h3>${escapeHtml(item.title)}</h3>
         ${bookBlock}
+        ${renderLink(item.link)}
       </article>
     `;
+  }
+
+  function renderBookMeta(book) {
+    const badges = [];
+    if (book.category) badges.push(`<span class="book-badge">${escapeHtml(book.category)}</span>`);
+    if (Array.isArray(book.tags)) {
+      book.tags
+        .filter(tag => tag && String(tag).trim())
+        .forEach(tag => badges.push(`<span class="book-badge">${escapeHtml(tag)}</span>`));
+    }
+    return badges.length ? `<div class="book-meta">${badges.join("")}</div>` : "";
   }
 
   function renderRunningCard(item) {

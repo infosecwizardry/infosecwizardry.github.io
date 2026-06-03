@@ -8,7 +8,7 @@
       "description": "InfosecWizard helps post-Sec+ / early-career defenders stop passively watching cybersecurity content and start doing hands-on labs that build real SOC analyst capability, portfolio evidence, and confidence in actual investigations.",
       "goals": [
         "Help 50 people break into cybersecurity",
-        "Hit 5,000 watch hours"
+        "Reach 5,000 watch hours"
       ],
       "link": {
         "label": "YouTube channel",
@@ -21,14 +21,18 @@
       "title": "Currently Reading",
       "books": [
         {
-          "title": "Rinsed",
-          "author": "Geoff White"
-        },
-        {
           "title": "The Diary of a CEO",
-          "author": "Steven Bartlett"
+          "author": "Steven Bartlett",
+          "status": "Currently Reading"
         }
-      ]
+      ],
+      "goals": [
+        "Read one book per month"
+      ],
+      "link": {
+        "label": "Reading log",
+        "url": "resources/reading-log.html"
+      }
     },
     {
       "id": "running",
@@ -36,6 +40,7 @@
       "title": "Running",
       "description": "Consistency over intensity. Working toward the next race and pushing what's possible.",
       "weeklyMileage": [
+        { "weekEnding": "2026-05-31", "miles": 18.4 },
         { "weekEnding": "2026-05-24", "miles": 20.3 },
         { "weekEnding": "2026-05-17", "miles": 19.5 }
       ],
@@ -50,12 +55,12 @@
         { "distance": "Marathon",      "time": "4:15:02", "date": "2025-03-23", "target": "2:59:00" }
       ],
       "goals": [
-        "60 mile ultra marathon",
+        "60-mile ultra marathon",
         "Sub-3 hour marathon (Boston qualifier)"
       ],
       "mileage": {
         "ytd": "",
-        "lastUpdated": "May 25, 2026"
+        "lastUpdated": "June 1, 2026"
       },
       "link": {
         "label": "Strava",
