@@ -1,6 +1,14 @@
 {
   "items": [
     {
+      "id": "diary-of-a-ceo",
+      "type": "book",
+      "title": "The Diary of a CEO",
+      "author": "Steven Bartlett",
+      "status": "currently-reading",
+      "tags": []
+    },
+    {
       "id": "rinsed",
       "type": "book",
       "title": "Rinsed",

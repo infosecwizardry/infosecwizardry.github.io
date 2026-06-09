@@ -36,6 +36,19 @@
       ]
     },
     {
+      "id": "portswigger-web-security-academy",
+      "type": "training",
+      "title": "PortSwigger Web Security Academy",
+      "author": "PortSwigger",
+      "description": "Free, comprehensive online training with hands-on labs covering web application security. Built by the team behind Burp Suite. Excellent for learning real-world web vulnerabilities including SQL injection, XSS, CSRF, SSRF, authentication flaws, and more.",
+      "link": "https://portswigger.net/web-security",
+      "tags": [
+        "soc-analyst",
+        "web-application-security",
+        "beginner"
+      ]
+    },
+    {
       "id": "kibana",
       "type": "tool",
       "title": "Kibana",

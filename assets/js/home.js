@@ -4,6 +4,7 @@
   const SCRIPT_URL = (document.currentScript && document.currentScript.src) || "";
   const CERTIFICATIONS_URL = new URL("../data/certifications-held.json", SCRIPT_URL).href;
   const PERSONAL_PROJECTS_URL = new URL("../data/personal-projects.json", SCRIPT_URL).href;
+  const READING_LOG_URL = new URL("../data/reading-log.json", SCRIPT_URL).href;
   const GITHUB_USERNAME = "infosecwizardry";
   const MAX_REPOS = 6;
   const EXCLUDED_REPOS = new Set([`${GITHUB_USERNAME}.github.io`]);
@@ -423,7 +424,6 @@
     if (!slug) return;
     if (window.FocusAreas && typeof window.FocusAreas.openModalForArea === "function") {
       await window.FocusAreas.openModalForArea(slug);
-      normalizeFocusAssetPaths();
     }
   }
 
@@ -483,21 +483,29 @@
     });
   }
 
-  function normalizeFocusAssetPaths() {
-    document.querySelectorAll("#focus-area-modal img").forEach((img) => {
-      const raw = img.getAttribute("src") || "";
-      if (location.pathname.includes("/redesign-preview/") && raw.startsWith("assets/")) {
-        img.setAttribute("src", "../" + raw);
-      }
-    });
-  }
-
-  function wireFocusAssetNormalizer() {
-    const body = document.getElementById("focus-modal-body");
-    if (!body || typeof MutationObserver === "undefined") return;
-
-    const observer = new MutationObserver(() => normalizeFocusAssetPaths());
-    observer.observe(body, { childList: true, subtree: true });
+  async function loadCurrentlyReading() {
+    const target = document.getElementById("reading-currently");
+    if (!target) return;
+    try {
+      const res = await fetch(READING_LOG_URL, { cache: "no-cache" });
+      if (!res.ok) return;
+      const data = await res.json();
+      const items = Array.isArray(data.items) ? data.items : [];
+      const current = items.filter(item =>
+        String(item.type || "").toLowerCase() === "book" &&
+        String(item.status || "").toLowerCase() === "currently-reading"
+      );
+      if (!current.length) return;
+      const labels = current.map(b => {
+        const title = String(b.title || "").trim();
+        const author = String(b.author || "").trim();
+        return author ? `${title} by ${author}` : title;
+      });
+      target.textContent = "Currently reading: " + labels.join(" · ");
+      target.hidden = false;
+    } catch (e) {
+      // silent fail: card still shows goals without the currently-reading line
+    }
   }
 
   function init() {
@@ -506,8 +514,8 @@
     wireEvidenceModal();
     wireCertificationsModal();
     wireRunningLogModal();
-    wireFocusAssetNormalizer();
     loadProjects();
+    loadCurrentlyReading();
 
     if (window.FocusAreas) {
       if (typeof window.FocusAreas.wireModalChrome === "function") {

@@ -985,6 +985,18 @@ h1 {
   font-size: clamp(1.35rem, 2vw, 1.85rem);
 }
 
+.reading-currently {
+  margin: 0 0 0.85rem;
+  padding: 0.55rem 0.85rem;
+  background: rgba(168, 104, 227, 0.1);
+  border: 1px solid rgba(168, 104, 227, 0.28);
+  border-radius: 10px;
+  color: var(--portfolio-text, #ecf4ff);
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
 .goal-list {
   display: grid;
   gap: 0.65rem;

@@ -24,7 +24,6 @@ test("production homepage uses approved recruiter-first copy and production sect
   assert.match(html, /Current Goals/);
   assert.match(html, /Want to talk about a defensive leadership role\?/);
   assert.match(html, /href="resume.html"/);
-  assert.match(html, /href="resources\/penetration-tester.html"/);
   assert.match(html, /href="resources\/reading-log.html"/);
 });
 

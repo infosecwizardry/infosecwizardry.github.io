@@ -23,6 +23,7 @@
     h1 { margin:0 0 .8rem; font-size:clamp(2rem, 5vw, 3.2rem); line-height:1.05; letter-spacing:-.04em; }
     .lead { color:var(--muted); max-width:68ch; }
     section { padding:1rem 0 .5rem; }
+    .reading-section + .reading-section { padding-top: 2.25rem; margin-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.06); }
     .section-header { margin-bottom:1rem; }
     .section-header h2 { margin:0 0 .3rem; font-size:1.7rem; }
     .section-header p { margin:0; color:var(--muted); }
@@ -96,7 +97,7 @@
   <header class="header">
     <div class="container nav">
       <a class="brand" href="../index.html">Mike <span>Small</span></a>
-      <a class="back-link" href="../index.html#personal-projects">Back to Personal Projects</a>
+      <a class="back-link" href="../index.html#current-goals">Back to Current Goals</a>
     </div>
   </header>
   <main>
@@ -109,22 +110,34 @@
         </div>
       </div>
     </section>
-    <section>
+    <section id="currently-reading-section" class="reading-section" hidden>
       <div class="container">
+        <div class="section-header">
+          <h2>Currently Reading</h2>
+          <p>What I am working through right now.</p>
+        </div>
+        <div id="currently-reading-grid" class="grid"></div>
+      </div>
+    </section>
+
+    <section class="reading-section reading-section-finished">
+      <div class="container">
+        <div class="section-header">
+          <h2>Finished Books</h2>
+          <p>Short reviews on why each book stuck with me, plus when I finished it.</p>
+        </div>
+
         <div class="filters-shell">
           <div class="filters-head">
             <div>
               <h2>Filter By Topic</h2>
-              <p>Narrow the log by tag so people can jump straight to the kinds of books they care about.</p>
+              <p>Narrow finished books to a specific topic.</p>
             </div>
             <div id="filter-count" class="filter-count"></div>
           </div>
           <div id="tag-filters" class="filter-row"></div>
         </div>
-        <div class="section-header">
-          <h2>Finished Books</h2>
-          <p>Each entry keeps the overview short, shows when I finished it, and highlights why it stood out.</p>
-        </div>
+
         <div id="reading-log-grid" class="grid"></div>
       </div>
     </section>
@@ -187,6 +200,30 @@
         }).join("");
       }
 
+      function renderCurrentlyReading(books) {
+        const section = document.getElementById("currently-reading-section");
+        const grid = document.getElementById("currently-reading-grid");
+        if (!books.length) {
+          if (section) section.hidden = true;
+          grid.innerHTML = "";
+          return;
+        }
+        if (section) section.hidden = false;
+        grid.innerHTML = books.map((book) => {
+          const author = book.author ? `<p class="book-author">by ${escapeHtml(book.author)}</p>` : "";
+          const tags = (book.tags || []).map(tag => `<span class="pill">${escapeHtml(tag)}</span>`).join("");
+          const note = book.note ? `<p>${escapeHtml(book.note)}</p>` : "";
+          return `
+            <article class="card">
+              <h3>${escapeHtml(book.title)}</h3>
+              ${author}
+              ${note}
+              ${tags ? `<div class="pill-row">${tags}</div>` : ""}
+            </article>
+          `;
+        }).join("");
+      }
+
       try {
         const response = await fetch(DATA_URL, { cache: "no-cache" });
         if (!response.ok) {
@@ -194,6 +231,13 @@
         }
         const data = await response.json();
         const items = Array.isArray(data.items) ? data.items : [];
+
+        const currentlyReading = items.filter((item) => {
+          if (String(item.type).toLowerCase() !== "book") return false;
+          return String(item.status || "").toLowerCase() === "currently-reading";
+        });
+        renderCurrentlyReading(currentlyReading);
+
         const books = items
           .filter((item) => {
             if (String(item.type).toLowerCase() !== "book") return false;

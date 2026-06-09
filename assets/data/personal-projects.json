@@ -16,25 +16,6 @@
       }
     },
     {
-      "id": "currently-reading",
-      "type": "book",
-      "title": "Currently Reading",
-      "books": [
-        {
-          "title": "The Diary of a CEO",
-          "author": "Steven Bartlett",
-          "status": "Currently Reading"
-        }
-      ],
-      "goals": [
-        "Read one book per month"
-      ],
-      "link": {
-        "label": "Reading log",
-        "url": "resources/reading-log.html"
-      }
-    },
-    {
       "id": "running",
       "type": "running",
       "title": "Running",
