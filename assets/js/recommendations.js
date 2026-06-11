@@ -14,6 +14,7 @@
     tool: "Tool",
     research: "Research",
     certification: "Certification",
+    conference: "Conference",
     other: "Other"
   };
 
@@ -26,10 +27,11 @@
     tool: "Tools",
     research: "Research",
     certification: "Certifications",
+    conference: "Conferences",
     other: "Other"
   };
 
-  const TYPE_ORDER = ["book", "training", "lab", "tool", "podcast", "creator", "research", "certification", "other"];
+  const TYPE_ORDER = ["book", "training", "lab", "tool", "podcast", "creator", "research", "certification", "conference", "other"];
 
   let cache = null;
   let readingLogCache = null;
@@ -106,8 +108,18 @@
     const review = item.review
       ? `<div class="rec-review"><strong>My take:</strong> ${escapeHtml(item.review)}</div>`
       : "";
-    const link = item.link
-      ? `<div class="project-links"><a class="resource-link" href="${escapeHtml(item.link)}" target="_blank" rel="noreferrer">View ${escapeHtml(typeLabel)} &rarr;</a></div>`
+    let linkEntries = [];
+    if (Array.isArray(item.links) && item.links.length) {
+      linkEntries = item.links
+        .filter(l => l && l.url)
+        .map(l => ({ label: l.label || "Link", url: l.url }));
+    } else if (item.link) {
+      linkEntries = [{ label: "View " + typeLabel, url: item.link }];
+    }
+    const link = linkEntries.length
+      ? `<div class="project-links">` + linkEntries.map(l =>
+          `<a class="resource-link" href="${escapeHtml(l.url)}" target="_blank" rel="noreferrer">${escapeHtml(l.label)} &rarr;</a>`
+        ).join(`<span class="rec-link-sep" aria-hidden="true">&nbsp;&middot;&nbsp;</span>`) + `</div>`
       : "";
 
     return `

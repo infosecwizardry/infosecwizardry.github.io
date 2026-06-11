@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conferences | Mike Small</title>
+  <meta name="description" content="Recommended cybersecurity conferences — community-run B-Sides, regional hacker cons, and large industry events." />
+  <style>
+    :root { --bg:#050108; --panel:rgba(22,14,38,.88); --text:#FFFFFF; --muted:#D8BEFF; --accent:#A868E3; --border:rgba(168,104,227,.18); --shadow:0 18px 40px rgba(0,0,0,.28); --radius:22px; --max:1080px; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background:radial-gradient(circle at top left, rgba(168,104,227,.12), transparent 28%), linear-gradient(180deg, #030108 0%, #050108 45%, #0a0418 100%); color:var(--text); line-height:1.6; }
+    a { color:inherit; text-decoration:none; }
+    .container { width:min(calc(100% - 2rem), var(--max)); margin:0 auto; }
+    .header { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:rgba(5,1,8,.72); border-bottom:1px solid rgba(255,255,255,.05); }
+    .nav { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1rem 0; }
+    .brand { font-weight:700; }
+    .brand span { color:var(--accent); }
+    .back-link { color:var(--muted); }
+    .hero { padding:4.5rem 0 2rem; }
+    .hero-card, .card { background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); }
+    .hero-card { padding:2rem; }
+    .eyebrow { display:inline-flex; align-items:center; color:var(--accent); background:rgba(168,104,227,.08); border:1px solid rgba(168,104,227,.15); padding:.45rem .8rem; border-radius:999px; font-size:.85rem; margin-bottom:1rem; }
+    h1 { margin:0 0 .8rem; font-size:clamp(2rem, 5vw, 3.2rem); line-height:1.05; letter-spacing:-.04em; }
+    .lead { color:var(--muted); max-width:68ch; }
+    section { padding:1rem 0 .5rem; }
+    .section-header { margin-bottom:1rem; }
+    .section-header h2 { margin:0 0 .3rem; font-size:1.7rem; }
+    .section-header p { margin:0; color:var(--muted); }
+    .grid { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:1rem; }
+    .card { padding:1.25rem; }
+    .card h3 { margin-top:0; margin-bottom:.5rem; }
+    .card p { margin-top:0; color:var(--muted); }
+    .resource-link { color:var(--accent); font-weight:600; }
+    .footer { padding:2.5rem 0 3.5rem; color:var(--muted); text-align:center; }
+    .empty-state { color:var(--muted); border:1px dashed rgba(255,255,255,.14); border-radius:18px; padding:1rem; background:rgba(255,255,255,.02); grid-column: 1 / -1; }
+    .pill-row { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.85rem; }
+    .pill { border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.03); color:var(--text); border-radius:999px; padding:.32rem .6rem; font-size:.78rem; }
+    .rec-card { position:relative; padding-top:2.6rem; }
+    .type-pill { position:absolute; top:1rem; right:1rem; font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; padding:.28rem .6rem; border-radius:999px; background:rgba(168,104,227,.12); border:1px solid rgba(168,104,227,.3); color:var(--accent); font-weight:600; }
+    .rec-card-author { color:var(--muted); font-size:.88rem; margin:-.2rem 0 .6rem; }
+    .project-links { margin-top:.9rem; font-size:.95rem; }
+    .conference-note { margin-top: 1.2rem; padding: 0.9rem 1.1rem; border-radius: 14px; background: rgba(168,104,227,.08); border: 1px solid rgba(168,104,227,.22); color: var(--text); font-size: .95rem; }
+    .conference-note strong { color: var(--accent); }
+    @media (max-width:900px) { .grid { grid-template-columns:1fr; } }
+  </style>
+  <link rel="stylesheet" href="../assets/css/site.css?v=sitewide" />
+</head>
+<body class="infosec-theme subpage">
+  <header class="header"><div class="container nav"><a class="brand" href="../index.html">Mike <span>Small</span></a><a class="back-link" href="../index.html#recommendations">Back to Recommendations</a></div></header>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <div class="eyebrow">Recommendations</div>
+          <h1>Conferences</h1>
+          <p class="lead">Security conferences worth attending — for the talks, the networking, and the chance to meet practitioners doing the work.</p>
+          <p class="conference-note"><strong>Can't make it in person?</strong> Most of these conferences upload their talks to YouTube for free after the event, usually within a few weeks. Search the conference name on YouTube and you'll find official channels with full recordings.</p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <h2>All Conferences</h2>
+          <p>Community-run cons, regional hacker events, and large industry conferences worth attending.</p>
+        </div>
+        <div id="cards-grid" class="grid"></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="container">Built for the Recommendations hub.</div></footer>
+  <script src="../assets/js/recommendations.js"></script>
+  <script>Recommendations.renderByType("cards-grid", "conference");</script>
+</body>
+</html>

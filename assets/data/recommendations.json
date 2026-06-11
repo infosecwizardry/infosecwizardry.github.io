@@ -1,6 +1,19 @@
 {
   "items": [
     {
+      "id": "tangled-web",
+      "type": "book",
+      "title": "The Tangled Web",
+      "author": "Michał Zalewski",
+      "description": "Deep technical guide to securing modern web applications. Covers browser security models, same-origin policy, content security, and the underlying mechanics that make web vulnerabilities possible. Essential reading for serious web security work.",
+      "link": "https://www.amazon.com/Tangled-Web-Securing-Modern-Applications/dp/1593273886",
+      "tags": [
+        "pen-tester",
+        "web-application-security",
+        "advanced"
+      ]
+    },
+    {
       "id": "tcm-practical-ethical-hacking",
       "type": "training",
       "title": "Practical Ethical Hacking",
@@ -9,6 +22,19 @@
       "link": "https://academy.tcm-sec.com/p/practical-ethical-hacking-the-complete-course",
       "tags": [
         "pen-tester"
+      ]
+    },
+    {
+      "id": "tcm-security-academy",
+      "type": "training",
+      "title": "TCM Security Academy",
+      "author": "TCM Security",
+      "description": "Affordable, hands-on training platform covering offensive security from foundations through advanced topics — Practical Ethical Hacking, Practical Network Penetration Tester (PNPT) certification path, Linux/Windows privilege escalation, OSINT, malware development, and more. Strong production quality and active community.",
+      "link": "https://academy.tcm-sec.com/",
+      "tags": [
+        "soc-analyst",
+        "pen-tester",
+        "beginner"
       ]
     },
     {
@@ -168,11 +194,91 @@
       "id": "ippsec",
       "type": "creator",
       "title": "IppSec",
-      "author": "YouTube",
       "description": "Walkthroughs of retired Hack The Box machines that build real offensive technique pattern recognition.",
-      "link": "https://www.youtube.com/@ippsec",
+      "links": [
+        { "label": "YouTube", "url": "https://www.youtube.com/@ippsec" },
+        { "label": "X / Twitter", "url": "https://x.com/ippsec" }
+      ],
       "tags": [
         "pen-tester"
+      ]
+    },
+    {
+      "id": "stok",
+      "type": "creator",
+      "title": "STÖK",
+      "author": "Fredrik Alexandersson",
+      "description": "Bug bounty hunter and creator making web hacking approachable and fun. Strong content on bug bounty methodology, recon, collaboration, and the mindset side of offensive security.",
+      "links": [
+        { "label": "YouTube", "url": "https://www.youtube.com/@STOKfredrik" },
+        { "label": "X / Twitter", "url": "https://x.com/stokfredrik" }
+      ],
+      "tags": [
+        "pen-tester",
+        "web-application-security"
+      ]
+    },
+    {
+      "id": "jhaddix",
+      "type": "creator",
+      "title": "Jason Haddix (jhaddix)",
+      "description": "Veteran bug bounty hunter and creator of The Bug Hunter's Methodology. Shares recon techniques, web hacking methodology, and AI-assisted security workflows. Most active on X, where he posts tradecraft and methodology threads.",
+      "links": [
+        { "label": "X / Twitter", "url": "https://x.com/Jhaddix" },
+        { "label": "LinkedIn", "url": "https://www.linkedin.com/in/jhaddix/" }
+      ],
+      "tags": [
+        "pen-tester",
+        "web-application-security"
+      ]
+    },
+    {
+      "id": "nahamsec",
+      "type": "creator",
+      "title": "NahamSec",
+      "author": "Ben Sadeghipour",
+      "description": "Bug bounty hunter and educator behind NahamCon. Live recon sessions, hunter interviews, and practical guidance for getting started in bug bounty and web application hacking.",
+      "links": [
+        { "label": "YouTube", "url": "https://www.youtube.com/@NahamSec" },
+        { "label": "Twitch", "url": "https://www.twitch.tv/nahamsec" },
+        { "label": "X / Twitter", "url": "https://x.com/NahamSec" }
+      ],
+      "tags": [
+        "pen-tester",
+        "web-application-security",
+        "beginner"
+      ]
+    },
+    {
+      "id": "13cubed",
+      "type": "creator",
+      "title": "13Cubed",
+      "author": "Richard Davis",
+      "description": "Deep, methodical walkthroughs of Windows forensics, memory analysis, and DFIR tooling that build real investigative skill.",
+      "links": [
+        { "label": "YouTube", "url": "https://www.youtube.com/@13Cubed" },
+        { "label": "X / Twitter", "url": "https://x.com/13cubed" }
+      ],
+      "tags": [
+        "soc-analyst",
+        "forensics",
+        "incident-response"
+      ]
+    },
+    {
+      "id": "john-hammond",
+      "type": "creator",
+      "title": "John Hammond",
+      "description": "Accessible technical walkthroughs across malware analysis, CTFs, real-world incidents, and security tooling. One of the best channels for seeing hands-on analysis explained clearly.",
+      "links": [
+        { "label": "YouTube", "url": "https://www.youtube.com/@_JohnHammond" },
+        { "label": "X / Twitter", "url": "https://x.com/_johnhammond" }
+      ],
+      "tags": [
+        "soc-analyst",
+        "pen-tester",
+        "malware-analysis",
+        "beginner"
       ]
     },
     {
@@ -259,6 +365,108 @@
       "tags": [
         "pen-tester",
         "advanced"
+      ]
+    },
+    {
+      "id": "btl1",
+      "type": "certification",
+      "title": "Blue Team Level 1 (BTL1)",
+      "author": "Security Blue Team",
+      "description": "Practical entry-level defensive certification covering phishing analysis, threat intelligence, digital forensics, SIEM and log analysis, and incident response. Hands-on exam where you investigate a realistic incident end-to-end. Strong validation for entry-level SOC roles.",
+      "link": "https://securityblue.team/certifications/btl1",
+      "tags": [
+        "soc-analyst",
+        "incident-response",
+        "beginner"
+      ]
+    },
+    {
+      "id": "cissp",
+      "type": "certification",
+      "title": "CISSP (Certified Information Systems Security Professional)",
+      "author": "(ISC)²",
+      "description": "Management-level security certification covering security architecture, asset security, communications and network security, identity and access management, security operations, software security, and risk management. Common requirement for senior and leadership security roles.",
+      "link": "https://www.isc2.org/certifications/cissp",
+      "tags": [
+        "soc-analyst",
+        "advanced"
+      ]
+    },
+    {
+      "id": "crto",
+      "type": "certification",
+      "title": "Certified Red Team Operator (CRTO)",
+      "author": "Zero-Point Security",
+      "description": "Hands-on red team certification covering Cobalt Strike tradecraft, command-and-control, Active Directory attacks, lateral movement, evasion, and persistence. Practical 48-hour exam in a realistic enterprise environment. Strong proof of real red team capability.",
+      "link": "https://training.zeropointsecurity.co.uk/courses/red-team-ops",
+      "tags": [
+        "pen-tester",
+        "red-teaming",
+        "advanced"
+      ]
+    },
+    {
+      "id": "osep",
+      "type": "certification",
+      "title": "OSEP (Offensive Security Experienced Penetration Tester)",
+      "author": "OffSec",
+      "description": "Advanced offensive certification focused on evasion: AV/EDR bypass, custom payload development, Active Directory attacks, lateral movement, code-signing attacks, and application allowlisting bypass. Practical 48-hour exam against a hardened enterprise environment.",
+      "link": "https://www.offsec.com/courses/pen-300/",
+      "tags": [
+        "pen-tester",
+        "red-teaming",
+        "malware-development",
+        "advanced"
+      ]
+    },
+    {
+      "id": "bsides",
+      "type": "conference",
+      "title": "Security B-Sides",
+      "author": "Community-run",
+      "description": "Community-run security conferences held in cities worldwide as affordable, accessible alternatives to large industry events. Find the closest one to you on the Security B-Sides site. Great way to meet local practitioners and present early work.",
+      "link": "https://www.securitybsides.com/",
+      "tags": [
+        "soc-analyst",
+        "pen-tester",
+        "beginner"
+      ]
+    },
+    {
+      "id": "simplycyber-con",
+      "type": "conference",
+      "title": "SimplyCyber Con",
+      "author": "Simply Cyber",
+      "description": "Free virtual conference from Gerald Auger's Simply Cyber community, built for people breaking into and growing in cybersecurity. Accessible talks from practitioners across defensive and offensive disciplines. I presented on purple teaming here in 2025.",
+      "link": "https://www.simplycyber.io/",
+      "tags": [
+        "soc-analyst",
+        "beginner"
+      ]
+    },
+    {
+      "id": "defcon",
+      "type": "conference",
+      "title": "DEF CON",
+      "author": "Las Vegas, NV",
+      "description": "The world's largest and most well-known hacker conference, held annually in Las Vegas. Talks across every security domain, dozens of villages (red team, blue team, hardware, ICS, AI/ML, social engineering, lockpicking, and more), and large-scale CTFs.",
+      "link": "https://defcon.org/",
+      "tags": [
+        "soc-analyst",
+        "pen-tester"
+      ]
+    },
+    {
+      "id": "wild-west-hackin-fest",
+      "type": "conference",
+      "title": "Wild West Hackin' Fest",
+      "author": "Black Hills Information Security",
+      "description": "Multi-day security conference put on by Black Hills, with a strong focus on practical offensive and defensive tradecraft. Held in Deadwood, South Dakota and online. Excellent community vibe and practitioner-led talks.",
+      "link": "https://wildwesthackinfest.com/",
+      "tags": [
+        "soc-analyst",
+        "pen-tester",
+        "incident-response"
       ]
     }
   ]
