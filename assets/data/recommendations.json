@@ -49,6 +49,35 @@
       ]
     },
     {
+      "id": "antisyphon-pay-what-you-can",
+      "type": "training",
+      "title": "Antisyphon Pay-What-You-Can Training",
+      "author": "Black Hills Information Security",
+      "description": "Live and on-demand security training from the Black Hills team on a pay-what-you-can model, including free seats. Strong coverage across SOC operations, incident response, threat hunting, active defense, and offensive tradecraft, taught by working practitioners.",
+      "link": "https://www.antisyphontraining.com/pay-what-you-can-training-information/",
+      "tags": [
+        "soc-analyst",
+        "pen-tester",
+        "incident-response",
+        "threat-hunting",
+        "beginner"
+      ]
+    },
+    {
+      "id": "sektor7",
+      "type": "training",
+      "title": "Sektor7 Institute",
+      "author": "Reenz0h",
+      "description": "Deep technical offensive security training focused on Windows internals, malware development, and red team tradecraft. Courses cover initial access, persistence, privilege escalation, EDR evasion, and custom tooling for serious offensive practitioners.",
+      "link": "https://institute.sektor7.net/",
+      "tags": [
+        "pen-tester",
+        "red-teaming",
+        "malware-development",
+        "advanced"
+      ]
+    },
+    {
       "id": "kibana",
       "type": "tool",
       "title": "Kibana",
@@ -93,6 +122,34 @@
       "tags": [
         "soc-analyst",
         "detection-engineering"
+      ]
+    },
+    {
+      "id": "vmware-workstation",
+      "type": "tool",
+      "title": "VMware Workstation Pro",
+      "author": "Broadcom",
+      "description": "Free-for-personal-use type-2 hypervisor for running virtual machines on Windows and Linux. Essential for building a home lab, isolating malware analysis environments, and standing up the attacker and defender systems you need for any practical security learning.",
+      "link": "https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion",
+      "tags": [
+        "soc-analyst",
+        "pen-tester",
+        "lab",
+        "beginner"
+      ]
+    },
+    {
+      "id": "osboxes",
+      "type": "tool",
+      "title": "OSBoxes",
+      "author": "OSBoxes",
+      "description": "Pre-built VirtualBox and VMware images for dozens of Linux distributions. Skip installation friction when you need a clean lab VM fast — useful for analysis sandboxes, attack platforms, and quickly testing new tools without rebuilding from scratch.",
+      "link": "https://www.osboxes.org/",
+      "tags": [
+        "soc-analyst",
+        "pen-tester",
+        "lab",
+        "beginner"
       ]
     },
     {
@@ -152,6 +209,56 @@
       "tags": [
         "soc-analyst",
         "forensics"
+      ]
+    },
+    {
+      "id": "comptia-security-plus",
+      "type": "certification",
+      "title": "CompTIA Security+",
+      "author": "CompTIA",
+      "description": "Industry-standard foundational security certification covering threats, vulnerabilities, architecture, identity, operations, and incident response. Common HR filter for entry-level security roles and a solid baseline for anyone breaking into the field.",
+      "link": "https://www.comptia.org/certifications/security",
+      "tags": [
+        "soc-analyst",
+        "pen-tester",
+        "beginner"
+      ]
+    },
+    {
+      "id": "thm-sal1",
+      "type": "certification",
+      "title": "SOC Level 1 Analyst (SAL1)",
+      "author": "TryHackMe",
+      "description": "Practical SOC analyst certification covering alert triage, threat intelligence, network and endpoint analysis, and digital forensics through hands-on labs and a 24-hour practical exam. Strong validation for entry-level defensive roles.",
+      "link": "https://tryhackme.com/r/certifications/sal1",
+      "tags": [
+        "soc-analyst",
+        "beginner"
+      ]
+    },
+    {
+      "id": "htb-cdsa",
+      "type": "certification",
+      "title": "Certified Defensive Security Analyst (CDSA)",
+      "author": "Hack The Box",
+      "description": "Hands-on defensive security certification covering SOC operations, incident handling, threat hunting, and digital forensics. The 7-day practical exam requires you to investigate and write a professional report on a realistic intrusion.",
+      "link": "https://academy.hackthebox.com/preview/certifications/htb-certified-defensive-security-analyst",
+      "tags": [
+        "soc-analyst",
+        "incident-response",
+        "threat-hunting"
+      ]
+    },
+    {
+      "id": "oscp",
+      "type": "certification",
+      "title": "OSCP (Offensive Security Certified Professional)",
+      "author": "OffSec",
+      "description": "The flagship hands-on offensive security certification. A 24-hour practical exam where you compromise multiple machines and write a professional penetration test report. Widely recognized as strong proof of real offensive skill and a common requirement for pen testing roles.",
+      "link": "https://www.offsec.com/courses/pen-200/",
+      "tags": [
+        "pen-tester",
+        "advanced"
       ]
     }
   ]
