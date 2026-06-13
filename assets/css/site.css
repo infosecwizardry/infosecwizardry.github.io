@@ -715,9 +715,13 @@ h1 {
   gap: 1rem;
 }
 
-.projects-grid,
-.rec-tile-grid {
+.projects-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.rec-tile-grid {
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.65rem;
 }
 
 .personal-grid,
@@ -726,16 +730,17 @@ h1 {
 }
 
 .rec-tile {
-  min-height: 128px;
-  display: grid;
-  align-content: space-between;
-  gap: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
   border: 1px solid rgba(168, 104, 227, 0.22);
-  border-radius: var(--radius);
-  padding: 1rem;
+  border-radius: 14px;
+  padding: 0.7rem 0.95rem;
   color: var(--text);
   background: rgba(19, 12, 34, 0.72);
   text-decoration: none;
+  transition: border-color 0.18s ease, background 0.18s ease, transform 0.15s ease;
 }
 
 .rec-tile:hover,
@@ -743,10 +748,22 @@ h1 {
   outline: none;
   border-color: rgba(216, 190, 255, 0.58);
   background: rgba(31, 18, 55, 0.86);
+  transform: translateY(-1px);
+}
+
+.rec-tile:hover .rec-tile-hint,
+.rec-tile:focus-visible .rec-tile-hint {
+  transform: translateX(3px);
 }
 
 .rec-tile h3 {
   margin: 0;
+  font-size: 0.98rem;
+}
+
+.rec-tile .rec-tile-hint {
+  flex-shrink: 0;
+  transition: transform 0.18s ease;
 }
 
 .rec-tile-hint,
@@ -1554,7 +1571,6 @@ h1 {
   .projects-grid,
   .personal-grid,
   .resources-grid,
-  .rec-tile-grid,
   .goals-grid,
   .cert-list,
   .evidence-metrics,
@@ -1562,6 +1578,10 @@ h1 {
   .focus-modal-cert-row,
   .contact-links {
     grid-template-columns: 1fr;
+  }
+
+  .rec-tile-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .capability-card {
@@ -1606,4 +1626,20 @@ h1 {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
   }
+}
+
+/* Recommendation cards: keep the type label in normal flow so it can never
+   overlap the title (replaces the absolute-position + padding clearance hack).
+   The `.rec-card >` selector raises specificity to override per-page inline
+   `.type-pill { position: absolute }` rules, and being last in the file wins
+   any source-order ties against `.card { padding }`. */
+.rec-card {
+  padding-top: 1rem;
+}
+
+.rec-card > .type-pill {
+  position: static;
+  display: block;
+  width: fit-content;
+  margin: 0 0 0.6rem;
 }
