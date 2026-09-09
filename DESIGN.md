@@ -13,6 +13,13 @@ Strategy: **restrained monochrome.** Paper, ink, one mute gray. No pink, yellow,
 | `--mid` | `#2A2A2A` | Mobile drawer, 3D sides |
 | `--mute` | `#6E6E6E` | Captions, soon labels |
 | `--fog` | `#9A9A9A` | Muted type on ink (meets AA where `--mute` does not) |
+| `--slab-hi` | `#ECECE8` | Staircase lit top face |
+| `--slab-lo` | `#BDBDB8` | Staircase bottom face |
+| `--slab-side` | `#454545` | Staircase left face |
+| `--slab-ink` | `#1A1A1A` | Staircase right face |
+| `--well` | `#E4E9EE` | Operator photo well, avatar disc (asset copies in `assets/` are frozen duplicates, keep in sync manually) |
+| `--dot` | `#C5C5BF` | Roadmap dot grid |
+| `--hair-strong` | `white / 0.34` | Pill hover border (stronger `--hair`) |
 | `--paper` | `#F3F3F1` | Canvas |
 | `--snow` | `#FAFAFA` | Raised plates |
 

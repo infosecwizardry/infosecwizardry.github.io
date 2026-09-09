@@ -6,6 +6,13 @@
   --fog: #9a9a9a;
   --paper: #f3f3f1;
   --snow: #fafafa;
+  --slab-hi: #ecece8;
+  --slab-lo: #bdbdb8;
+  --slab-side: #454545;
+  --slab-ink: #1a1a1a;
+  --well: #e4e9ee;
+  --dot: #c5c5bf;
+  --hair-strong: rgb(255 255 255 / 0.34);
   --focus: #111111;
   --hair: rgb(255 255 255 / 0.12);
   --pad: 1.875rem;
@@ -467,7 +474,7 @@ html.is-leaving .page-fade {
     max-width: min(58rem, calc(100% - 5rem));
     padding: 0.5rem 0.75rem 0.5rem 1rem;
     overflow: hidden;
-    border: 1px solid rgb(255 255 255 / 0.12);
+    border: 1px solid var(--hair);
     border-radius: var(--radius-cta);
     justify-content: flex-start;
     gap: 1.1rem;
@@ -586,7 +593,7 @@ html.is-leaving .page-fade {
   .nav__pill:hover,
   .nav__pill:focus-within {
     translate: 0 -3px;
-    border-color: rgb(255 255 255 / 0.34);
+    border-color: var(--hair-strong);
   }
 
   .nav__pill:hover:active,
@@ -706,7 +713,7 @@ html.is-leaving .page-fade {
 }
 
 .stair__face--back {
-  background: #2a2a2a;
+  background: var(--mid);
   transform: rotateY(180deg) translateZ(calc(var(--d) / 2));
 }
 
@@ -719,12 +726,12 @@ html.is-leaving .page-fade {
 }
 
 .stair__face--left {
-  background: #454545;
+  background: var(--slab-side);
   transform: rotateY(-90deg) translateZ(calc(var(--w) / 2));
 }
 
 .stair__face--right {
-  background: #1a1a1a;
+  background: var(--slab-ink);
   transform: rotateY(90deg) translateZ(calc(var(--w) / 2));
 }
 
@@ -737,13 +744,13 @@ html.is-leaving .page-fade {
 }
 
 .stair__face--top {
-  background: #ecece8;
+  background: var(--slab-hi);
   border: 1px solid rgb(10 10 10 / 0.1);
   transform: rotateX(90deg) translateZ(calc(var(--h) / 2));
 }
 
 .stair__face--bottom {
-  background: #bdbdb8;
+  background: var(--slab-lo);
   transform: rotateX(-90deg) translateZ(calc(var(--h) / 2));
 }
 
@@ -808,7 +815,7 @@ html.is-leaving .page-fade {
 .hero__ghost {
   color: var(--paper);
   font-weight: 600;
-  border-bottom: 1px solid rgb(240 243 246 / 0.35);
+  border-bottom: 1px solid rgb(243 243 241 / 0.35);
   padding-bottom: 0.15rem;
 }
 
@@ -932,7 +939,7 @@ html.is-leaving .page-fade {
   margin: 1.75rem 1.75rem 0;
   display: grid;
   place-items: center;
-  background: #e4e9ee;
+  background: var(--well);
   border-radius: 50%;
   overflow: hidden;
 }

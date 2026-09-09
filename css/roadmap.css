@@ -24,7 +24,7 @@
   height: 100%;
   overflow: hidden;
   background-color: var(--paper);
-  background-image: radial-gradient(circle, #c5c5bf 1.15px, transparent 1.2px);
+  background-image: radial-gradient(circle, var(--dot) 1.15px, transparent 1.2px);
   background-size: 24px 24px;
   background-position: 0 0;
   cursor: grab;
