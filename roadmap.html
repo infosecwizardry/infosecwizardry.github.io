@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>InfoSec Wizard</title>
+    <meta
+      name="description"
+      content="The InfoSec Wizard roadmap. Find where you are and see what comes next, from fundamentals to SOC or GRC."
+    />
+    <link rel="canonical" href="./roadmap.html" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="icon" href="assets/mark.svg" type="image/svg+xml" sizes="any" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/site.css" />
+    <link rel="stylesheet" href="css/roadmap.css" />
+  </head>
+  <body class="roadmap-page">
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="nav" data-nav>
+      <nav class="nav__pill" aria-label="Primary">
+        <a class="nav__brand" href="./" aria-label="InfoSec Wizard home">
+          <img class="nav__mark" src="assets/mark.svg" alt="" width="32" height="28" />
+          <span class="nav__word">InfoSec Wizard</span>
+        </a>
+        <div class="nav__links">
+          <a href="./">Home</a>
+          <a href="./roadmap.html" aria-current="page">Roadmap</a>
+          <span class="nav-soon">Resources <small>soon</small></span>
+          <span class="nav-soon">Blogs <small>soon</small></span>
+          <span class="nav-soon">Labs <small>soon</small></span>
+          <span class="nav-soon">CTFs <small>soon</small></span>
+        </div>
+        <a class="btn nav__cta" href="https://discord.gg/azdxRmes3Z" target="_blank" rel="noopener">Join the community</a>
+        <button
+          class="nav__trigger"
+          type="button"
+          data-nav-trigger
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Open menu"
+        >
+          <svg class="icon-menu" viewBox="0 0 28 25" fill="currentColor" aria-hidden="true">
+            <path d="M0 5h27V0H0v5Zm0 10h27v-5H0v5Zm0 10h27v-5H0v5Z" />
+          </svg>
+          <svg class="icon-close" viewBox="0 0 24 23" fill="currentColor" aria-hidden="true">
+            <path d="M.56 3.54 19.65 22.63l3.53-3.54L4.09 0 .56 3.54Zm22.07 0L3.54 22.63 0 19.09 19.09 0l3.54 3.54Z" />
+          </svg>
+        </button>
+        <div class="nav__glass" aria-hidden="true"></div>
+      </nav>
+      <div class="nav__drawer" id="mobile-menu" data-nav-drawer>
+        <div class="nav__drawer-inner">
+          <a href="./">Home</a>
+          <a href="./roadmap.html" aria-current="page">Roadmap</a>
+          <span class="nav-soon">Resources <small>soon</small></span>
+          <span class="nav-soon">Blogs <small>soon</small></span>
+          <span class="nav-soon">Labs <small>soon</small></span>
+          <span class="nav-soon">CTFs <small>soon</small></span>
+          <a href="https://discord.gg/azdxRmes3Z" target="_blank" rel="noopener">Join the community</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="roadmap-main" id="main">
+      <div class="stage" data-stage>
+        <div class="world" data-world>
+          <svg class="edges" data-edges aria-hidden="true"></svg>
+        </div>
+        <div class="zoom" data-zoom role="group" aria-label="Map controls">
+          <button type="button" data-zoom="out" aria-label="Zoom out">&minus;</button>
+          <button type="button" data-zoom="fit">Fit</button>
+          <button type="button" data-zoom="in" aria-label="Zoom in">+</button>
+          <button type="button" data-list-btn aria-expanded="false" aria-controls="list-panel">List</button>
+        </div>
+        <div class="listpanel" id="list-panel" data-listpanel hidden>
+          <p class="rbar__label">List the path</p>
+        </div>
+        <aside class="drawer" data-drawer aria-label="Node details" hidden></aside>
+        <noscript>
+          <div class="listpanel">
+            <p>The interactive map needs JavaScript. The path, in order:</p>
+            <ol>
+              <li>Enter the path</li>
+              <li>Computer fundamentals</li>
+              <li>Network fundamentals</li>
+              <li>Security+</li>
+              <li>First lab hours</li>
+              <li>Practical cert</li>
+              <li>Portfolio project</li>
+              <li>Resume and applications</li>
+              <li>SOC L1</li>
+              <li>GRC fundamentals</li>
+            </ol>
+          </div>
+        </noscript>
+      </div>
+    </main>
+
+    <script src="js/site.js" defer></script>
+    <script src="js/roadmap-data.js" defer></script>
+    <script src="js/roadmap.js" defer></script>
+  </body>
+</html>

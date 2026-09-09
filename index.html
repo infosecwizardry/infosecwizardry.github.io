@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>InfoSec Wizard</title>
+    <meta
+      name="description"
+      content="InfoSec Wizard is a community with a centralized roadmap and resource room for breaking into cybersecurity, and for the next role after that."
+    />
+    <link rel="canonical" href="./" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="icon" href="assets/mark.svg" type="image/svg+xml" sizes="any" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/site.css" />
+    <noscript>
+      <style>
+        .stair.is-pending .stair__rect {
+          transform: none;
+        }
+        .stair.is-pending .stair__face {
+          opacity: 1;
+        }
+      </style>
+    </noscript>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="nav" data-nav>
+      <nav class="nav__pill" aria-label="Primary">
+        <a class="nav__brand" href="./" aria-label="InfoSec Wizard home">
+          <img class="nav__mark" src="assets/mark.svg" alt="" width="32" height="28" />
+          <span class="nav__word">InfoSec Wizard</span>
+        </a>
+        <div class="nav__links">
+          <a href="./" aria-current="page">Home</a>
+          <a href="./roadmap.html">Roadmap</a>
+          <span class="nav-soon">Resources <small>soon</small></span>
+          <span class="nav-soon">Blogs <small>soon</small></span>
+          <span class="nav-soon">Labs <small>soon</small></span>
+          <span class="nav-soon">CTFs <small>soon</small></span>
+        </div>
+        <a class="btn nav__cta" href="https://discord.gg/azdxRmes3Z" target="_blank" rel="noopener">Join the community</a>
+        <button
+          class="nav__trigger"
+          type="button"
+          data-nav-trigger
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Open menu"
+        >
+          <svg class="icon-menu" viewBox="0 0 28 25" fill="currentColor" aria-hidden="true">
+            <path d="M0 5h27V0H0v5Zm0 10h27v-5H0v5Zm0 10h27v-5H0v5Z" />
+          </svg>
+          <svg class="icon-close" viewBox="0 0 24 23" fill="currentColor" aria-hidden="true">
+            <path d="M.56 3.54 19.65 22.63l3.53-3.54L4.09 0 .56 3.54Zm22.07 0L3.54 22.63 0 19.09 19.09 0l3.54 3.54Z" />
+          </svg>
+        </button>
+        <div class="nav__glass" aria-hidden="true"></div>
+      </nav>
+      <div class="nav__drawer" id="mobile-menu" data-nav-drawer>
+        <div class="nav__drawer-inner">
+          <a href="./" aria-current="page">Home</a>
+          <a href="./roadmap.html">Roadmap</a>
+          <span class="nav-soon">Resources <small>soon</small></span>
+          <span class="nav-soon">Blogs <small>soon</small></span>
+          <span class="nav-soon">Labs <small>soon</small></span>
+          <span class="nav-soon">CTFs <small>soon</small></span>
+          <a href="https://discord.gg/azdxRmes3Z" target="_blank" rel="noopener">Join the community</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="page-fade">
+      <section class="hero">
+        <figure class="stair is-pending" data-stair aria-label="Path: Start, Skills, Labs, Certifications, Break in, Continue the grind">
+          <div class="stair__world">
+            <div class="stair__yaw">
+              <ol class="stair__stack">
+                <li class="stair__step" style="--i: 0" data-stair-step>
+                  <div class="stair__rect">
+                    <div class="stair__mass">
+                      <span class="stair__face stair__face--front"><span class="stair__name">Start</span></span>
+                      <span class="stair__face stair__face--back" aria-hidden="true"></span>
+                      <span class="stair__face stair__face--left" aria-hidden="true"></span>
+                      <span class="stair__face stair__face--right" aria-hidden="true"></span>
+                      <span class="stair__face stair__face--top" aria-hidden="true"></span>
+                      <span class="stair__face stair__face--bottom" aria-hidden="true"></span>
+                    </div>
+                  </div>
+                </li>
+                <li class="stair__step" style="--i: 1" data-stair-step>
+                  <div class="stair__rect">
+                    <div class="stair__mass">
+                      <span class="stair__face stair__face--front"><span class="stair__name">Skills</span></span>
+                      <span class="stair__face stair__face--back" aria-hidden="true"></span>
+                      <span class="stair__face stair__face--left" aria-hidden="true"></span>
+                      <span class="stair__face stair__face--right" aria-hidden="true"></span>
+                      <span class="stair__face stair__face--top" aria-hidden="true"></span>
+                      <span class="stair__face stair__face--bottom" aria-hidden="true"></span>
+                    </div>
+
+                  </div>
+                </li>
+                <li class="stair__step" style="--i: 2" data-stair-step>
+                  <div class="stair__rect">
+                    <div class="stair__mass">
+                      <span class="stair__face stair__face--front"><span class="stair__name">Labs</span></span>
+                      <span class="stair__face stair__face--back" aria-hidden="true"></span>
+                      <span class="stair__face stair__face--left" aria-hidden="true"></span>
+                      <span class="stair__face stair__face--right" aria-hidden="true"></span>
+                      <span class="stair__face stair__face--top" aria-hidden="true"></span>
+                      <span class="stair__face stair__face--bottom" aria-hidden="true"></span>
+                    </div>
+
+                  </div>
+                </li>
+                <li class="stair__step" style="--i: 3" data-stair-step>
+                  <div class="stair__rect">
+                    <div class="stair__mass">
+                      <span class="stair__face stair__face--front"><span class="stair__name">Certifications</span></span>
+                      <span class="stair__face stair__face--back" aria-hidden="true"></span>
+                      <span class="stair__face stair__face--left" aria-hidden="true"></span>
+                      <span class="stair__face stair__face--right" aria-hidden="true"></span>
+                      <span class="stair__face stair__face--top" aria-hidden="true"></span>
+                      <span class="stair__face stair__face--bottom" aria-hidden="true"></span>
+                    </div>
+
+                  </div>
+                </li>
+                <li class="stair__step" style="--i: 4" data-stair-step>
+                  <div class="stair__rect">
+                    <div class="stair__mass">
+                      <span class="stair__face stair__face--front"><span class="stair__name">Break in</span></span>
+                      <span class="stair__face stair__face--back" aria-hidden="true"></span>
+                      <span class="stair__face stair__face--left" aria-hidden="true"></span>
+                      <span class="stair__face stair__face--right" aria-hidden="true"></span>
+                      <span class="stair__face stair__face--top" aria-hidden="true"></span>
+                      <span class="stair__face stair__face--bottom" aria-hidden="true"></span>
+                    </div>
+
+                  </div>
+                </li>
+                <li class="stair__step" style="--i: 5" data-stair-step>
+                  <div class="stair__rect">
+                    <div class="stair__mass">
+                      <span class="stair__face stair__face--front"><span class="stair__name">Continue the grind</span></span>
+                      <span class="stair__face stair__face--back" aria-hidden="true"></span>
+                      <span class="stair__face stair__face--left" aria-hidden="true"></span>
+                      <span class="stair__face stair__face--right" aria-hidden="true"></span>
+                      <span class="stair__face stair__face--top" aria-hidden="true"></span>
+                      <span class="stair__face stair__face--bottom" aria-hidden="true"></span>
+                    </div>
+
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </figure>
+        <div class="wrap hero__copy">
+          <div class="hero__inner">
+            <h1 class="display">One map.<br />The resources<br />with it.</h1>
+            <p class="lead">
+              InfoSec Wizard is a community. The roadmap and resource room for breaking into cyber, and for the role after that.
+            </p>
+            <div class="hero__actions">
+              <a class="btn" href="./roadmap.html">
+                See the path
+                <svg viewBox="0 0 15 12" fill="currentColor" aria-hidden="true">
+                  <path d="M8.33.22a.75.75 0 0 1 1.08 0l4.85 4.85a.75.75 0 0 1 0 1.08l-4.85 4.85a.75.75 0 1 1-1.08-1.08L11.88 6.37H0V4.85h11.88L8.33 1.3a.75.75 0 0 1 0-1.08Z" />
+                </svg>
+              </a>
+              <a class="hero__ghost" href="https://discord.gg/azdxRmes3Z" target="_blank" rel="noopener">Join the community</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="audience" id="audience">
+        <div class="wrap">
+          <div class="audience__head">
+            <p class="kicker">who this is for</p>
+            <h2 class="display">Find your step.</h2>
+            <p class="lead">Enter at your step. Work the same stack.</p>
+          </div>
+          <div class="lanes">
+            <article class="lane">
+              <span class="lane__index" aria-hidden="true">1</span>
+              <h3>Breaking in.</h3>
+              <p>
+                What to learn first, which labs to run, which certs are worth it.
+              </p>
+            </article>
+            <article class="lane">
+              <span class="lane__index" aria-hidden="true">2</span>
+              <h3>Building reps.</h3>
+              <p>
+                Labs, CTFs, and writeups that prove the work.
+              </p>
+            </article>
+            <article class="lane">
+              <span class="lane__index" aria-hidden="true">3</span>
+              <h3>Chasing the next role.</h3>
+              <p>
+                Deeper skills and a clear read on the hiring bar.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="operators" id="operators">
+        <div class="wrap">
+          <div class="operators__head">
+            <p class="kicker">who runs this</p>
+            <h2 class="display">Built by professionals, for your break-in.</h2>
+            <p class="lead">
+              Two cybersecurity professionals working in the industry today.
+            </p>
+          </div>
+          <div class="operator-grid">
+            <article class="operator">
+              <div class="operator__photo">
+                <img src="assets/operators/avatar.svg" alt="" width="80" height="80" />
+              </div>
+              <div class="operator__body">
+                <p class="operator__role">Cybersecurity professional, focus area</p>
+                <h3 class="display">[ Name ]</h3>
+                <p>
+                  [ Background, current focus in the industry, and how they help the community here. e.g. roadmap track, labs, or mentoring topics. ]
+                </p>
+                <div class="operator__links">
+                  <span class="operator__link">
+                    GitHub
+                    <svg width="14" height="12" viewBox="0 0 15 12" fill="currentColor" aria-hidden="true">
+                      <path d="M8.33.22a.75.75 0 0 1 1.08 0l4.85 4.85a.75.75 0 0 1 0 1.08l-4.85 4.85a.75.75 0 1 1-1.08-1.08L11.88 6.37H0V4.85h11.88L8.33 1.3a.75.75 0 0 1 0-1.08Z" />
+                    </svg>
+                  </span>
+                  <span class="operator__link">
+                    LinkedIn
+                    <svg width="14" height="12" viewBox="0 0 15 12" fill="currentColor" aria-hidden="true">
+                      <path d="M8.33.22a.75.75 0 0 1 1.08 0l4.85 4.85a.75.75 0 0 1 0 1.08l-4.85 4.85a.75.75 0 1 1-1.08-1.08L11.88 6.37H0V4.85h11.88L8.33 1.3a.75.75 0 0 1 0-1.08Z" />
+                    </svg>
+                  </span>
+                  <span class="operator__link">
+                    Blog
+                    <svg width="14" height="12" viewBox="0 0 15 12" fill="currentColor" aria-hidden="true">
+                      <path d="M8.33.22a.75.75 0 0 1 1.08 0l4.85 4.85a.75.75 0 0 1 0 1.08l-4.85 4.85a.75.75 0 1 1-1.08-1.08L11.88 6.37H0V4.85h11.88L8.33 1.3a.75.75 0 0 1 0-1.08Z" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </article>
+            <article class="operator">
+              <div class="operator__photo">
+                <img src="assets/operators/avatar.svg" alt="" width="80" height="80" />
+              </div>
+              <div class="operator__body">
+                <p class="operator__role">Cybersecurity professional, focus area</p>
+                <h3 class="display">[ Name ]</h3>
+                <p>
+                  [ Background, current focus in the industry, and how they help the community here. e.g. roadmap track, labs, or mentoring topics. ]
+                </p>
+                <div class="operator__links">
+                  <span class="operator__link">
+                    GitHub
+                    <svg width="14" height="12" viewBox="0 0 15 12" fill="currentColor" aria-hidden="true">
+                      <path d="M8.33.22a.75.75 0 0 1 1.08 0l4.85 4.85a.75.75 0 0 1 0 1.08l-4.85 4.85a.75.75 0 1 1-1.08-1.08L11.88 6.37H0V4.85h11.88L8.33 1.3a.75.75 0 0 1 0-1.08Z" />
+                    </svg>
+                  </span>
+                  <span class="operator__link">
+                    LinkedIn
+                    <svg width="14" height="12" viewBox="0 0 15 12" fill="currentColor" aria-hidden="true">
+                      <path d="M8.33.22a.75.75 0 0 1 1.08 0l4.85 4.85a.75.75 0 0 1 0 1.08l-4.85 4.85a.75.75 0 1 1-1.08-1.08L11.88 6.37H0V4.85h11.88L8.33 1.3a.75.75 0 0 1 0-1.08Z" />
+                    </svg>
+                  </span>
+                  <span class="operator__link">
+                    Blog
+                    <svg width="14" height="12" viewBox="0 0 15 12" fill="currentColor" aria-hidden="true">
+                      <path d="M8.33.22a.75.75 0 0 1 1.08 0l4.85 4.85a.75.75 0 0 1 0 1.08l-4.85 4.85a.75.75 0 1 1-1.08-1.08L11.88 6.37H0V4.85h11.88L8.33 1.3a.75.75 0 0 1 0-1.08Z" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="coming" id="coming">
+        <div class="wrap">
+          <h2 class="display">The map, then the stack</h2>
+          <div class="coming-grid">
+            <a class="coming-item" href="./roadmap.html">
+              <svg viewBox="0 0 40 32" fill="none" aria-hidden="true">
+                <path d="M1 31V1h16v10h22v20H1Z" stroke="currentColor" stroke-width="2" />
+                <path d="M7 16h10M7 22h18" stroke="currentColor" stroke-width="2" />
+              </svg>
+              <p>
+                <strong>Roadmap</strong>
+              </p>
+            </a>
+            <div class="coming-item">
+              <svg viewBox="0 0 40 32" fill="none" aria-hidden="true">
+                <rect x="1" y="1" width="12" height="14" stroke="currentColor" stroke-width="2" />
+                <rect x="14" y="8" width="12" height="14" stroke="currentColor" stroke-width="2" />
+                <rect x="27" y="4" width="12" height="14" stroke="currentColor" stroke-width="2" />
+              </svg>
+              <p>
+                <strong>Resources</strong>
+                <span>soon</span>
+              </p>
+            </div>
+            <div class="coming-item">
+              <svg viewBox="0 0 40 32" fill="none" aria-hidden="true">
+                <path d="M1 6h38v24H1V6Z" stroke="currentColor" stroke-width="2" />
+                <path d="M1 14h38" stroke="currentColor" stroke-width="2" />
+                <path d="M8 1v10" stroke="currentColor" stroke-width="2" />
+              </svg>
+              <p>
+                <strong>Blogs</strong>
+                <span>soon</span>
+              </p>
+            </div>
+            <div class="coming-item">
+              <svg viewBox="0 0 40 32" fill="none" aria-hidden="true">
+                <rect x="1" y="8" width="38" height="23" stroke="currentColor" stroke-width="2" />
+                <path d="M10 8V4h20v4" stroke="currentColor" stroke-width="2" />
+                <path d="M14 18h12" stroke="currentColor" stroke-width="2" />
+              </svg>
+              <p>
+                <strong>Labs</strong>
+                <span>soon</span>
+              </p>
+            </div>
+            <div class="coming-item">
+              <svg viewBox="0 0 40 32" fill="none" aria-hidden="true">
+                <path d="M20 2 38 31H2L20 2Z" stroke="currentColor" stroke-width="2" />
+                <path d="M20 13v8" stroke="currentColor" stroke-width="2" />
+              </svg>
+              <p>
+                <strong>CTFs</strong>
+                <span>soon</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer page-fade">
+      <div class="wrap">
+        <div class="footer__top">
+          <a class="footer__brand" href="./" aria-label="InfoSec Wizard home">
+            <img src="assets/mark.svg" alt="" width="32" height="28" />
+            <span class="footer__word">InfoSec Wizard</span>
+          </a>
+          <a class="btn" href="https://discord.gg/azdxRmes3Z" target="_blank" rel="noopener">Join the community</a>
+        </div>
+        <div class="footer__meta">
+          <p>A community for breaking in and moving up.</p>
+          <p>© <span id="y">2026</span> InfoSec Wizard.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="js/site.js" defer></script>
+    <script src="js/stair.js" defer></script>
+  </body>
+</html>
