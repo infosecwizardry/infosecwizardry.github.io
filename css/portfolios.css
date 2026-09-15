@@ -13,6 +13,10 @@
   margin-top: 1.25rem;
 }
 
+.portfolios-hero .kicker {
+  color: var(--accent-soft);
+}
+
 .portfolios-stats {
   display: flex;
   flex-wrap: wrap;
@@ -60,6 +64,12 @@
   margin-bottom: 2rem;
 }
 
+.chips[hidden],
+.portfolio-grid[hidden],
+.hiring[hidden] {
+  display: none;
+}
+
 .chip {
   min-height: 2.5rem;
   padding: 0.5rem 1.1rem;
@@ -82,8 +92,15 @@
 }
 
 .chip.is-active {
-  background: var(--ink);
+  background: var(--accent);
   color: var(--paper);
+}
+
+@media (hover: hover) {
+  .chip:not(.is-active):hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
 }
 
 .portfolio-grid {
@@ -115,6 +132,10 @@
   border-radius: var(--radius-card);
   padding: 1.5rem;
   color: var(--ink);
+}
+
+.portfolio-card[hidden] {
+  display: none;
 }
 
 .portfolio-card.is-spotlight {
@@ -158,7 +179,7 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--mute);
+  color: var(--accent);
 }
 
 .portfolio-card h3 {
@@ -182,7 +203,12 @@
 .portfolio-card__link {
   margin-top: auto;
   font-weight: 700;
-  color: var(--ink);
+  color: var(--accent);
+}
+
+.portfolio-card__link:hover,
+.portfolio-card__link:focus-visible {
+  text-decoration: underline;
 }
 
 /* Hiring band */
@@ -262,7 +288,40 @@
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--mute);
+  color: var(--accent);
+}
+
+.showcase-empty {
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius-card);
+  padding: 2rem;
+  background: var(--snow);
+}
+
+.showcase-empty h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin-bottom: 0.75rem;
+}
+
+.showcase-empty p {
+  max-width: 42rem;
+}
+
+.showcase-empty .btn {
+  margin-top: 1.5rem;
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.demo-notice {
+  margin-top: 1.5rem;
+  max-width: 42rem;
+  padding: 0.8rem 1rem;
+  border-left: 0.25rem solid var(--accent-soft);
+  background: var(--mid);
+  color: var(--paper);
+  font-size: 0.9rem;
 }
 
 .tool-card .btn {
