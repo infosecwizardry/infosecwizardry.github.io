@@ -17,8 +17,8 @@
       href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/site.css" />
-    <link rel="stylesheet" href="css/portfolios.css" />
+    <link rel="stylesheet" href="css/site.css?v=2" />
+    <link rel="stylesheet" href="css/portfolios.css?v=4" />
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -76,23 +76,9 @@
           <p class="kicker">member showcase</p>
           <h1 class="display">Proof of work for people breaking into security.</h1>
           <p class="lead">
-            Every active member gets a page here once they've shipped a portfolio, whether you're landing your
-            first security role or moving up from analyst to engineer to lead.
+            The first member portfolios are under review. This is where active members will show work for their
+            first security role or the next role in their career.
           </p>
-          <div class="portfolios-stats">
-            <div class="stat">
-              <span class="stat__num display">48</span>
-              <span class="stat__label">Live portfolios</span>
-            </div>
-            <div class="stat">
-              <span class="stat__num display">12</span>
-              <span class="stat__label">Companies hired from here</span>
-            </div>
-            <div class="stat">
-              <span class="stat__num display">3</span>
-              <span class="stat__label">Security tracks</span>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -100,17 +86,17 @@
         <div class="wrap">
           <div class="showcase__head">
             <p class="kicker">member portfolios</p>
-            <h2 class="display">Filter by track.</h2>
+            <h2 class="display">The first profiles are on the way.</h2>
           </div>
 
-          <div class="chips" id="chips">
-            <button class="chip is-active" data-track="all" type="button">All tracks</button>
-            <button class="chip" data-track="soc" type="button">SOC &amp; Blue Team</button>
-            <button class="chip" data-track="offensive" type="button">Offensive Security</button>
-            <button class="chip" data-track="grc" type="button">GRC &amp; Cloud</button>
+          <div class="chips" id="chips" hidden>
+            <button class="chip is-active" data-track="all" type="button" aria-pressed="true">All tracks</button>
+            <button class="chip" data-track="soc" type="button" aria-pressed="false">SOC &amp; Blue Team</button>
+            <button class="chip" data-track="offensive" type="button" aria-pressed="false">Offensive Security</button>
+            <button class="chip" data-track="grc" type="button" aria-pressed="false">GRC &amp; Cloud</button>
           </div>
 
-          <div class="portfolio-grid" id="portfolio-grid">
+          <div class="portfolio-grid" id="portfolio-grid" hidden>
             <article class="portfolio-card is-spotlight" data-track="offensive">
               <div class="portfolio-card__top">
                 <div class="portfolio-card__photo">
@@ -223,10 +209,18 @@
               <a class="portfolio-card__link" href="#">View portfolio →</a>
             </article>
           </div>
+          <div class="showcase-empty">
+            <h2 class="display">Want yours to be one of them?</h2>
+            <p>
+              Build a portfolio that shows how you think, share it with the community for feedback, and submit it
+              for the showcase when it is ready.
+            </p>
+            <a class="btn" href="https://discord.gg/azdxRmes3Z" target="_blank" rel="noopener">Join the community</a>
+          </div>
         </div>
       </section>
 
-      <section class="hiring" id="for-companies">
+      <section class="hiring" id="for-companies" hidden>
         <div class="wrap hiring__inner">
           <div>
             <h2 class="display">Hiring for security roles?</h2>
@@ -294,11 +288,11 @@
             <div>
               <h3 class="display">Get feedback, then get on the showcase.</h3>
               <p>
-                Join the Discord, post your draft, and get feedback from mentors and other members. Once
+                Join the community, post your draft, and get feedback from mentors and other members. Once
                 it's ready, yours goes live right here too.
               </p>
             </div>
-            <a class="btn" href="https://discord.gg/azdxRmes3Z" target="_blank" rel="noopener">Join the Discord</a>
+            <a class="btn" href="https://discord.gg/azdxRmes3Z" target="_blank" rel="noopener">Join the community</a>
           </div>
         </div>
       </section>
@@ -320,6 +314,5 @@
       </div>
     </footer>
     <script src="js/site.js" defer></script>
-    <script src="js/portfolios.js" defer></script>
   </body>
 </html>

@@ -1,10 +1,10 @@
 # Design
 
-Black and white. No rainbow. The marketing site we looked at was a layout cue only.
+Black and white lead. Purple-blue is a limited interaction accent. The marketing site we looked at was a layout cue only.
 
 ## Color
 
-Strategy: **restrained monochrome.** Paper, ink, one mute gray. No pink, yellow, violet, indigo, report red, or icon orange.
+Strategy: **restrained monochrome with one accent.** Paper, ink, one mute gray, and purple-blue for selected interactive states. No gradients, report red, icon orange, or competing accent colors.
 
 | Token | Hex | Role |
 |---|---|---|
@@ -19,6 +19,8 @@ Strategy: **restrained monochrome.** Paper, ink, one mute gray. No pink, yellow,
 | `--slab-ink` | `#1A1A1A` | Staircase right face |
 | `--well` | `#E4E9EE` | Operator photo well, avatar disc (asset copies in `assets/` are frozen duplicates, keep in sync manually) |
 | `--dot` | `#C5C5BF` | Roadmap dot grid |
+| `--accent` | `#3E3183` | Selected interactive states |
+| `--accent-soft` | `#D8BEFF` | Accent text on dark surfaces |
 | `--hair-strong` | `white / 0.34` | Pill hover border (stronger `--hair`) |
 | `--paper` | `#F3F3F1` | Canvas |
 | `--snow` | `#FAFAFA` | Raised plates |
