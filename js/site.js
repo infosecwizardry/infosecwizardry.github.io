@@ -41,46 +41,111 @@
   });
 })();
 
-/* Reusable page-switch transition. Cascades elements carrying
-   class="page-fade" in on load and fades them up fast on internal
-   page switches. Skipped without JS (content stays visible) and under
-   prefers-reduced-motion (instant navigation). */
+/* Page-switch fade. Native @view-transition crossfades supporting
+   browsers. Fallback fades .page-fade then navigates.
+   Skipped without JS and under prefers-reduced-motion. */
 (() => {
-  const DURATION = 150;
+  const DURATION = 200;
   const root = document.documentElement;
-  if (!document.querySelector(".page-fade")) return;
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const hasFade = !!document.querySelector(".page-fade");
 
-  root.classList.add("is-entering");
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => root.classList.remove("is-entering"));
-  });
+  const nativeMPA = () => {
+    try {
+      if (CSS.supports("at-rule", "@view-transition")) return true;
+    } catch {
+      /* some engines parse the rule but reject this query */
+    }
+    try {
+      for (const sheet of document.styleSheets) {
+        let rules;
+        try {
+          rules = sheet.cssRules;
+        } catch {
+          continue;
+        }
+        for (const rule of rules) {
+          if (rule.constructor && rule.constructor.name === "CSSViewTransitionRule") {
+            if (/\bnavigation\s*:\s*auto\b/.test(rule.cssText)) return true;
+          }
+        }
+      }
+    } catch {
+      return false;
+    }
+    return false;
+  };
+
+  const useNative = nativeMPA();
+
+  const sameOriginPage = (event) => {
+    if (event.defaultPrevented || event.button !== 0) return null;
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return null;
+    const link = event.target.closest("a");
+    if (!link) return null;
+    if (link.target === "_blank" || link.hasAttribute("download")) return null;
+    const href = link.getAttribute("href");
+    if (!href || href.startsWith("#")) return null;
+    let url;
+    try {
+      url = new URL(href, window.location.href);
+    } catch {
+      return null;
+    }
+    if (url.origin !== window.location.origin) return null;
+    if (url.pathname === window.location.pathname && url.search === window.location.search) {
+      return null;
+    }
+    return url;
+  };
+
+  const playEnter = () => {
+    if (!hasFade) return;
+    root.classList.add("is-entering");
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => root.classList.remove("is-entering"));
+    });
+  };
 
   window.addEventListener("pageshow", (event) => {
     if (event.persisted) root.classList.remove("is-entering", "is-leaving");
   });
 
+  if (useNative) {
+    /* Skip an in-flight MPA fade when another in-site page link is
+       clicked so the last header tab wins. */
+    window.addEventListener("pagereveal", (event) => {
+      const vt = event.viewTransition;
+      if (!vt || typeof vt.skipTransition !== "function") return;
+      const skipOnNav = (click) => {
+        if (!sameOriginPage(click)) return;
+        try {
+          vt.skipTransition();
+        } catch {
+          /* finished between the click and this call */
+        }
+      };
+      document.addEventListener("click", skipOnNav, true);
+      const done = () => document.removeEventListener("click", skipOnNav, true);
+      Promise.resolve(vt.finished).then(done, done);
+    });
+    return;
+  }
+
+  playEnter();
+
+  let pending = null;
+  let leaveTimer = 0;
+
   document.addEventListener("click", (event) => {
-    if (event.defaultPrevented || event.button !== 0) return;
-    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-    const link = event.target.closest("a");
-    if (!link) return;
-    if (link.target === "_blank" || link.hasAttribute("download")) return;
-    const href = link.getAttribute("href");
-    if (!href || href.startsWith("#")) return;
-    let url;
-    try {
-      url = new URL(href, window.location.href);
-    } catch {
-      return;
-    }
-    if (url.origin !== window.location.origin) return;
-    if (url.pathname === window.location.pathname && url.search === window.location.search) return;
-    if (root.classList.contains("is-leaving")) return;
+    const url = sameOriginPage(event);
+    if (!url) return;
     event.preventDefault();
+    pending = url.toString();
     root.classList.add("is-leaving");
-    window.setTimeout(() => {
-      window.location.href = url.toString();
+    window.clearTimeout(leaveTimer);
+    leaveTimer = window.setTimeout(() => {
+      window.location.href = pending;
     }, DURATION);
   });
 })();
@@ -144,6 +209,7 @@
 
   let thumb = null;
   let attached = false;
+  let pinned = null;
 
   function place(el, instant) {
     items().forEach((a) => a.classList.toggle("is-hot", a === el));
@@ -166,12 +232,17 @@
   }
 
   function onLeave() {
+    if (pinned) {
+      place(pinned, true);
+      return;
+    }
     if (document.documentElement.classList.contains("is-leaving")) return;
     place(current());
   }
 
   function onClick(event) {
-    place(event.currentTarget, true);
+    pinned = event.currentTarget;
+    place(pinned, true);
   }
 
   function unbind() {
@@ -184,6 +255,7 @@
     linksWrap.removeEventListener("pointerleave", onLeave);
     window.removeEventListener("resize", onResize);
     items().forEach((a) => a.classList.remove("is-hot"));
+    pinned = null;
     if (thumb) {
       thumb.remove();
       thumb = null;

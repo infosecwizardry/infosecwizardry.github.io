@@ -62,6 +62,52 @@ html {
   overflow-x: hidden;
 }
 
+/* Page switch: crossfade dissolve. Viewport snapshot only.
+   No named groups — nav pill, main, and footer keep their own rules. */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  mix-blend-mode: normal;
+  animation-duration: 420ms;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+}
+
+::view-transition-old(root) {
+  animation-name: page-fade-out;
+}
+
+::view-transition-new(root) {
+  animation-name: page-fade-in;
+}
+
+@keyframes page-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
+
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
 body {
   background: var(--paper);
   color: var(--ink);
@@ -209,7 +255,8 @@ button {
 
 /* Purple-ramp rim: buttons plus cards (lanes, operators, voices, coming). */
 .hero .btn,
-.footer .btn {
+.footer .btn,
+.discord-band .btn {
   border: var(--rim-width) solid transparent;
   color: var(--paper);
   transition:
@@ -222,7 +269,8 @@ button {
   background-clip: padding-box, border-box;
 }
 
-.footer .btn {
+.footer .btn,
+.discord-band .btn {
   background-color: var(--ink);
   background-image: linear-gradient(var(--ink), var(--ink)),
     conic-gradient(from var(--rim-angle, 0deg), var(--ramp-conic));
@@ -231,7 +279,9 @@ button {
 .hero .btn:hover,
 .hero .btn:focus-visible,
 .footer .btn:hover,
-.footer .btn:focus-visible {
+.footer .btn:focus-visible,
+.discord-band .btn:hover,
+.discord-band .btn:focus-visible {
   color: var(--ink);
   background-color: var(--accent);
   background-image: linear-gradient(var(--accent), var(--accent)),
@@ -283,7 +333,9 @@ button {
   .footer .btn,
   .nav__cta.btn,
   .operator,
-  .coming-item {
+  .coming-item,
+  .portfolio-card,
+  .discord-band .btn {
     animation: rim-outline 4s linear infinite;
   }
 
@@ -298,63 +350,32 @@ button {
   .nav__cta.btn,
   .operator,
   .coming-item,
+  .portfolio-card,
+  .discord-band .btn,
   .stair {
     animation: none;
   }
 }
 
-/* Page-switch transition (reusable).
-   Usage: add class="page-fade" to the elements that should animate
-   on page enter/leave (page mains, footer). The nav stays stable.
-   js/site.js toggles html.is-entering / html.is-leaving.
-   Enter: sections rise in with a short cascade. Leave: quick fade up. */
+/* Page-switch fallback when @view-transition is not available.
+   Fade only. Nav is not a .page-fade. */
 @media (prefers-reduced-motion: no-preference) {
   :root {
-    --ease-page: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-page: ease;
   }
 
-  .page-fade,
-  .page-fade > * {
-    transition:
-      opacity 420ms var(--ease-page),
-      translate 420ms var(--ease-page);
+  .page-fade {
+    transition: opacity 420ms var(--ease-page);
   }
 
-  .page-fade > *:nth-child(2) {
-    transition-delay: 60ms;
-  }
-
-  .page-fade > *:nth-child(3) {
-    transition-delay: 120ms;
-  }
-
-  .page-fade > *:nth-child(4) {
-    transition-delay: 180ms;
-  }
-
-  .page-fade > *:nth-child(n + 5) {
-    transition-delay: 240ms;
-  }
-
-  html.is-entering .page-fade {
+  html.is-entering .page-fade,
+  html.is-leaving .page-fade {
     opacity: 0;
-  }
-
-  html.is-entering .page-fade > * {
-    opacity: 0;
-    translate: 0 14px;
-  }
-
-  html.is-leaving .page-fade,
-  html.is-leaving .page-fade > * {
-    opacity: 0;
-    transition-duration: 150ms;
-    transition-timing-function: ease-in;
-    transition-delay: 0ms;
   }
 
   html.is-leaving .page-fade {
-    translate: 0 -8px;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in;
   }
 }
 
@@ -476,14 +497,14 @@ html.is-leaving .page-fade {
   }
 
   a.coming-item:focus-visible {
-    translate: 0 -3px;
+    translate: 0 -0.28rem;
   }
 
   /* Boosted twins: must outrank the generic .reveal.is-revealed end-state
      (0,3,1) or the lift never applies post-reveal. Low-spec rules above stay
      as the no-JS fallback. */
   html.js-reveal .coming-grid a.coming-item.reveal:focus-visible {
-    translate: 0 -3px;
+    translate: 0 -0.28rem;
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -495,25 +516,42 @@ html.is-leaving .page-fade {
 
 @media (hover: hover) and (min-width: 992px) and (prefers-reduced-motion: no-preference) {
   .lane {
-    transition: translate 180ms var(--ease-out);
+    transition: translate 220ms var(--ease-out);
   }
 
   .lane:hover {
-    translate: 0 -3px;
+    translate: 0 -0.28rem;
   }
 
   .coming-item:hover {
-    translate: 0 -3px;
+    translate: 0 -0.28rem;
   }
 
   /* Boosted twin: outranks the generic .reveal.is-revealed end-state (0,3,1).
      Low-spec rule above stays as the no-JS fallback. */
   html.js-reveal .coming-grid .coming-item.reveal:hover {
-    translate: 0 -3px;
+    translate: 0 -0.28rem;
   }
 
   .coming-item:hover svg {
     transform: scale(1.06) translateY(-2px);
+  }
+
+  .operator {
+    transition: translate 220ms var(--ease-out);
+  }
+
+  .operator:hover {
+    translate: 0 -0.28rem;
+  }
+
+  html.js-reveal .lanes .lane.reveal:hover,
+  html.js-reveal .operator-grid .operator.reveal:hover {
+    translate: 0 -0.28rem;
+  }
+
+  .operator:hover .operator__photo img {
+    scale: 1.06;
   }
 }
 
@@ -1234,6 +1272,7 @@ a.operator__link:focus-visible {
 .operator__photo img {
   width: 58%;
   height: auto;
+  transition: scale 280ms var(--ease-out);
 }
 
 .operator__photo--photo img {
