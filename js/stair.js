@@ -29,8 +29,14 @@
   const massOf = (step) => step.querySelector(".stair__mass");
   const facesOf = (step) => [...step.querySelectorAll(".stair__face")];
 
+  const keepRim = (anim) => {
+    const name = anim.animationName;
+    return name === "rim-outline" || name === "stair-rim-outline";
+  };
+
   const killAnims = (el) => {
     el.getAnimations().forEach((anim) => {
+      if (keepRim(anim)) return;
       try {
         anim.cancel();
       } catch {
@@ -45,6 +51,7 @@
         ? stair.getAnimations({ subtree: true })
         : [];
     list.forEach((anim) => {
+      if (keepRim(anim)) return;
       try {
         anim.cancel();
       } catch {

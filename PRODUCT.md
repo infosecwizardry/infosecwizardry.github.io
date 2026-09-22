@@ -31,14 +31,14 @@ Copy sounds like a briefing, not a bootcamp ad. No fake metrics. No neon SOC cli
 - Navy-and-cyan "cyber" templates, circuit-board heroes, lock icons
 - Udemy / TryHackMe marketing candy, countdown timers, fake student counts
 - Inter-on-cream SaaS cards with identical icon+title+text grids
-- Rainbow CTA rims, frosted pill nav, and the pink/yellow/violet/indigo swatch set
+- Four-stop rainbow CTA rims, frosted pill nav, and the pink/yellow/indigo swatch set. One Spectrum violet (`#8D59FF`) as a rim is allowed.
 - Cloning another company's marketing chrome. Layout rhythm is allowed; their identity is not.
 
 ## Design Principles
 
 1. **Say who it's for before you say what you have.** The three lanes are the homepage, not a footer note.
 2. **Operators are proof.** Two working professionals, named as such, not a faceless org.
-3. **Paper and ink, color as a rim.** Spectrum language: cool paper, spec-black bands, rainbow only on the CTA edge.
+3. **Paper and ink, color as a rim.** Spectrum language: cool paper, spec-black bands, Spectrum `spec-map` (`#8D59FF`) only as a hairline, never a flood.
 4. **Don't ship a 404 as a promise.** Unbuilt routes are marked soon, not linked dead.
 5. **Craft over curriculum-speak.** Headlines in Impact. Body in a geometric grotesque. No em dashes, no hype.
 

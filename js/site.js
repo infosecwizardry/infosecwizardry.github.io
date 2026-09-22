@@ -96,7 +96,7 @@
   if (!("IntersectionObserver" in window)) return;
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   const targets = document.querySelectorAll(
-    ".audience__head, .lanes .lane, .operators__head, .operator, .coming h2, .coming-item"
+    ".audience__head, .lanes .lane, .operators__head, .operator, .voices__head, .coming h2, .coming-item"
   );
   if (!targets.length) return;
   document.documentElement.classList.add("js-reveal");
