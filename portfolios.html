@@ -17,8 +17,8 @@
       href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/site.css?v=2" />
-    <link rel="stylesheet" href="css/portfolios.css?v=4" />
+    <link rel="stylesheet" href="css/site.css?v=23" />
+    <link rel="stylesheet" href="css/portfolios.css?v=13" />
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -33,6 +33,7 @@
           <a href="./">Home</a>
           <a href="./roadmap.html">Roadmap</a>
           <a href="./portfolios.html" aria-current="page">Portfolios</a>
+          <a href="./faq.html">FAQ</a>
           <span class="nav-soon">Resources <small>soon</small></span>
           <span class="nav-soon">Blogs <small>soon</small></span>
           <span class="nav-soon">Labs <small>soon</small></span>
@@ -47,12 +48,8 @@
           aria-controls="mobile-menu"
           aria-label="Open menu"
         >
-          <svg class="icon-menu" viewBox="0 0 28 25" fill="currentColor" aria-hidden="true">
-            <path d="M0 5h27V0H0v5Zm0 10h27v-5H0v5Zm0 10h27v-5H0v5Z" />
-          </svg>
-          <svg class="icon-close" viewBox="0 0 24 23" fill="currentColor" aria-hidden="true">
-            <path d="M.56 3.54 19.65 22.63l3.53-3.54L4.09 0 .56 3.54Zm22.07 0L3.54 22.63 0 19.09 19.09 0l3.54 3.54Z" />
-          </svg>
+          <svg class="icon-menu" viewBox="0 0 28 25" fill="currentColor" aria-hidden="true"><path d="M0 5h27V0H0v5Zm0 10h27v-5H0v5Zm0 10h27v-5H0v5Z" /></svg>
+          <svg class="icon-close" viewBox="0 0 24 23" fill="currentColor" aria-hidden="true"><path d="M.56 3.54 19.65 22.63l3.53-3.54L4.09 0 .56 3.54Zm22.07 0L3.54 22.63 0 19.09 19.09 0l3.54 3.54Z" /></svg>
         </button>
         <div class="nav__glass" aria-hidden="true"></div>
       </nav>
@@ -61,6 +58,7 @@
           <a href="./">Home</a>
           <a href="./roadmap.html">Roadmap</a>
           <a href="./portfolios.html" aria-current="page">Portfolios</a>
+          <a href="./faq.html">FAQ</a>
           <span class="nav-soon">Resources <small>soon</small></span>
           <span class="nav-soon">Blogs <small>soon</small></span>
           <span class="nav-soon">Labs <small>soon</small></span>
@@ -75,10 +73,7 @@
         <div class="wrap">
           <p class="kicker">member showcase</p>
           <h1 class="display">Proof of work for people breaking into security.</h1>
-          <p class="lead">
-            The first member portfolios are under review. This is where active members will show work for their
-            first security role or the next role in their career.
-          </p>
+          <p class="lead">A portfolio showcase for members landing their first security role or moving into the next one.</p>
         </div>
       </section>
 
@@ -86,150 +81,34 @@
         <div class="wrap">
           <div class="showcase__head">
             <p class="kicker">member portfolios</p>
-            <h2 class="display">The first profiles are on the way.</h2>
+            <h2 class="display">Filter by track.</h2>
           </div>
-
-          <div class="chips" id="chips" hidden>
+          <div class="chips" id="chips">
             <button class="chip is-active" data-track="all" type="button" aria-pressed="true">All tracks</button>
             <button class="chip" data-track="soc" type="button" aria-pressed="false">SOC &amp; Blue Team</button>
             <button class="chip" data-track="offensive" type="button" aria-pressed="false">Offensive Security</button>
             <button class="chip" data-track="grc" type="button" aria-pressed="false">GRC &amp; Cloud</button>
           </div>
-
-          <div class="portfolio-grid" id="portfolio-grid" hidden>
-            <article class="portfolio-card is-spotlight" data-track="offensive">
-              <div class="portfolio-card__top">
-                <div class="portfolio-card__photo">
-                  <img src="assets/operators/avatar.svg" alt="" width="80" height="80" />
-                </div>
-                <div>
-                  <p class="portfolio-card__track">Offensive Security</p>
-                  <h3 class="display">Mara Reyes</h3>
-                  <p class="portfolio-card__cohort">Cohort 2025</p>
-                </div>
-              </div>
-              <p class="portfolio-card__quote">
-                Writing up my capstone pentest was the first time I had to explain my own work. Turns out
-                that's half the interview.
-              </p>
-              <p>
-                Former help desk tech, now breaking into pentesting. Portfolio walks through a full external
-                assessment against a lab environment, findings and remediation included.
-              </p>
-              <a class="portfolio-card__link" href="#">View portfolio →</a>
-            </article>
-
+          <div class="portfolio-grid" id="portfolio-grid">
             <article class="portfolio-card" data-track="soc">
               <div class="portfolio-card__top">
-                <div class="portfolio-card__photo">
-                  <img src="assets/operators/avatar.svg" alt="" width="80" height="80" />
-                </div>
-                <div>
-                  <p class="portfolio-card__track">SOC &amp; Blue Team</p>
-                  <h3 class="display">Jonah Tran</h3>
-                  <p class="portfolio-card__cohort">Cohort 2025</p>
-                </div>
+                <div class="portfolio-card__photo"><img class="is-photo" src="assets/operators/kevin-luna.jpg" alt="Kevin Luna" width="80" height="80" /></div>
+                <div><p class="portfolio-card__track">SOC &amp; Blue Team</p><h3 class="display">Kevin Luna</h3><p class="portfolio-card__cohort">InfoSec Wizard member</p></div>
               </div>
-              <p>
-                Transitioning out of retail management. Landed a Tier 1 SOC analyst role after building a
-                home lab detection portfolio using Security Onion and Sigma rules.
-              </p>
-              <a class="portfolio-card__link" href="#">View portfolio →</a>
+              <p class="portfolio-card__quote">Building, breaking and securing enterprise systems.</p>
+              <p>Four years across security operations, incident response, IAM, and endpoint security in complex multi-tenant MSP environments, currently supporting 50+ organizations and 1,000+ endpoints. He got into the field wanting to understand, in his own words, &ldquo;how systems work, how they fail, and how they can be effectively secured.&rdquo;</p>
+              <button class="portfolio-card__link" type="button" data-preview-url="https://kevinluna-is.github.io/" data-preview-name="Kevin Luna">View portfolio &rarr;</button>
             </article>
-
-            <article class="portfolio-card" data-track="grc">
-              <div class="portfolio-card__top">
-                <div class="portfolio-card__photo">
-                  <img src="assets/operators/avatar.svg" alt="" width="80" height="80" />
-                </div>
-                <div>
-                  <p class="portfolio-card__track">GRC &amp; Cloud</p>
-                  <h3 class="display">Priya Kannan</h3>
-                  <p class="portfolio-card__cohort">Cohort 2024</p>
-                </div>
-              </div>
-              <p>
-                Ex-auditor moving into cloud security. Portfolio includes a mock SOC 2 gap assessment and an
-                AWS IAM hardening writeup.
-              </p>
-              <a class="portfolio-card__link" href="#">View portfolio →</a>
-            </article>
-
-            <article class="portfolio-card" data-track="offensive">
-              <div class="portfolio-card__top">
-                <div class="portfolio-card__photo">
-                  <img src="assets/operators/avatar.svg" alt="" width="80" height="80" />
-                </div>
-                <div>
-                  <p class="portfolio-card__track">Offensive Security</p>
-                  <h3 class="display">Daniel Osei</h3>
-                  <p class="portfolio-card__cohort">Cohort 2024</p>
-                </div>
-              </div>
-              <p>
-                Sysadmin turned red teamer. Now doing internal pentests at a mid-size fintech, three years
-                after his first CTF writeup.
-              </p>
-              <a class="portfolio-card__link" href="#">View portfolio →</a>
-            </article>
-
             <article class="portfolio-card" data-track="soc">
               <div class="portfolio-card__top">
-                <div class="portfolio-card__photo">
-                  <img src="assets/operators/avatar.svg" alt="" width="80" height="80" />
-                </div>
-                <div>
-                  <p class="portfolio-card__track">SOC &amp; Blue Team</p>
-                  <h3 class="display">Sofia Lindqvist</h3>
-                  <p class="portfolio-card__cohort">Cohort 2025</p>
-                </div>
+                <div class="portfolio-card__photo"><img class="is-photo" src="assets/operators/johann-weingertner.png" alt="Johann Weingertner" width="80" height="80" /></div>
+                <div><p class="portfolio-card__track">SOC &amp; Blue Team</p><h3 class="display">Johann Weingertner</h3><p class="portfolio-card__cohort">InfoSec Wizard member</p></div>
               </div>
-              <p>
-                Career changer from nursing. Portfolio documents her path through Security+ and a self run
-                phishing awareness project for a local nonprofit.
-              </p>
-              <a class="portfolio-card__link" href="#">View portfolio →</a>
-            </article>
-
-            <article class="portfolio-card" data-track="grc">
-              <div class="portfolio-card__top">
-                <div class="portfolio-card__photo">
-                  <img src="assets/operators/avatar.svg" alt="" width="80" height="80" />
-                </div>
-                <div>
-                  <p class="portfolio-card__track">GRC &amp; Cloud</p>
-                  <h3 class="display">Theo Walsh</h3>
-                  <p class="portfolio-card__cohort">Cohort 2025</p>
-                </div>
-              </div>
-              <p>
-                Military transition, six years in IT operations. Portfolio centers on a NIST 800-53 control
-                mapping he built for a mock federal contractor.
-              </p>
-              <a class="portfolio-card__link" href="#">View portfolio →</a>
+              <p class="portfolio-card__quote">That curiosity shapes how I build and hunt threats.</p>
+              <p>360+ hours on CyberDefenders: SIEM triage, log analysis, and detection engineering across Elastic, Splunk, and Microsoft Sentinel. Ranked CyberDefenders CyberRange Top 100, with 9 certifications behind it.</p>
+              <button class="portfolio-card__link" type="button" data-preview-url="https://johannweingertner.github.io/" data-preview-name="Johann Weingertner">View portfolio &rarr;</button>
             </article>
           </div>
-          <div class="showcase-empty">
-            <h2 class="display">Want yours to be one of them?</h2>
-            <p>
-              Build a portfolio that shows how you think, share it with the community for feedback, and submit it
-              for the showcase when it is ready.
-            </p>
-            <a class="btn" href="https://discord.gg/azdxRmes3Z" target="_blank" rel="noopener">Join the community</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="hiring" id="for-companies" hidden>
-        <div class="wrap hiring__inner">
-          <div>
-            <h2 class="display">Hiring for security roles?</h2>
-            <p class="lead">
-              Every portfolio above belongs to a member who has completed hands-on training in SOC, offensive
-              security, or GRC. Reach out and we'll connect you directly.
-            </p>
-          </div>
-          <a class="btn" href="#">Contact InfoSec Wizard</a>
         </div>
       </section>
 
@@ -238,66 +117,18 @@
           <div class="build-yours__head">
             <p class="kicker">not on the showcase yet</p>
             <h2 class="display">Haven't built yours yet?</h2>
-            <p class="lead">
-              A security portfolio isn't a resume with extra steps. It's proof you can do the work. Pick a
-              tool below, fill in the checklist, and you're ready to be added above.
-            </p>
+            <p class="lead">A security portfolio is proof you can do the work. Pick a tool, use the checklist, and bring a draft to the community.</p>
           </div>
-
           <div class="build-yours__layout">
             <div class="tool-list">
-              <div class="tool-card">
-                <div class="tool-card__head">
-                  <h3>GitHub Pages</h3>
-                  <span class="tool-card__tag">Free, self hosted</span>
-                </div>
-                <p>
-                  Free static hosting straight from a repo. Works for any track: your tooling repo can live
-                  right next to the writeup, and it costs nothing to keep online.
-                </p>
-                <a class="btn" href="https://pages.github.com/" target="_blank" rel="noopener">Visit</a>
-              </div>
-
-              <div class="tool-card">
-                <div class="tool-card__head">
-                  <h3>Carrd</h3>
-                  <span class="tool-card__tag">No code needed</span>
-                </div>
-                <p>
-                  A clean one page site builder. Good fit for GRC members and anyone who wants a real site
-                  instead of a shared doc, without touching code.
-                </p>
-                <a class="btn" href="https://carrd.co/" target="_blank" rel="noopener">Visit</a>
-              </div>
+              <div class="tool-card"><div class="tool-card__head"><h3>GitHub Pages</h3><span class="tool-card__tag">Free, self hosted</span></div><p>Free static hosting straight from a repo. Your tooling repository can live next to the writeup.</p><a class="btn" href="https://pages.github.com/" target="_blank" rel="noopener">Visit</a></div>
+              <div class="tool-card"><div class="tool-card__head"><h3>Carrd</h3><span class="tool-card__tag">No code needed</span></div><p>A clean one-page builder for members who want a real site without touching code.</p><a class="btn" href="https://carrd.co/" target="_blank" rel="noopener">Visit</a></div>
             </div>
-
-            <aside class="checklist-card">
-              <h3>What to include, at minimum</h3>
-              <ul>
-                <li>A short "about": your background, target role, and what career transition you're making</li>
-                <li>2 to 3 writeups: a lab pentest, a home lab detection, or a mock audit, with the problem,
-                  your approach, and the outcome</li>
-                <li>Certifications and the study path behind them, not just a badge wall</li>
-                <li>A skills list scoped to your target track (SOC, offensive, GRC), not everything you've touched</li>
-                <li>A working way to contact you: email or a scheduling link</li>
-              </ul>
-            </aside>
-          </div>
-
-          <div class="discord-band">
-            <div>
-              <h3 class="display">Get feedback, then get on the showcase.</h3>
-              <p>
-                Join the community, post your draft, and get feedback from mentors and other members. Once
-                it's ready, yours goes live right here too.
-              </p>
-            </div>
-            <a class="btn" href="https://discord.gg/azdxRmes3Z" target="_blank" rel="noopener">Join the community</a>
+            <aside class="checklist-card"><h3>What to include, at minimum</h3><ul><li>Your background and target role</li><li>Two to three writeups with the problem, approach, and outcome</li><li>Certifications with the study path behind them</li><li>A skill list scoped to the target track</li><li>A working way to contact you</li></ul></aside>
           </div>
         </div>
       </section>
     </main>
-
     <footer class="footer page-fade">
       <div class="wrap">
         <div class="footer__top">
@@ -313,6 +144,30 @@
         </div>
       </div>
     </footer>
-    <script src="js/site.js" defer></script>
+    <div class="portfolio-preview" id="portfolio-preview" hidden>
+      <div class="portfolio-preview__backdrop" data-preview-close></div>
+      <div class="portfolio-preview__dialog" role="dialog" aria-modal="true" aria-labelledby="portfolio-preview-title">
+        <div class="portfolio-preview__head">
+          <p class="portfolio-preview__title" id="portfolio-preview-title"></p>
+          <div class="portfolio-preview__actions">
+            <a class="btn" id="portfolio-preview-open" href="#" target="_blank" rel="noopener">Open full site &#8599;</a>
+            <button class="portfolio-preview__close" type="button" data-preview-close aria-label="Close preview">
+              <svg viewBox="0 0 24 23" fill="currentColor" aria-hidden="true" width="16" height="16">
+                <path d="M.56 3.54 19.65 22.63l3.53-3.54L4.09 0 .56 3.54Zm22.07 0L3.54 22.63 0 19.09 19.09 0l3.54 3.54Z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <iframe
+          id="portfolio-preview-frame"
+          title="Member portfolio preview"
+          loading="lazy"
+          sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+        ></iframe>
+      </div>
+    </div>
+
+    <script src="js/site.js?v=9" defer></script>
+    <script src="js/portfolios.js?v=6" defer></script>
   </body>
 </html>
