@@ -1,372 +1,735 @@
-/* Roadmap canvas page. Tokens match css/site.css. */
+/* Roadmap schematic. Tokens come from css/site.css. */
 
-/* Canvas fills the viewport. Nav stays the site-wide fixed pill (see site.css).
-   Overflow is on the stage, not body, so position:fixed nav is not trapped. */
-.roadmap-main {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.rbar__label {
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--mute);
-  margin-right: 0.25rem;
-}
-
-/* Canvas. Dots live on the stage so zoom-out still fills the viewport. */
-.stage {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-color: var(--paper);
-  background-image: radial-gradient(circle, var(--dot) 1.15px, transparent 1.2px);
-  background-size: 24px 24px;
-  background-position: 0 0;
-  cursor: grab;
-  touch-action: none;
-}
-
-.stage.is-panning {
-  cursor: grabbing;
-}
-
-.world {
-  position: absolute;
-  left: 0;
-  top: 0;
-  transform-origin: 0 0;
-}
-
-.edges {
-  position: absolute;
-  left: 0;
-  top: 0;
-  overflow: visible;
-  pointer-events: none;
-}
-
-.rnode {
-  position: absolute;
-  width: 11rem;
-  min-height: 2.75rem;
-  padding: 0.75rem 0.875rem;
-  border: 1px solid var(--ink);
-  border-radius: 1.25rem;
-  background: var(--snow);
-  color: var(--ink);
-  font-size: 0.85rem;
-  font-weight: 600;
-  line-height: 1.25;
-  text-align: left;
-  cursor: pointer;
-  transition:
-    background var(--duration) var(--ease-out),
-    color var(--duration) var(--ease-out),
-    translate 180ms var(--ease-out),
-    scale 140ms var(--ease-out);
-}
-
-.rnode small {
-  display: block;
-  margin-bottom: 0.25rem;
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--mute);
-  transition: color var(--duration) var(--ease-out);
-}
-
-.rnode.is-sel {
-  z-index: 2;
+.roadmap-page ::selection {
   background: var(--ink);
   color: var(--paper);
 }
 
-.rnode.is-sel small {
+.roadmap-hero {
+  padding: 8.5rem 0 2rem;
+  background: var(--hero);
+  color: var(--paper);
+  overflow: hidden;
+}
+
+.roadmap-hero__inner {
+  display: grid;
+  gap: 2rem;
+  align-items: end;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .roadmap-hero__copy {
+    animation: hero-in 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+}
+
+@media (min-width: 860px) {
+  .roadmap-hero__inner {
+    grid-template-columns: minmax(0, 1fr) 7.5rem;
+    gap: 3rem;
+  }
+}
+
+.roadmap-hero h1.display {
+  font-size: clamp(2.5rem, 7vw, 4.35rem);
+  max-width: 11ch;
+}
+
+.roadmap-hero .lead {
+  margin-top: 1.25rem;
+  max-width: 36rem;
   color: var(--fog);
 }
 
-@media (hover: hover) {
-  .rnode:hover:not(.is-sel) {
-    z-index: 1;
-    background: var(--paper);
+.hero-schematic {
+  display: none;
+  width: 5.5rem;
+  justify-self: end;
+  color: inherit;
+  text-decoration: none;
+  transition: scale 220ms var(--ease-out);
+}
+
+.hero-schematic svg {
+  display: block;
+  width: 100%;
+  height: 11rem;
+  overflow: visible;
+}
+
+@media (min-width: 860px) {
+  .hero-schematic {
+    display: block;
   }
+}
+
+@media (hover: hover) {
+  .hero-schematic:hover {
+    scale: 1.04;
+  }
+
+  .hero-schematic:hover .hero-schematic__mark:not(.hero-schematic__mark--fork) {
+    fill: var(--accent);
+  }
+}
+
+.hero-schematic__rail {
+  fill: none;
+  stroke: var(--paper);
+  stroke-width: 1.4;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.hero-schematic__mark {
+  fill: var(--paper);
+}
+
+.hero-schematic__mark--fork {
+  fill: none;
+  stroke: var(--paper);
+  stroke-width: 1.3;
+}
+
+.hero-schematic__soon {
+  fill: none;
+  stroke: var(--fog);
+  stroke-width: 1.2;
+  stroke-dasharray: 2 2;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .rnode:active {
-    translate: 0 1px;
-    scale: 0.97;
+  .hero-schematic__rail {
+    stroke-dasharray: 420;
+    stroke-dashoffset: 420;
+    animation: rail-draw 1100ms cubic-bezier(0.16, 1, 0.3, 1) 120ms forwards;
+  }
+
+  .hero-schematic__mark {
+    opacity: 0;
+    animation: mark-in 420ms var(--ease-out) 520ms forwards;
+  }
+
+  .hero-schematic__mark--fork {
+    animation-delay: 720ms;
+  }
+
+  .hero-schematic__soon {
+    opacity: 0;
+    animation: mark-in 420ms var(--ease-out) 900ms forwards;
   }
 }
 
-@media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .rnode:hover:not(:active) {
-    translate: 0 -3px;
+@keyframes rail-draw {
+  to {
+    stroke-dashoffset: 0;
   }
 }
 
-/* Zoom + list cluster, bottom-left of the canvas. */
-.zoom {
-  position: absolute;
-  left: 1.5rem;
-  bottom: 1.25rem;
-  z-index: 3;
-  display: flex;
-  gap: 0.375rem;
+@keyframes mark-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.zoom button {
-  min-width: 2.75rem;
-  min-height: 2.75rem;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid var(--ink);
-  border-radius: 999px;
+@keyframes hero-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes panel-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Paper field. No dot lattice. Registration ticks only. */
+.roadmap-map {
+  --node: 2.6rem;
+  --gutter: 1.1rem;
+  --hairline: color-mix(in srgb, var(--ink) 14%, transparent);
+  position: relative;
+  padding: 2rem 0 3.5rem;
   background: var(--paper);
-  color: var(--ink);
+}
+
+@media (min-width: 700px) {
+  .roadmap-map {
+    --node: 3rem;
+    --gutter: 1.5rem;
+  }
+}
+
+.map-frame {
+  pointer-events: none;
+  position: absolute;
+  inset: 1.25rem var(--pad);
+}
+
+.map-frame__tick {
+  position: absolute;
+  width: 1.35rem;
+  height: 1.35rem;
+  border: 2px solid var(--ink);
+}
+
+.map-frame__tick--tl {
+  top: 0;
+  left: 0;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.map-frame__tick--tr {
+  top: 0;
+  right: 0;
+  border-left: 0;
+  border-bottom: 0;
+}
+
+.map-frame__tick--bl {
+  bottom: 0;
+  left: 0;
+  border-right: 0;
+  border-top: 0;
+}
+
+.map-frame__tick--br {
+  bottom: 0;
+  right: 0;
+  border-left: 0;
+  border-top: 0;
+}
+
+.path-board {
+  position: relative;
+}
+
+.path-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.path-lines path {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  transition:
+    stroke 240ms var(--ease-out),
+    stroke-width 240ms var(--ease-out);
+}
+
+.path-lines path.is-dashed {
+  stroke: var(--mute);
+  stroke-dasharray: 5 6;
+}
+
+.path-lines path.is-hot {
+  stroke: url(#rail-hot);
+  stroke-width: 2.5;
+}
+
+.path {
+  position: relative;
+  z-index: 1;
+  list-style: none;
+  padding: 0.5rem 0 0;
+}
+
+.path__step--trunk,
+.path__step--soon {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--node) minmax(0, 1fr);
+  column-gap: var(--gutter);
+  padding-bottom: 1.35rem;
+}
+
+.path__step--fork {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--node) minmax(0, 1fr);
+  column-gap: var(--gutter);
+  padding-bottom: 1.35rem;
+  grid-template-areas:
+    "node lab"
+    "ccd ccd"
+    "btl btl";
+}
+
+.path__step--fork .path__node {
+  grid-area: node;
+}
+
+.fork__label {
+  grid-area: lab;
+  align-self: center;
+  margin: 0;
   font-size: 0.8rem;
   font-weight: 700;
-  transition:
-    background var(--duration) var(--ease-out),
-    color var(--duration) var(--ease-out),
-    scale 140ms var(--ease-out);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mute);
+  white-space: nowrap;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .zoom button:active {
-    scale: 0.96;
+.path__step--fork #ccd-l1 {
+  grid-area: ccd;
+}
+
+.path__step--fork #btl1 {
+  grid-area: btl;
+  margin-top: 1rem;
+}
+
+@media (min-width: 860px) {
+  .path__step--trunk,
+  .path__step--soon {
+    grid-template-columns: minmax(0, 38rem);
+    justify-content: center;
+    justify-items: center;
+    row-gap: 0.7rem;
+  }
+
+  .path__step--trunk .path__node,
+  .path__step--soon .path__node {
+    grid-column: 1;
+  }
+
+  .path__step--trunk .step-card,
+  .path__step--soon .step-card {
+    width: 100%;
+    max-width: none;
+    grid-column: 1;
+    justify-self: stretch;
+  }
+
+  .path__step--fork {
+    width: min(40rem, 100%);
+    margin-inline: auto;
+    grid-template-columns: minmax(0, 1fr) var(--node) minmax(0, 1fr);
+    column-gap: 1.1rem;
+    grid-template-areas:
+      ". lab ."
+      "ccd node btl";
+    align-items: stretch;
+  }
+
+  .path__step--fork .path__node {
+    justify-self: center;
+    align-self: start;
+    margin-top: 1.5rem;
+  }
+
+  .fork__label {
+    justify-self: center;
+    align-self: end;
+    width: max-content;
+    margin: 0 0 0.65rem;
+    text-align: center;
+  }
+
+  .path__step--fork #ccd-l1,
+  .path__step--fork #btl1 {
+    width: 100%;
+    max-width: none;
+  }
+
+  .path__step--fork #ccd-l1 {
+    justify-self: stretch;
+  }
+
+  .path__step--fork #btl1 {
+    justify-self: stretch;
+    margin-top: 0;
   }
 }
 
+.path__node {
+  appearance: none;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  align-self: start;
+  width: var(--node);
+  height: var(--node);
+  padding: 0;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--snow);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-text-fill-color: var(--ink);
+  transition:
+    background-color var(--duration) var(--ease-out),
+    color var(--duration) var(--ease-out),
+    border-color var(--duration) var(--ease-out),
+    background-image var(--duration) var(--ease-out),
+    scale 200ms var(--ease-out),
+    box-shadow var(--duration) var(--ease-out);
+}
+
+button.path__node:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem var(--paper), 0 0 0 0.35rem var(--ink);
+}
+
+button.path__node {
+  cursor: pointer;
+}
+
 @media (hover: hover) {
-  .zoom button:hover {
+  .path__step:not(.is-current) button.path__node:hover {
+    background: var(--ink);
+    color: var(--paper);
+    -webkit-text-fill-color: var(--paper);
+    scale: 1.06;
+  }
+}
+
+.path__step.is-reached .path__node,
+.path__step.is-reached button.path__node {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+  -webkit-text-fill-color: var(--paper);
+}
+
+.path__step.is-current .path__node,
+.path__step.is-current button.path__node {
+  color: var(--paper);
+  -webkit-text-fill-color: var(--paper);
+  border: var(--rim-width) solid rgb(0 0 0 / 0);
+  background-color: var(--ink);
+  background-image: linear-gradient(var(--ink), var(--ink)),
+    conic-gradient(from var(--rim-angle, 0deg), var(--ramp-conic));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  scale: 1.06;
+}
+
+.path__step--soon .path__node {
+  background: var(--paper);
+  border-style: dashed;
+  border-color: var(--mute);
+}
+
+.step-card {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  border: var(--rim-width) solid transparent;
+  border-radius: var(--radius-card);
+  background: var(--snow);
+  box-shadow: inset 0 0 0 1px var(--hairline);
+  scroll-margin-top: 6rem;
+  cursor: pointer;
+  transition:
+    background-color var(--duration) var(--ease-out),
+    box-shadow var(--duration) var(--ease-out),
+    translate 220ms var(--ease-out);
+}
+
+.path__step--fork .step-card {
+  height: 100%;
+  min-height: 100%;
+}
+
+.step-card.is-selected {
+  box-shadow: none;
+  background-image: linear-gradient(var(--snow), var(--snow)),
+    conic-gradient(from var(--rim-angle, 0deg), var(--ramp-conic));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.step-card__stage {
+  padding: 1rem 1.35rem 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+.step-card__toggle {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.2rem 1.35rem 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.step-card__toggle .display,
+.step-card--soon .display {
+  font-size: clamp(1.55rem, 3.2vw, 2.15rem);
+}
+
+.path__step--fork .step-card__toggle .display {
+  display: block;
+  font-size: clamp(1.35rem, 2.5vw, 1.7rem);
+  min-height: 2.4em;
+}
+
+.step-card.is-selected .step-card__toggle .display {
+  background-image: var(--ramp);
+  background-size: 8rem var(--rim-width);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  padding-bottom: 0.4rem;
+}
+
+.step-card__icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  margin-top: 0.15rem;
+  border: 1.5px solid var(--ink);
+  border-radius: 50%;
+  font-size: 1.05rem;
+  line-height: 1;
+  transition:
+    rotate 240ms var(--ease-out),
+    background-color var(--duration) var(--ease-out),
+    color var(--duration) var(--ease-out);
+}
+
+.step-card__toggle[aria-expanded="true"] .step-card__icon {
+  rotate: 45deg;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+@media (hover: hover) {
+  .step-card__toggle:hover .step-card__icon {
     background: var(--ink);
     color: var(--paper);
   }
 }
 
-/* List-the-path panel. */
-.listpanel {
-  position: absolute;
-  left: 1.5rem;
-  bottom: 4.5rem;
-  z-index: 3;
-  width: min(19rem, calc(100% - 3rem));
-  max-height: 50%;
-  overflow-y: auto;
-  overflow-x: hidden;
-  overscroll-behavior: contain;
-  scrollbar-width: thin;
-  scrollbar-color: var(--ink) transparent;
-  scrollbar-gutter: stable;
-  padding: 1rem 1.25rem;
-  border: 1px solid var(--ink);
-  border-radius: 1.25rem;
-  background: var(--snow);
+.step-card__sum {
+  padding: 0.4rem 1.35rem 0.35rem;
+  max-width: 38rem;
+  color: var(--mid);
+}
+
+.path__step--fork .step-card__sum {
+  flex: 1;
+}
+
+.step-card__crew {
+  margin: 0.55rem 1.35rem 1.15rem;
+  padding: 0.55rem 0.8rem 0.6rem;
+  border-radius: 0.85rem;
+  box-shadow: inset 0 0 0 1px var(--hairline);
+  color: var(--mid);
+  font-size: 0.88rem;
+  line-height: 1.3;
+}
+
+.step-card__crew small {
+  display: block;
+  margin-bottom: 0.15rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+.step-card__crew strong {
+  margin-right: 0.35rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 400;
   color: var(--ink);
+  -webkit-text-fill-color: var(--ink);
+  letter-spacing: 0.02em;
 }
 
-.listpanel::-webkit-scrollbar {
-  width: 0.5rem;
-}
-
-.listpanel::-webkit-scrollbar-track {
-  background: transparent;
-  margin: 1rem 0;
-}
-
-.listpanel::-webkit-scrollbar-thumb {
+.step-card__time {
+  position: relative;
+  overflow: hidden;
+  margin: 0.55rem 1.35rem 1.15rem;
+  padding: 0.45rem 0.75rem;
+  max-width: 16rem;
+  border-radius: var(--radius-cta);
   background: var(--ink);
-  border-radius: 999px;
-  border: 2px solid var(--snow);
+  color: var(--paper);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
-@media (hover: hover) {
-  .listpanel::-webkit-scrollbar-thumb:hover {
-    background: var(--mid);
-  }
+.step-card__time::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  transform: scaleX(var(--span, 0.5));
+  transform-origin: left;
+  opacity: 0.35;
+  pointer-events: none;
 }
 
-.listpanel[hidden] {
-  display: none;
+.step-card:not(:has(.step-card__time, .step-card__crew)) .step-card__sum {
+  padding-bottom: 1.15rem;
 }
 
-.listpanel ol {
-  margin: 0.5rem 0 0 1.25rem;
+.step-card:not(:has(.step-card__sum, .step-card__time, .step-card__crew)) .step-card__toggle {
+  padding-bottom: 1.15rem;
+}
+
+.step-card__more {
+  padding: 0 1.35rem 1.35rem;
+  cursor: auto;
+}
+
+.step-card__more dl {
+  margin: 0;
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--hairline);
+}
+
+.step-card__more dt {
+  margin: 0 0 0.3rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+.step-card__more dd {
+  margin: 0 0 1.15rem;
+  max-width: 36rem;
+  color: var(--mid);
+}
+
+.step-card__more dd:last-child {
+  margin-bottom: 0;
+}
+
+.step-card__more ul {
+  display: grid;
+  gap: 0.4rem;
   padding: 0;
-  font-size: 0.9rem;
+  list-style: none;
 }
 
-.listpanel li {
-  margin: 0.25rem 0;
-}
-
-.listpanel li button {
-  padding: 0.375rem 0;
-  min-height: 2.75rem;
-  font-weight: 600;
-  text-align: left;
-  text-decoration: underline;
-  text-underline-offset: 0.15rem;
+.step-card__more a {
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1.5px;
   transition: color var(--duration) var(--ease-out);
 }
 
-@media (hover: hover) {
-  .listpanel li button:hover {
-    color: var(--mute);
-  }
+.step-card__more a:hover {
+  color: var(--ramp-blue);
 }
 
-/* Briefing drawer. Desktop: right overlay. Phone: bottom sheet. */
-.drawer {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 4;
-  width: min(21.25rem, 100%);
-  overflow-y: auto;
-  padding: 1.75rem 1.5rem;
-  background: var(--ink);
-  color: var(--paper);
-  visibility: hidden;
-  pointer-events: none;
-  transform: translate3d(100%, 0, 0);
-  transition:
-    transform 220ms var(--ease-out),
-    visibility 220ms;
+.step-card--soon {
+  padding: 1rem 1.25rem 1.15rem;
+  border: 1.5px dashed var(--mute);
+  background: transparent;
+  box-shadow: none;
+  color: var(--mute);
+  cursor: default;
 }
 
-.drawer.is-open {
-  visibility: visible;
-  pointer-events: auto;
-  transform: none;
+.step-card--soon .display {
+  margin-top: 0.25rem;
 }
 
-.drawer[hidden] {
-  display: none;
-}
-
-.drawer h2 {
-  font-family: var(--font-display);
-  font-weight: 400;
-  text-transform: uppercase;
-  font-size: 2.125rem;
-  line-height: 0.95;
-  margin: 0 0 0.875rem;
-}
-
-.drawer p {
-  font-size: 0.9rem;
-  line-height: 1.5;
-  margin: 0 0 0.75rem;
-}
-
-.drawer__next {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 0.25rem 0 0.75rem;
-}
-
-.drawer__next button {
-  min-height: 2.75rem;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid var(--paper);
-  border-radius: 999px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--paper);
-  transition:
-    background var(--duration) var(--ease-out),
-    color var(--duration) var(--ease-out),
-    scale 140ms var(--ease-out);
+.step-card--soon small {
+  margin-left: 0.4rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  vertical-align: middle;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .drawer__next button:active {
-    scale: 0.97;
-  }
-}
-
-@media (hover: hover) {
-  .drawer__next button:hover {
-    background: var(--paper);
-    color: var(--ink);
-  }
-}
-
-.drawer__links {
-  margin: 0 0 0.75rem;
-}
-
-.drawer__links a {
-  display: block;
-  padding: 0.375rem 0;
-  min-height: 2.75rem;
-  font-size: 0.9rem;
-  text-decoration: underline;
-  text-underline-offset: 0.15rem;
-  transition: color var(--duration) var(--ease-out);
-}
-
-@media (hover: hover) {
-  .drawer__links a:hover {
-    color: var(--fog);
-  }
-}
-
-.drawer__close {
-  display: inline-block;
-  margin-top: 1rem;
-  min-height: 2.75rem;
-  padding: 0.625rem 0.75rem;
-  font-size: 0.85rem;
-  color: var(--fog);
-  transition: color var(--duration) var(--ease-out);
-}
-
-@media (hover: hover) {
-  .drawer__close:hover {
-    color: var(--paper);
-  }
-}
-
-@media (max-width: 47.9375rem) {
-  .drawer {
-    top: auto;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    max-height: 70%;
-    border-top: 1px solid var(--paper);
-    transform: translate3d(0, 100%, 0);
+  .path__step.is-current .path__node,
+  .step-card.is-selected {
+    animation: rim-outline 4s linear infinite;
   }
 
-  .drawer.is-open {
-    transform: none;
+  .step-card.is-selected .step-card__toggle .display {
+    animation: underline-travel 4s linear infinite;
+  }
+
+  .step-card.is-selected .step-card__more dl {
+    animation: panel-in 280ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .path-lines path:not(.is-dashed) {
+    stroke-dasharray: var(--len, 800);
+    stroke-dashoffset: var(--len, 800);
+    animation: rail-draw 720ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: calc(var(--i, 0) * 55ms);
+  }
+
+  .path-lines.is-drawn path:not(.is-dashed) {
+    stroke-dashoffset: 0;
+    animation: none;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .stage,
-  .world,
-  .rnode,
-  .rnode small,
-  .zoom button,
-  .listpanel li button,
-  .drawer,
-  .drawer__next button,
-  .drawer__links a,
-  .drawer__close {
-    transition: none !important;
+  .roadmap-hero__copy,
+  .hero-schematic__rail,
+  .hero-schematic__mark,
+  .hero-schematic__soon,
+  .path__node,
+  .step-card,
+  .step-card__icon,
+  .step-card__more dl,
+  .path-lines path {
     animation: none !important;
+    transition: none;
+  }
+
+  .hero-schematic__mark,
+  .hero-schematic__soon {
+    opacity: 1;
+  }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .step-card:hover:not(.step-card--soon):not(.is-selected) {
+    translate: 0 -0.28rem;
+    box-shadow: inset 0 0 0 1px var(--ink);
   }
 }

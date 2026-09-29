@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>InfoSec Wizard</title>
+    <title>Roadmap | InfoSec Wizard</title>
     <meta
       name="description"
-      content="The InfoSec Wizard roadmap. Find where you are and see what comes next, from fundamentals to SOC or GRC."
+      content="The InfoSec Wizard roadmap. Start, Security+, a practical cert, then a project."
     />
     <link rel="canonical" href="./roadmap.html" />
     <meta name="theme-color" content="#0a0a0a" />
@@ -18,7 +18,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/site.css?v=23" />
-    <link rel="stylesheet" href="css/roadmap.css" />
+    <link rel="stylesheet" href="css/roadmap.css?v=21" />
   </head>
   <body class="roadmap-page">
     <a class="skip" href="#main">Skip to content</a>
@@ -77,42 +77,234 @@
     </header>
 
     <main class="roadmap-main page-fade" id="main">
-      <div class="stage" data-stage>
-        <div class="world" data-world>
-          <svg class="edges" data-edges aria-hidden="true"></svg>
+      <section class="roadmap-hero">
+        <div class="wrap roadmap-hero__inner">
+          <div class="roadmap-hero__copy">
+            <h1 class="display">Find your step. Take the next one.</h1>
+            <p class="lead">Start, Security+, a practical cert, then a project. Open a step for what it covers and how long it takes.</p>
+          </div>
+          <a class="hero-schematic" href="#start" aria-label="Open Start on the path">
+            <svg viewBox="0 0 88 176" aria-hidden="true">
+              <path
+                class="hero-schematic__rail"
+                d="M44 10 V58 M44 58 V90 M44 90 L16 118 M44 90 L72 118 M16 118 L44 146 M72 118 L44 146 M44 146 V168"
+              />
+              <circle class="hero-schematic__mark" cx="44" cy="10" r="5.5" />
+              <circle class="hero-schematic__mark" cx="44" cy="58" r="5.5" />
+              <circle class="hero-schematic__mark" cx="44" cy="90" r="5.5" />
+              <circle class="hero-schematic__mark hero-schematic__mark--fork" cx="16" cy="118" r="5.5" />
+              <circle class="hero-schematic__mark hero-schematic__mark--fork" cx="72" cy="118" r="5.5" />
+              <circle class="hero-schematic__mark" cx="44" cy="146" r="5.5" />
+              <circle class="hero-schematic__soon" cx="44" cy="166" r="4.5" />
+            </svg>
+          </a>
         </div>
-        <div class="zoom" data-zoom role="group" aria-label="Map controls">
-          <button type="button" data-zoom="out" aria-label="Zoom out">&minus;</button>
-          <button type="button" data-zoom="fit">Fit</button>
-          <button type="button" data-zoom="in" aria-label="Zoom in">+</button>
-          <button type="button" data-list-btn aria-expanded="false" aria-controls="list-panel">List</button>
+      </section>
+
+      <section class="roadmap-map">
+        <div class="map-frame" aria-hidden="true">
+          <span class="map-frame__tick map-frame__tick--tl"></span>
+          <span class="map-frame__tick map-frame__tick--tr"></span>
+          <span class="map-frame__tick map-frame__tick--bl"></span>
+          <span class="map-frame__tick map-frame__tick--br"></span>
         </div>
-        <div class="listpanel" id="list-panel" data-listpanel hidden>
-          <p class="rbar__label">List the path</p>
-        </div>
-        <aside class="drawer" data-drawer aria-label="Node details" hidden></aside>
-        <noscript>
-          <div class="listpanel">
-            <p>The interactive map needs JavaScript. The path, in order:</p>
-            <ol>
-              <li>Enter the path</li>
-              <li>Computer fundamentals</li>
-              <li>Network fundamentals</li>
-              <li>Security+</li>
-              <li>First lab hours</li>
-              <li>Practical cert</li>
-              <li>Portfolio project</li>
-              <li>Resume and applications</li>
-              <li>SOC L1</li>
-              <li>GRC fundamentals</li>
+        <div class="wrap">
+          <div class="path-board">
+            <svg class="path-lines" data-lines aria-hidden="true"></svg>
+            <ol class="path" id="path" aria-label="Roadmap steps">
+              <li class="path__step path__step--trunk" data-index="0">
+                <button class="path__node" type="button" data-anchor="n0" data-goto="start" aria-label="Open Start">1</button>
+                <article class="step-card" id="start" data-stage="start">
+                  <p class="step-card__stage">The path</p>
+                  <h2>
+                    <button class="step-card__toggle" type="button" aria-expanded="false" aria-controls="more-start">
+                      <span class="display">Start</span>
+                      <span class="step-card__icon" aria-hidden="true">+</span>
+                    </button>
+                  </h2>
+                  <div class="step-card__more" id="more-start" hidden>
+                    <dl>
+                      <dt>Why</dt>
+                      <dd>Order matters. The gate cert, then a practical cert, then a project.</dd>
+                      <dt>Start with</dt>
+                      <dd>
+                        <ul>
+                          <li><a href="https://discord.gg/azdxRmes3Z" target="_blank" rel="noopener">Ask in the community</a></li>
+                        </ul>
+                      </dd>
+                    </dl>
+                  </div>
+                </article>
+              </li>
+
+              <li class="path__step path__step--trunk" data-index="1">
+                <button class="path__node" type="button" data-anchor="n1" data-goto="security-plus" aria-label="Open Security+">2</button>
+                <article class="step-card" id="security-plus" data-stage="security-plus">
+                  <p class="step-card__stage">Certifications</p>
+                  <h2>
+                    <button class="step-card__toggle" type="button" aria-expanded="false" aria-controls="more-secplus">
+                      <span class="display">Security+</span>
+                      <span class="step-card__icon" aria-hidden="true">+</span>
+                    </button>
+                  </h2>
+                  <p class="step-card__sum">The gate cert. Broad vocabulary across threats, controls, and operations.</p>
+                  <p class="step-card__time" style="--span: 0.5">1–3 months</p>
+                  <div class="step-card__more" id="more-secplus" hidden>
+                    <dl>
+                      <dt>Why</dt>
+                      <dd>Gate cert first. Not a specialty, and not the last cert.</dd>
+                      <dt>Start with</dt>
+                      <dd>
+                        <ul>
+                          <li><a href="https://www.comptia.org/certifications/security" target="_blank" rel="noopener">CompTIA Security+</a></li>
+                        </ul>
+                      </dd>
+                    </dl>
+                  </div>
+                </article>
+              </li>
+
+              <li class="path__step path__step--trunk" data-index="2">
+                <button class="path__node" type="button" data-anchor="n2" data-goto="practical-cert" aria-label="Open Practical certification">3</button>
+                <article class="step-card" id="practical-cert" data-stage="practical">
+                  <p class="step-card__stage">Certifications</p>
+                  <h2>
+                    <button class="step-card__toggle" type="button" aria-expanded="false" aria-controls="more-practical">
+                      <span class="display">Practical certification</span>
+                      <span class="step-card__icon" aria-hidden="true">+</span>
+                    </button>
+                  </h2>
+                  <p class="step-card__sum">Hands-on certs that test doing, not memorizing. Choose one path below.</p>
+                  <p class="step-card__time" style="--span: 1">3–6 months</p>
+                  <div class="step-card__more" id="more-practical" hidden>
+                    <dl>
+                      <dt>Why</dt>
+                      <dd>You already have Security+. Do not sit another trivia exam.</dd>
+                      <dt>Start with</dt>
+                      <dd>
+                        <ul>
+                          <li><a href="#ccd-l1">Certified CyberDefenders Level 1</a></li>
+                          <li><a href="#btl1">Blue Team Level 1</a></li>
+                        </ul>
+                      </dd>
+                    </dl>
+                  </div>
+                </article>
+              </li>
+
+              <li class="path__step path__step--fork" data-index="3">
+                <span class="path__node" data-anchor="n3" aria-hidden="true">4</span>
+                <p class="fork__label">Choose one</p>
+                <article class="step-card" id="ccd-l1" data-anchor="ccd-l1" data-stage="choose">
+                  <p class="step-card__stage">Certifications</p>
+                  <h2>
+                    <button class="step-card__toggle" type="button" aria-expanded="false" aria-controls="more-ccd">
+                      <span class="display">Certified CyberDefenders Level 1</span>
+                      <span class="step-card__icon" aria-hidden="true">+</span>
+                    </button>
+                  </h2>
+                  <p class="step-card__sum">Practical blue-team work: investigations, detections, and labs that score what you can do.</p>
+                  <p class="step-card__crew"><small>Community</small><strong>2</strong> taking or took this</p>
+                  <div class="step-card__more" id="more-ccd" hidden>
+                    <dl>
+                      <dt>Why</dt>
+                      <dd>One of the practical paths after Security+.</dd>
+                      <dt>Start with</dt>
+                      <dd>
+                        <ul>
+                          <li><a href="https://cyberdefenders.org/" target="_blank" rel="noopener">CyberDefenders</a></li>
+                        </ul>
+                      </dd>
+                    </dl>
+                  </div>
+                </article>
+                <article class="step-card" id="btl1" data-anchor="btl1" data-stage="choose">
+                  <p class="step-card__stage">Certifications</p>
+                  <h2>
+                    <button class="step-card__toggle" type="button" aria-expanded="false" aria-controls="more-btl1">
+                      <span class="display">Blue Team Level 1</span>
+                      <span class="step-card__icon" aria-hidden="true">+</span>
+                    </button>
+                  </h2>
+                  <p class="step-card__sum">A hands-on defensive cert. Labs, not trivia.</p>
+                  <p class="step-card__crew"><small>Community</small><strong>1</strong> took this</p>
+                  <div class="step-card__more" id="more-btl1" hidden>
+                    <dl>
+                      <dt>Why</dt>
+                      <dd>One of the practical paths after Security+.</dd>
+                      <dt>Start with</dt>
+                      <dd>
+                        <ul>
+                          <li><a href="https://www.securityblue.team/why-btl1/" target="_blank" rel="noopener">Blue Team Level 1</a></li>
+                        </ul>
+                      </dd>
+                    </dl>
+                  </div>
+                </article>
+              </li>
+
+              <li class="path__step path__step--trunk" data-index="4">
+                <button class="path__node" type="button" data-anchor="n4" data-goto="projects" aria-label="Open Projects">5</button>
+                <article class="step-card" id="projects" data-stage="projects">
+                  <p class="step-card__stage">Projects</p>
+                  <h2>
+                    <button class="step-card__toggle" type="button" aria-expanded="false" aria-controls="more-projects">
+                      <span class="display">Projects</span>
+                      <span class="step-card__icon" aria-hidden="true">+</span>
+                    </button>
+                  </h2>
+                  <p class="step-card__sum">One project, written up. Something a hiring manager can read in five minutes.</p>
+                  <div class="step-card__more" id="more-projects" hidden>
+                    <dl>
+                      <dt>Why</dt>
+                      <dd>Proof of work. Certs without a writeup do not travel.</dd>
+                      <dt>Start with</dt>
+                      <dd>
+                        <ul>
+                          <li><a href="./portfolios.html">Member portfolios</a></li>
+                        </ul>
+                      </dd>
+                    </dl>
+                  </div>
+                </article>
+              </li>
+
+              <li class="path__step path__step--soon">
+                <span class="path__node" data-anchor="nsoon" aria-hidden="true"></span>
+                <div class="step-card step-card--soon">
+                  <p>Senior, lead, and specialist roles</p>
+                  <p class="display">Continue the grind <small>soon</small></p>
+                </div>
+              </li>
             </ol>
           </div>
-        </noscript>
-      </div>
+        </div>
+      </section>
+
+      <noscript>
+        <div class="wrap">
+          <p>The path, in order: Start, Security+, Practical certification, then choose Certified CyberDefenders Level 1 or Blue Team Level 1, then Projects.</p>
+        </div>
+      </noscript>
     </main>
 
+    <footer class="footer page-fade">
+      <div class="wrap">
+        <div class="footer__top">
+          <a class="footer__brand" href="./" aria-label="InfoSec Wizard home">
+            <img src="assets/mark.svg" alt="" width="32" height="28" />
+            <span class="footer__word">InfoSec Wizard</span>
+          </a>
+          <a class="btn" href="https://discord.gg/azdxRmes3Z" target="_blank" rel="noopener">Join the community</a>
+        </div>
+        <div class="footer__meta">
+          <p>A community for breaking in and moving up.</p>
+          <p>© <span id="y">2026</span> InfoSec Wizard.</p>
+        </div>
+      </div>
+    </footer>
+
     <script src="js/site.js?v=9" defer></script>
-    <script src="js/roadmap-data.js" defer></script>
-    <script src="js/roadmap.js" defer></script>
+    <script src="js/roadmap.js?v=14" defer></script>
   </body>
 </html>

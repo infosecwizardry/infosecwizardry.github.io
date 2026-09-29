@@ -1,158 +1,124 @@
-/* Temp catalog. Placeholder copy and example.com stubs, not curriculum picks. */
+/* Catalog as of the path-and-timeframe pass. The live page is HTML in
+   roadmap.html; this file is the same node list for later reuse. */
 window.ROADMAP = {
   nodes: [
     {
-      id: "enter",
-      title: "Enter the path",
+      id: "start",
+      title: "Start",
       stage: "start",
-      x: 40,
-      y: 244,
+      x: 48,
+      y: 220,
       kinds: ["skill"],
       tracks: [],
       level: "beginner",
-      briefing: "You are at the start. Two skills first, then the gate cert. Not a job track yet.",
-      why: "Order matters. Fundamentals before certs, certs before applications.",
-      next: ["computer-fundamentals", "network-fundamentals"],
-      links: [{ label: "Temp: how to begin", href: "https://example.com/temp-start", temp: true }]
-    },
-    {
-      id: "computer-fundamentals",
-      title: "Computer fundamentals",
-      stage: "skills",
-      x: 300,
-      y: 64,
-      kinds: ["skill"],
-      tracks: [],
-      level: "beginner",
-      briefing: "How computers actually work. Hardware, operating systems, and the command line.",
-      why: "Everything later assumes this. Skipping it means relearning it under pressure.",
+      briefing: "Order matters. The gate cert, then a practical cert, then a project.",
+      why: "Order matters. The gate cert, then a practical cert, then a project.",
       next: ["security-plus"],
-      links: [{ label: "Temp: Professor Messer A+ core", href: "https://example.com/temp-computer", temp: true }]
-    },
-    {
-      id: "network-fundamentals",
-      title: "Network fundamentals",
-      stage: "skills",
-      x: 300,
-      y: 444,
-      kinds: ["skill"],
-      tracks: [],
-      level: "beginner",
-      briefing: "How machines talk. TCP/IP, DNS, and what a packet does on the wire.",
-      why: "Security work is network work. This is the other half of the starting fork.",
-      next: ["security-plus"],
-      links: [{ label: "Temp: Network+ outline", href: "https://example.com/temp-network", temp: true }]
+      links: []
     },
     {
       id: "security-plus",
       title: "Security+",
       stage: "certs",
-      x: 580,
-      y: 244,
+      x: 320,
+      y: 220,
       kinds: ["cert"],
       tracks: [],
       level: "beginner",
-      briefing: "The gate cert. Broad vocabulary across threats, controls, and operations.",
-      why: "Gate cert after fundamentals. Not the last cert, and not a specialty.",
-      next: ["first-labs", "practical-cert"],
-      links: [{ label: "Temp: CompTIA Security+ exam", href: "https://example.com/temp-secplus", temp: true }]
-    },
-    {
-      id: "first-labs",
-      title: "First lab hours",
-      stage: "labs",
-      x: 860,
-      y: 64,
-      kinds: ["lab"],
-      tracks: [],
-      level: "beginner",
-      briefing: "Hands on keyboards. Guided labs that prove you can do the work, not just name it.",
-      why: "You already have Security+. Time in labs beats another trivia exam.",
-      next: ["portfolio-project"],
-      links: [{ label: "Temp: intro SOC / fundamentals path", href: "https://example.com/temp-labs", temp: true }]
+      briefing: "The gate cert. Broad vocabulary across threats, controls, and operations. Plan on 1 to 3 months.",
+      why: "Gate cert first. Not a specialty, and not the last cert.",
+      next: ["practical-cert"],
+      links: [{ label: "CompTIA Security+", href: "https://www.comptia.org/certifications/security" }]
     },
     {
       id: "practical-cert",
-      title: "Practical cert",
+      title: "Practical certification",
       stage: "certs",
-      x: 860,
-      y: 444,
+      x: 600,
+      y: 220,
       kinds: ["cert"],
       tracks: [],
       level: "intermediate",
-      briefing: "A hands-on cert that tests doing, not memorizing. One is enough for now.",
+      briefing: "Hands-on certs that test doing, not memorizing. Two ways forward: Certified CyberDefenders Level 1 and Blue Team Level 1. Plan on 3 to 6 months.",
       why: "You already have Security+. Do not sit another trivia exam.",
-      next: ["portfolio-project"],
-      links: [{ label: "Temp: first practical cert", href: "https://example.com/temp-practical", temp: true }]
+      next: ["ccd-l1", "btl1"],
+      links: []
     },
     {
-      id: "portfolio-project",
-      title: "Portfolio project",
+      id: "ccd-l1",
+      title: "Certified CyberDefenders Level 1",
+      stage: "certs",
+      x: 900,
+      y: 40,
+      kinds: ["cert"],
+      tracks: ["soc"],
+      level: "intermediate",
+      briefing: "Certified CyberDefenders Level 1. Practical blue-team work: investigations, detections, and labs that score what you can do.",
+      why: "One of the practical paths after Security+.",
+      next: ["projects"],
+      links: [{ label: "CyberDefenders", href: "https://cyberdefenders.org/" }]
+    },
+    {
+      id: "btl1",
+      title: "Blue Team Level 1",
+      stage: "certs",
+      x: 900,
+      y: 400,
+      kinds: ["cert"],
+      tracks: ["soc"],
+      level: "intermediate",
+      briefing: "Blue Team Level 1. A hands-on defensive cert. Labs, not trivia.",
+      why: "One of the practical paths after Security+.",
+      next: ["projects"],
+      links: [{ label: "Blue Team Level 1", href: "https://www.securityblue.team/why-btl1/" }]
+    },
+    {
+      id: "projects",
+      title: "Projects",
       stage: "break-in",
-      x: 1140,
-      y: 244,
+      x: 1220,
+      y: 220,
       kinds: ["project"],
       tracks: [],
       level: "intermediate",
-      briefing: "One home-lab project, written up. Something a hiring manager can read in five minutes.",
-      why: "Proof of work. Labs without a writeup do not travel.",
-      next: ["resume-apps"],
-      links: [{ label: "Temp: home-lab brief", href: "https://example.com/temp-project", temp: true }]
-    },
-    {
-      id: "resume-apps",
-      title: "Resume and applications",
-      stage: "break-in",
-      x: 1420,
-      y: 244,
-      kinds: ["skill"],
-      tracks: [],
-      level: "intermediate",
-      briefing: "A tight resume and a steady application habit. Target junior and apprentice roles.",
-      why: "The break-in step. Skills without applications do not convert.",
-      next: ["soc-l1", "grc-fundamentals"],
-      links: [{ label: "Temp: resume teardown notes", href: "https://example.com/temp-resume", temp: true }]
-    },
-    {
-      id: "soc-l1",
-      title: "SOC L1",
-      stage: "soc",
-      x: 1700,
-      y: 64,
-      kinds: ["skill"],
-      tracks: ["soc"],
-      level: "intermediate",
-      briefing: "First blue-team role. Triage alerts, escalate well, learn the stack.",
-      why: "The standard entry point. This community starts people on blue.",
+      briefing: "One project, written up. Something a hiring manager can read in five minutes.",
+      why: "Proof of work. Certs without a writeup do not travel.",
       next: [],
-      links: [{ label: "Temp: SOC L1 role notes", href: "https://example.com/temp-soc", temp: true }]
-    },
-    {
-      id: "grc-fundamentals",
-      title: "GRC fundamentals",
-      stage: "grc",
-      x: 1700,
-      y: 444,
-      kinds: ["skill"],
-      tracks: ["grc"],
-      level: "intermediate",
-      briefing: "Governance, risk, and compliance basics. Frameworks, evidence, and audit language.",
-      why: "The other entry rail. Pick it deliberately, not by default.",
-      next: [],
-      links: [{ label: "Temp: GRC starter", href: "https://example.com/temp-grc", temp: true }]
+      links: []
     }
   ],
   edges: [
-    { from: "enter", to: "computer-fundamentals" },
-    { from: "enter", to: "network-fundamentals" },
-    { from: "computer-fundamentals", to: "security-plus" },
-    { from: "network-fundamentals", to: "security-plus" },
-    { from: "security-plus", to: "first-labs" },
+    { from: "start", to: "security-plus" },
     { from: "security-plus", to: "practical-cert" },
-    { from: "first-labs", to: "portfolio-project" },
-    { from: "practical-cert", to: "portfolio-project" },
-    { from: "portfolio-project", to: "resume-apps" },
-    { from: "resume-apps", to: "soc-l1" },
-    { from: "resume-apps", to: "grc-fundamentals" }
-  ]
+    { from: "practical-cert", to: "ccd-l1" },
+    { from: "practical-cert", to: "btl1" },
+    { from: "ccd-l1", to: "projects" },
+    { from: "btl1", to: "projects" }
+  ],
+  labels: [
+    {
+      id: "choose-practical",
+      text: "Choose one",
+      between: ["ccd-l1", "btl1"]
+    }
+  ],
+  timeline: {
+    maxMonths: 6,
+    bands: [
+      {
+        id: "security-plus-time",
+        label: "1–3 months",
+        startMonth: 1,
+        endMonth: 3,
+        nodeIds: ["security-plus"]
+      },
+      {
+        id: "practical-time",
+        label: "3–6 months",
+        startMonth: 3,
+        endMonth: 6,
+        nodeIds: ["practical-cert"]
+      }
+    ]
+  }
 };
